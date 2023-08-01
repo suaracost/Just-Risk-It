@@ -1,3 +1,4 @@
 ![Banner](images/header.jpg)
 
-# Alejandro Suarez y Nicolas Quintana
+# Proyecto Estructuras de datos
+Alejandro Suarez y Nicolas Quintana
