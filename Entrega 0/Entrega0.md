@@ -19,8 +19,8 @@
 1. Empezar juego
 
          inicializar
-      
-   Este Comando inicia el juego donde le va a preguntar al usuario la cantidad de jugadores Luego pregunta el nombre de cada uno de los jugadores para poder indentificarlos durante la partida. Despues, por turnos cada jugador seleccionara en que territorio desea ubicar sus unidades de ejercito. 
+
+   Este Comando inicia el juego donde le va a preguntar al usuario la cantidad de jugadores, Luego pregunta el nombre de cada uno de los jugadores para poder identificarlos durante la partida. Después, por turnos, cada jugador seleccionará en que territorio desea ubicar sus unidades de ejército. El comando $$ Inicializar $$ Tiene dos posibles salidas: `Juegos en curso` el cual especifica que el juego ya ha sido inicializado previamente y `Inicializacion Satisfactoria ` el cual confirma que sea ha inicializado el juego correctamente
    
 2.turno <id_jugador>
 
