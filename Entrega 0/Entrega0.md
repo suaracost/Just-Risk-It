@@ -35,13 +35,13 @@
       Este comando termina la ejecución del programa. Este comando no tiene salidas
 
 
-6. Guardado del juego
+6. Guardado el juego
 
             guardar <nombre_archivo>
 
-      Este comando guarda toda la partida en un archivo de texto plano, este contiene la cantidad de jhugadores que estuvieron en la partida y para cada jugador debe almacenar su nombre o ID , su color en la partida , la cantidad de paises que ocupa este, Un identificar de cada territorio junto con la cantidad de unidades de ejército en él, la cantidad de tarjetas que posee  y por ultimo, un identificador de cada tarjeta Las posibles salidas de este son : `Juego no inicalzado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto`
+      Este comando guarda toda la partida en un archivo de texto plano, este contiene la cantidad de jhugadores que estuvieron en la partida y para cada jugador debe almacenar su nombre o ID , su color en la partida , la cantidad de paises que ocupa este, Un identificar de cada territorio junto con la cantidad de unidades de ejército en él, la cantidad de tarjetas que posee  y por ultimo, un identificador de cada tarjeta Las posibles salidas de este son : `Juego no inicalzado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guarda correctamente la partida, `Error al Guardar` se refiera a que la partida no ah sido guardara correctamente. 
 
-7. guardar_comprimido <nombre_archivo>
+7. Guardar el juego en un archivo comprimido
 
    hola
 
