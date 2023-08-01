@@ -5,5 +5,9 @@ Alejandro Suarez y Nicolas Quintana
 
 ----
 
-## Table of Content
+## Tabla de contenidos
 0. Entrega 0
+  -  Documentación
+  -  Código
+
+1. 
