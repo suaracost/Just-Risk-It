@@ -9,5 +9,5 @@ Alejandro Suarez y Nicolas Quintana
 0. ¿Quienes somos?
     - [🔫💣 Wiki 💣🔫](https://github.com/suaracost/Just-Risk-It/wiki)
 2. Entrega 0
-    -  [📑 Documentación 📑] (/Entrega 0/Entrega0.md)
+    -  [📑 Documentación 📑](/Entrega 0/Entrega0.md)
     -  Link a código
