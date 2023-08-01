@@ -16,39 +16,43 @@
 
 ### Comandos
 
-1. inicializar
+1. Empezar juego
 
-   hola
+         inicializar
+      
+   Este Comando inicia el juego donde le va a preguntar al usuario la cantidad de jugadores Luego pregunta el nombre de cada uno de los jugadores para poder indentificarlos durante la partida. Despues, por turnos cada jugador seleccionara en que territorio desea ubicar sus unidades de ejercito. 
    
-2. turno <id_jugador>
+2.turno <id_jugador>
+
+            turno <id_jugador>
 
    hola
 
-3. salir
+4. salir
 
    hola
 
-4. guardar <nombre_archivo>
+5. guardar <nombre_archivo>
 
    hola
 
-5. guardar_comprimido <nombre_archivo>
+6. guardar_comprimido <nombre_archivo>
 
    hola
 
-6. inicializar <nombre_archivo>
+7. inicializar <nombre_archivo>
 
    hola
 
-7. costo_conquista <territorio>
+8. costo_conquista <territorio>
 
    hola
 
-8. conquista_mas_barata
+9. conquista_mas_barata
 
    hola
 
-9. Ayuda
+10. Ayuda
 
          help
    
