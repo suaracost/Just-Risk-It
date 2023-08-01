@@ -6,7 +6,7 @@
    
    1.2 ejecucción
 
-3. Comandos
+2. Comandos
 
    2.1 inicializar
 
@@ -26,4 +26,4 @@
 
    2.9 help
 
-      Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente.
+   Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente.
