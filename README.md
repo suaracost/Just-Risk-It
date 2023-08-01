@@ -5,7 +5,7 @@ Alejandro Suarez y Nicolas Quintana
 
 ----
 
-## Tabla de contenidos
+### Tabla de contenidos
 0. ¿Quienes somos?
 1. Entrega 0
     -  Documentación
