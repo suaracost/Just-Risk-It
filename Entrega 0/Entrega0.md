@@ -22,19 +22,20 @@
 
    Este Comando inicia el juego donde le va a preguntar al usuario la cantidad de jugadores, Luego pregunta el nombre de cada uno de los jugadores para poder identificarlos durante la partida. Después, por turnos, cada jugador seleccionará en que territorio desea ubicar sus unidades de ejército. El comando `Inicializar`  Tiene dos posibles salidas: `Juegos en curso` el cual especifica que el juego ya ha sido inicializado previamente y `Inicializacion Satisfactoria ` el cual confirma que sea ha inicializado el juego correctamente
    
-2.turno <id_jugador>
+2. turno <id_jugador>
 
             turno <id_jugador>
 
-   Este comando describe que quiere hacer el juagdor este puede `Fortificar terriorio` donde mueve algunas unidades de ejercito que esten a un territorio a otro, `Atacar un territorio Vecino` Este debe escoger un territorio de su ejercito donde ataca un territorio enemigo vecino donde a travez de los dados define si gano o perdio el ataque , este proceso se repite hasta que uno de los dos jugadores se queden si unidades  o hasata que el atacante decida detenerse. y  por ultimo, `Obtener nuevas unidades` donde le verificva al jugador cuantas nuevas unidades puede reclamar y luego este puedo asignarlo en cualquiera de sus territorios y define que cantidad quiere en cada uno de estos.
+     Este comando describe que quiere hacer el jugador este puede `Fortificar terriorio` donde mueve algunas unidades de ejército que estén a un territorio a otro, `Atacar un territorio Vecino` Este debe escoger un territorio de su ejército, donde ataca un territorio enemigo vecino, donde a través de los dados define si gano o perdió el ataque, este proceso se repite hasta que uno de los dos jugadores se queden si unidades  o hasta que el atacante decida detenerse. Y  por último, `Obtener nuevas unidades` donde le verifica al jugador cuantas nuevas unidades puede reclamar y luego este puedo asignarlo en cualquiera de sus territorios y define que cantidad quiere en cada uno de estos. Este comando tiene varias salidas como, `Juego no inicializado` Este se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado` se refiera ah que se ha acabado la partida y hubo un ganador, `Jugador no valido` se refiere a que utiliza un ID o nombre de jugador que no está dentro de la partida, `Jugardor fuera de turno` se refiere a que un jugador quiere jugar un turno cuando no lo era, y por último `Turno terminado Correctamente` cuando el turno del jugador acabo correctamente.
 
 4. salir
 
-   hola
+      Este comando termina la ejecución del programa. Este comando no tiene salidas
+
 
 5. guardar <nombre_archivo>
 
-   hola
+      Este C
 
 6. guardar_comprimido <nombre_archivo>
 
