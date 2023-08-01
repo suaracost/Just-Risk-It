@@ -1,12 +1,25 @@
-### Entrega 0
+# Entrega 0
 
+1. Compilación y ejecucción
+   
+   1.1 compilación
+   
+   1.2 ejecucción
 
-## 1. Comandos
-  # 1.1 inicializar
-  # 1.2 turno <id_jugador>
-  # 1.3 salir
-  # 1.4 guardar <nombre_archivo>
-  # 1.5 guardar_comprimido <nombre_archivo>
-  # 1.6 inicializar <nombre_archivo>
-  # 1.7 costo_conquista <territorio>
-  # 1.8 conquista_mas_barata
+3. Comandos
+
+   2.1 inicializar
+
+   2.2 turno <id_jugador>
+
+   2.3 salir
+
+   2.4 guardar <nombre_archivo>
+
+   2.5 guardar_comprimido <nombre_archivo>
+
+   2.6 inicializar <nombre_archivo>
+
+   2.7 costo_conquista <territorio>
+
+   2.8 conquista_mas_barata
