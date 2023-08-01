@@ -30,7 +30,7 @@
 
 4. salida de la aplicacion
 
-              salir
+            salir
 
       Este comando termina la ejecución del programa. Este comando no tiene salidas
 
@@ -39,15 +39,19 @@
 
             guardar <nombre_archivo>
 
-      Este comando guarda toda la partida en un archivo de texto plano, este contiene la cantidad de jhugadores que estuvieron en la partida y para cada jugador debe almacenar su nombre o ID , su color en la partida , la cantidad de paises que ocupa este, Un identificar de cada territorio junto con la cantidad de unidades de ejército en él, la cantidad de tarjetas que posee  y por ultimo, un identificador de cada tarjeta Las posibles salidas de este son : `Juego no inicalzado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guarda correctamente la partida, `Error al Guardar` se refiera a que la partida no ah sido guardara correctamente. 
+      Este comando guarda toda la partida en un archivo de texto plano, este contiene la cantidad de jugadores que estuvieron en la partida y para cada jugador debe almacenar su nombre o ID, su color en la partida, la cantidad de países que ocupa este, Un identificar de cada territorio junto con la cantidad de unidades de ejército en él, la cantidad de tarjetas que posee  y por último, un identificador de cada tarjeta. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guardar correctamente la partida, `Error al Guardar` se refiera a que la partida no ha sido guardara correctamente. 
 
 7. Guardar el juego en un archivo comprimido
 
-   hola
+            guardar_comprimido <nombre_archivo>
+
+      Este Comando hace los mismo que el comando `guardar <nombre_archivo>` pero este es un archivo Binario con extension `.bin` que tendra la misma informacion del archivo de texto. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guardar correctamente la partida, `Error al Comprimir` se refiera a que la partida no ha sido guardara ni codificada correctamente. 
 
 8. inicializar <nombre_archivo>
 
-   hola
+            inicializar <nombre_archivo>
+
+      Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juegoo desde un archivo de juego normal el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso`se refiere a que el juego ya ha sido inicializado , `Archivo vacio o incompleto` se refiere a que el nom,bre del archivo no contiene iinformacion vvalida o no existe 
 
 9. costo_conquista <territorio>
 
