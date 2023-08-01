@@ -23,3 +23,5 @@
    2.7 costo_conquista <territorio>
 
    2.8 conquista_mas_barata
+
+   2.9 help
