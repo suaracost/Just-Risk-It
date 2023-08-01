@@ -35,31 +35,37 @@
       Este comando termina la ejecución del programa. Este comando no tiene salidas
 
 
-6. Guardado el juego
+5. Guardado el juego
 
             guardar <nombre_archivo>
 
       Este comando guarda toda la partida en un archivo de texto plano, este contiene la cantidad de jugadores que estuvieron en la partida y para cada jugador debe almacenar su nombre o ID, su color en la partida, la cantidad de países que ocupa este, Un identificar de cada territorio junto con la cantidad de unidades de ejército en él, la cantidad de tarjetas que posee  y por último, un identificador de cada tarjeta. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guardar correctamente la partida, `Error al Guardar` se refiera a que la partida no ha sido guardara correctamente. 
 
-7. Guardar el juego en un archivo comprimido
+6. Guardar el juego en un archivo comprimido
 
             guardar_comprimido <nombre_archivo>
 
       Este Comando hace los mismo que el comando `guardar <nombre_archivo>` pero este es un archivo Binario con extension `.bin` que tendra la misma informacion del archivo de texto. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guardar correctamente la partida, `Error al Comprimir` se refiera a que la partida no ha sido guardara ni codificada correctamente. 
 
-8. inicializar <nombre_archivo>
+7. inicializar <nombre_archivo>
 
             inicializar <nombre_archivo>
 
-      Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juegoo desde un archivo de juego normal el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso`se refiere a que el juego ya ha sido inicializado , `Archivo vacio o incompleto` se refiere a que el nom,bre del archivo no contiene iinformacion vvalida o no existe 
+      Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juego desde un archivo de juego normal, el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso`se refiere a que el juego ya ha sido inicializado, `Archivo vacio o incompleto` se refiere a que el nombre del archivo no contiene información válida o no existe, por lo tanto, no sé ha podido inicializar.
 
-9. costo_conquista <territorio>
+8. costo_conquista <territorio>
 
-   hola
+            costo_conquista <territorio>       
 
-10. conquista_mas_barata
+      Este Comando debe calcular el costo y la secuencia de territorios a ser conquistados para lograr controlar el territorio dado por el usuario. El territorio debe ser aquel que el jugador tenga controlado más cerca al dado por el jugador. Esta información se analiza desde el punto de vista del jugador que tiene el turno de juego. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado`se refiera ah que se ha acabado la partida y hubo un ganador, y por último `Comando correcto ` este especifica desde el territorio donde está que pasos tiene que hacer atacando a otros para conquistar <n> unidades de ejército
 
-   hola
+   
+
+9. conquista_mas_barata
+
+         conquista_mas_barata
+
+     Este
 
 11. Ayuda
 
