@@ -26,7 +26,7 @@
 
             turno <id_jugador>
 
-   hola
+   Este comando describe que quiere hacer el juagdor este puede `Fortificar terriorio` donde mueve algunas unidades de ejercito que esten a un territorio a otro, `Atacar un territorio Vecino` Este debe escoger un territorio de su ejercito donde ataca un territorio enemigo vecino donde a travez de los dados define si gano o perdio el ataque , este proceso se repite hasta que uno de los dos jugadores se queden si unidades  o hasata que el atacante decida detenerse. y  por ultimo, `Obtener nuevas unidades` donde le verificva al jugador cuantas nuevas unidades puede reclamar y luego este puedo asignarlo en cualquiera de sus territorios y define que cantidad quiere en cada uno de estos.
 
 4. salir
 
