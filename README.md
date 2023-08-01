@@ -7,6 +7,7 @@ Alejandro Suarez y Nicolas Quintana
 
 ### Tabla de contenidos
 0. ¿Quienes somos?
-1. Entrega 0
-    -  Documentación
-    -  Código
+    - [✒️ Fourier's theorem ✒️] (wiki)
+2. Entrega 0
+    -  Link a documentación
+    -  Link a código
