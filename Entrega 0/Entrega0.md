@@ -1,29 +1,49 @@
 # Entrega 0
 
-1. Compilación y ejecucción
+## Compilación y ejecucción
    
-   1.1 compilación
+1. compilación
+
+   hola
    
-   1.2 ejecucción
+2. ejecucción
 
-2. Comandos
+   hola
 
-   2.1 inicializar
+## Comandos
 
-   2.2 turno <id_jugador>
+1. inicializar
 
-   2.3 salir
+   hola
+   
+2. turno <id_jugador>
 
-   2.4 guardar <nombre_archivo>
+   hola
 
-   2.5 guardar_comprimido <nombre_archivo>
+3. salir
 
-   2.6 inicializar <nombre_archivo>
+   hola
 
-   2.7 costo_conquista <territorio>
+4. guardar <nombre_archivo>
 
-   2.8 conquista_mas_barata
+   hola
 
-   2.9 help
+5. guardar_comprimido <nombre_archivo>
 
-      Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente.
+   hola
+
+6. inicializar <nombre_archivo>
+
+   hola
+
+7. costo_conquista <territorio>
+
+   hola
+
+8. conquista_mas_barata
+
+   hola
+
+9. help
+   
+   Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente.
