@@ -1,6 +1,6 @@
 # Entrega 0
 
-## Compilación y ejecucción
+### Compilación y ejecucción
    
 1. compilación
 
@@ -10,7 +10,7 @@
 
    hola
 
-## Comandos
+### Comandos
 
 1. inicializar
 
