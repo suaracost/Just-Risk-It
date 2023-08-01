@@ -26,4 +26,4 @@
 
    2.9 help
 
-         Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente.
+      Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente.
