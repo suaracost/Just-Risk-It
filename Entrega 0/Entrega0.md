@@ -28,32 +28,32 @@
 
      Este comando describe que quiere hacer el jugador este puede `Fortificar terriorio` donde mueve algunas unidades de ejército que estén a un territorio a otro, `Atacar un territorio Vecino` Este debe escoger un territorio de su ejército, donde ataca un territorio enemigo vecino, donde a través de los dados define si gano o perdió el ataque, este proceso se repite hasta que uno de los dos jugadores se queden si unidades  o hasta que el atacante decida detenerse. Y  por último, `Obtener nuevas unidades` donde le verifica al jugador cuantas nuevas unidades puede reclamar y luego este puedo asignarlo en cualquiera de sus territorios y define que cantidad quiere en cada uno de estos. Este comando tiene varias salidas como, `Juego no inicializado` Este se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado` se refiera ah que se ha acabado la partida y hubo un ganador, `Jugador no valido` se refiere a que utiliza un ID o nombre de jugador que no está dentro de la partida, `Jugardor fuera de turno` se refiere a que un jugador quiere jugar un turno cuando no lo era, y por último `Turno terminado Correctamente` cuando el turno del jugador acabo correctamente.
 
-4. salida de la aplicacion
+3. salida de la aplicacion
 
             salir
 
       Este comando termina la ejecución del programa. Este comando no tiene salidas
 
 
-5. Guardado el juego
+4. Guardado el juego
 
             guardar <nombre_archivo>
 
       Este comando guarda toda la partida en un archivo de texto plano, este contiene la cantidad de jugadores que estuvieron en la partida y para cada jugador debe almacenar su nombre o ID, su color en la partida, la cantidad de países que ocupa este, Un identificar de cada territorio junto con la cantidad de unidades de ejército en él, la cantidad de tarjetas que posee  y por último, un identificador de cada tarjeta. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guardar correctamente la partida, `Error al Guardar` se refiera a que la partida no ha sido guardara correctamente. 
 
-6. Guardar el juego en un archivo comprimido
+5. Guardar el juego en un archivo comprimido
 
             guardar_comprimido <nombre_archivo>
 
       Este Comando hace los mismo que el comando `guardar <nombre_archivo>` pero este es un archivo Binario con extension `.bin` que tendra la misma informacion del archivo de texto. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guardar correctamente la partida, `Error al Comprimir` se refiera a que la partida no ha sido guardara ni codificada correctamente. 
 
-7. inicializar <nombre_archivo>
+6. inicializar <nombre_archivo>
 
             inicializar <nombre_archivo>
 
       Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juego desde un archivo de juego normal, el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso`se refiere a que el juego ya ha sido inicializado, `Archivo vacio o incompleto` se refiere a que el nombre del archivo no contiene información válida o no existe, por lo tanto, no sé ha podido inicializar.
 
-8. costo_conquista <territorio>
+7. costo_conquista <territorio>
 
             costo_conquista <territorio>       
 
@@ -61,13 +61,13 @@
 
    
 
-9. conquista_mas_barata
+8. conquista_mas_barata
 
          conquista_mas_barata
 
-     Este
+     Este Comando calcula de todos los territorios posibles aquel que pueda sacrificar el menor número de unidades perdidas , este comando solo lo puede hacer el jugador que está jugando en ese turno. Las posibles salidas de este son: `Juego no inicializado` se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado`se refiera ah que se ha acabado la partida y hubo un ganador, `Juegador no valido` se refiere a que un jugador intento usar este comando cuando no era su turno, y por último `Comando correcto ` ) La conquista más barata es avanzar sobre el territorio <territorio_1> desde el territorio <territorio_2>. Para conquistar el territorio <territorio_1>, debe atacar desde <territorio_2>, pasando por los territorios <territorio_3>, <territorio_4>, ..., <territorio_m>. Debe conquistar <n> unidades de ejército.
 
-11. Ayuda
+9. Ayuda
 
          help
    
