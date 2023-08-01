@@ -28,7 +28,7 @@
 
      Este comando describe que quiere hacer el jugador este puede `Fortificar terriorio` donde mueve algunas unidades de ejército que estén a un territorio a otro, `Atacar un territorio Vecino` Este debe escoger un territorio de su ejército, donde ataca un territorio enemigo vecino, donde a través de los dados define si gano o perdió el ataque, este proceso se repite hasta que uno de los dos jugadores se queden si unidades  o hasta que el atacante decida detenerse. Y  por último, `Obtener nuevas unidades` donde le verifica al jugador cuantas nuevas unidades puede reclamar y luego este puedo asignarlo en cualquiera de sus territorios y define que cantidad quiere en cada uno de estos. Este comando tiene varias salidas como, `Juego no inicializado` Este se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado` se refiera ah que se ha acabado la partida y hubo un ganador, `Jugador no valido` se refiere a que utiliza un ID o nombre de jugador que no está dentro de la partida, `Jugardor fuera de turno` se refiere a que un jugador quiere jugar un turno cuando no lo era, y por último `Turno terminado Correctamente` cuando el turno del jugador acabo correctamente.
 
-3. salida de la aplicacion
+3. Salida de la aplicacion
 
             salir
 
@@ -47,21 +47,19 @@
 
       Este Comando hace los mismo que el comando `guardar <nombre_archivo>` pero este es un archivo Binario con extension `.bin` que tendra la misma informacion del archivo de texto. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Comando correcto` se refiere a que se pudo guardar correctamente la partida, `Error al Comprimir` se refiera a que la partida no ha sido guardara ni codificada correctamente. 
 
-6. inicializar <nombre_archivo>
+6. Inicializar a partir de un archivo
 
             inicializar <nombre_archivo>
 
       Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juego desde un archivo de juego normal, el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso`se refiere a que el juego ya ha sido inicializado, `Archivo vacio o incompleto` se refiere a que el nombre del archivo no contiene información válida o no existe, por lo tanto, no sé ha podido inicializar.
 
-7. costo_conquista <territorio>
+7. Calcular costo conquista
 
             costo_conquista <territorio>       
 
       Este Comando debe calcular el costo y la secuencia de territorios a ser conquistados para lograr controlar el territorio dado por el usuario. El territorio debe ser aquel que el jugador tenga controlado más cerca al dado por el jugador. Esta información se analiza desde el punto de vista del jugador que tiene el turno de juego. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado`se refiera ah que se ha acabado la partida y hubo un ganador, y por último `Comando correcto ` este especifica desde el territorio donde está que pasos tiene que hacer atacando a otros para conquistar <n> unidades de ejército
 
-   
-
-8. conquista_mas_barata
+8. Calcular costo de conquista mas bajo
 
          conquista_mas_barata
 
