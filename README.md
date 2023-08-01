@@ -9,5 +9,3 @@ Alejandro Suarez y Nicolas Quintana
 0. Entrega 0
     -  Documentación
     -  Código
-
-1. 
