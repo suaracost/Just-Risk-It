@@ -4,11 +4,11 @@
    
 1. compilación
 
-   g++ -std=c++11 main.cpp -o risk
+         g++ -std=c++11 main.cpp -o risk
    
 2. ejecucción
 
-   ./risk
+         ./risk
 
 ### Comandos
 
