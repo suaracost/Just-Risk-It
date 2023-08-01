@@ -4,11 +4,11 @@
    
 1. compilación
 
-   hola
+   g++ -std=c++11 main.cpp -o risk
    
 2. ejecucción
 
-   hola
+   ./risk
 
 ### Comandos
 
