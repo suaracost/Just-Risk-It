@@ -48,6 +48,8 @@
 
    hola
 
-9. help
+9. Ayuda
+
+         help
    
    Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente.
