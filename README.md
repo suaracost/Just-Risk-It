@@ -7,7 +7,7 @@ Alejandro Suarez y Nicolas Quintana
 
 ## Tabla de contenidos
 0. Entrega 0
-  -  Documentación
-  -  Código
+    -  Documentación
+    -  Código
 
 1. 
