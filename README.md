@@ -7,7 +7,7 @@ Alejandro Suarez y Nicolas Quintana
 
 ### Tabla de contenidos
 0. ¿Quienes somos?
-    - [✒️ Fourier's theorem ✒️] (wiki)
+    - [✒️ Fourier's theorem ✒️] ([wiki](https://github.com/suaracost/Just-Risk-It/wiki))
 2. Entrega 0
     -  Link a documentación
     -  Link a código
