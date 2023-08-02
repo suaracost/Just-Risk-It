@@ -2,13 +2,13 @@
 
 ### Compilación y ejecucción
    
-1. compilación
+1. Compilación
 
          g++ -std=c++11 main.cpp -o risk
 
    FALTA ESTO
    
-3. ejecucción
+3. Ejecucción
 
          ./risk
 
