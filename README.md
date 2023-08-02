@@ -10,4 +10,4 @@ Alejandro Suarez y Nicolas Quintana
     - [🔫💣 Wiki 💣🔫](https://github.com/suaracost/Just-Risk-It/wiki)
 2. Entrega 0
     -  [📑 Documentación 📑](Entrega%200/Entrega0.md)
-    -  Link a código
+    -  [🤖 Código 🤖](Entrega%200/archivosCodigos)
