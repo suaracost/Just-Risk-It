@@ -84,4 +84,4 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          help
    
-   Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente. 
+      Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente. 
