@@ -4,7 +4,7 @@
    
 1. Compilación
 
-         g++ -std=c++11 main.cpp menu.h Menu.cxx -o risk
+         g++ -std=c++11 main.cpp Menu.h Menu.cxx -o risk
 
    FALTA ESTO
    
