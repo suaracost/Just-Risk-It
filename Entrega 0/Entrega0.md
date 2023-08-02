@@ -60,7 +60,7 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          inicializar_archivo <nombre_archivo>
 
-      Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juego desde un archivo de juego normal, el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso`se refiere a que el juego ya ha sido inicializado, `Archivo vacio o incompleto` se refiere a que el nombre del archivo no contiene información válida o no existe, por lo tanto, no sé ha podido inicializar. Si se necesita ayuda en este comando se puede ejecutar el comando:
+      Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juego desde un archivo de juego normal, el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso` se refiere a que el juego ya ha sido inicializado, `Archivo vacio o incompleto` se refiere a que el nombre del archivo no contiene información válida o no existe, por lo tanto, no sé ha podido inicializar. Si se necesita ayuda en este comando se puede ejecutar el comando:
 
           inicializar_archivo ?
 
@@ -68,7 +68,7 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          costo_conquista <territorio>       
 
-      Este Comando debe calcular el costo y la secuencia de territorios a ser conquistados para lograr controlar el territorio dado por el usuario. El territorio debe ser aquel que el jugador tenga controlado más cerca al dado por el jugador. Esta información se analiza desde el punto de vista del jugador que tiene el turno de juego. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado`se refiera ah que se ha acabado la partida y hubo un ganador, y por último `Comando correcto ` este especifica desde el territorio donde está que pasos tiene que hacer atacando a otros para conquistar <n> unidades de ejército. Si se necesita ayuda en este comando se puede ejecutar el comando:
+      Este Comando debe calcular el costo y la secuencia de territorios a ser conquistados para lograr controlar el territorio dado por el usuario. El territorio debe ser aquel que el jugador tenga controlado más cerca al dado por el jugador. Esta información se analiza desde el punto de vista del jugador que tiene el turno de juego. Las posibles salidas de este son: `Juego no inicializado`se refiere a que la partida no ha sido inicializado correctamente, `Juego terminado` se refiera ah que se ha acabado la partida y hubo un ganador, y por último `Comando correcto ` este especifica desde el territorio donde está que pasos tiene que hacer atacando a otros para conquistar <n> unidades de ejército. Si se necesita ayuda en este comando se puede ejecutar el comando:
 
          costo_conquista ?
 
