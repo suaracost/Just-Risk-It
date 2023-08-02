@@ -16,6 +16,8 @@
 
 ### Comandos
 
+Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos sin la información que se pide de la siguiente manera: < "texto" >
+
 1. Empezar juego
 
          inicializar
