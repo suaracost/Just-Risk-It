@@ -158,7 +158,7 @@ void Menu::menu()
 
     // condicional de help
 
-    else if(comando.compare("help") == 0)
+    else if(comando.compare("ayuda") == 0)
     {
       std::cout<<"Los comandos disponibles son:"
                <<"\n - inicializar"
