@@ -82,6 +82,6 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
 16. Ayuda
 
-         help
+         ayuda
    
       Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente. 
