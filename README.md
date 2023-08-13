@@ -1,5 +1,7 @@
 ![Banner](images/header.jpg)
 
+<sub> Imagen tomada de: [Steam: Risk](https://store.steampowered.com/app/1128810/RISK_Global_Domination/?l=latam) </sub>
+
 # Proyecto Estructuras de datos
 Alejandro Suarez y Nicolas Quintana
 
