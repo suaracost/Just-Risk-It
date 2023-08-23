@@ -9,7 +9,7 @@ Alejandro Suarez y Nicolas Quintana
 
 ### Tabla de contenidos
 0. ¿Quienes somos?
-    - [🔫💣 Wiki 💣🔫](https://github.com/suaracost/Just-Risk-It/wiki)
+    - [🪪🍻 Wiki 🍻🪪](https://github.com/suaracost/Just-Risk-It/wiki)
 2. Entrega 0
     -  [📑 Instrucciones (compilación, ejecucción y comandos) 📑](Documentos/instrucciones.md)
     -  [🤖 Código 🤖](Entrega%200/archivosCodigos)
