@@ -1,4 +1,4 @@
-# Entrega 0
+# Instrucciones
 
 ### Compilación y ejecucción
    
