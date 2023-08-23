@@ -90,4 +90,4 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
                     
           Limpiar
 
-    Al ejecutar este comando en la terminal limpia la consala dejando solo el banner y introducir nuevos comandos.
+    Al ejecutar este comando en la terminal se limpiara la consola dejando solo el banner y la consola, para introducir nuevos comandos.
