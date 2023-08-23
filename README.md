@@ -1,4 +1,4 @@
-![Banner](images/header.jpg)
+![Banner](Images/header.jpg)
 
 <sub> Imagen tomada de: [Steam: Risk](https://store.steampowered.com/app/1128810/RISK_Global_Domination/?l=latam) </sub>
 
