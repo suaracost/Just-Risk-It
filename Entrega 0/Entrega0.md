@@ -84,4 +84,4 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          ayuda
    
-      Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente. 
+      Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente. Sirve para explicar todos los comandos disponibles y una breve explicacion de cada uno
