@@ -34,7 +34,7 @@
 - cartas: Lista de Carta , Lista de todas las cartas que tiene el jugador
 - cantidadTropas: Entero, Numero de tropas del jugador
 ### Comportamiento del objeto
-- Jugador(id,String color): Operacion para crear un Jugador
+- Jugador(String id,String color): Operacion para crear un Jugador
   - Pos: color=color,Idjugador=id,List<Territorio> territoriosPersonales = new List<Territorio>(0), List<Carta> cartas = new List<Carta>(0), Cantidadtropas=0
 Tropas(String ttipo): Crear una tropa 
 ## Tads Territorio
