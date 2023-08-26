@@ -1,1 +1,9 @@
 
+
+
+### tads Menu
+##Conjunto minimo de datos
+- partidas (Partida), Lista <Partida>, Lista de partidas, Guarda todas las partidas que se guarden en un menu
+##Comportamiento del objeto
+- Mapamundi: Imprime el mapa mundi de Risk
+- Menu: Despliega el menu con todas la funciones de Risk
