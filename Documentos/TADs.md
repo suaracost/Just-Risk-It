@@ -46,10 +46,10 @@ Tropas(String ttipo): Crear una tropa
     - Post: Int numTropas =0 , nombreTerritorio=nnombreTerritorio
 ## Tads Cartas
 ### Conjunto minimo de datos
-NombreCarta: String, Nombre de la carta 
-tipocarta, String, Describe de que tipo es la carta dentro el juego
-descripcion: String, Descripcion breve de que es la carta tambien puede explicar si es una mision que tiene que hacer en la mision 
+- NombreCarta: String, Nombre de la carta 
+- tipocarta, String, Describe de que tipo es la carta dentro el juego
+- descripcion: String, Descripcion breve de que es la carta tambien puede explicar si es una mision que tiene que hacer en la mision 
 ### Comportamiento del objeto
-Cartas(string nombre,string tipo,string descri): para crear una carta
- -Post:NombreCarta= nombre, Tipocarta = tipo , descripcion = descri
+- Cartas(string nombre,string tipo,string descri): para crear una carta
+    - Post:NombreCarta= nombre, Tipocarta = tipo , descripcion = descri
 
