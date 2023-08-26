@@ -66,7 +66,6 @@
 
 ## Tads Tropas
 ### Conjunto minimo de datos
-- valor : Entero, Valor de la tropa dentro el arsenal
 - tipo : String , Tipo de la tropa dentro del arsernal
 ### Comportamiento del objeto
 
