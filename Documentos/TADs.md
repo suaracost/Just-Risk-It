@@ -12,7 +12,7 @@
 - cartaT: Lista de Carta: Indica todas las cartas que hay dentro de la partida
 ### Comportamiento del objeto
 - Partida() : Operacion para crear una partida sin jugadores y jugadoresTurnos 
-   - post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Cartas> cartat = new List<Cartas>(52)
+   - post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[5]
 - VerCartat(): Imprime todas las cartas que hay dentro de la partida
 - VerTurnos() : Imprime los turnos de los jugadores dentro de la partida
 - VerJugadores(): Imprime los jugadores de la partida
