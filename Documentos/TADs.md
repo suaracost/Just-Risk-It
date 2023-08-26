@@ -15,10 +15,10 @@
 ### Comportamiento del objeto
 - Partida() : Operacion para crear una partida sin jugadores y jugadoresTurnos 
    - post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6]
--GetCartat(): Imprime todas las cartas que hay dentro de la partida
--GetTurnos() : Imprime los turnos de los jugadores dentro de la partida
--GetContinentes(): Ver el arreglo de continentes
--GetJugadores(): Imprime los jugadores de la partida
+- GetCartat(): Imprime todas las cartas que hay dentro de la partida
+- GetTurnos() : Imprime los turnos de los jugadores dentro de la partida
+- GetContinentes(): Ver el arreglo de continentes
+- GetJugadores(): Imprime los jugadores de la partida
 - FijarJuagadores(Jugador njugador) : Operacion para meter un jugador dentro la lista de jugadores
   - Post:  jugadores.push_back(njugador)
 - FijarJugadorTurnos(Jugador njugador): Operacion para meter los jugadores en la cola de jugadores para ver todos los turno
@@ -38,8 +38,8 @@
    -Post: Nombre = nnombre
 - FijarTerritorios(Territorio nterritorios)
      -Post:  territorios.push_back(nterritorio)
--GetNombre()
--GetTerritorios()
+- GetNombre()
+- GetTerritorios()
 ## Tads Jugador
 ### Conjunto minimo de datos
 - Color: String : Color del jugador dentro de la partida
@@ -53,9 +53,9 @@
 - FijarTerritoriosPersonales(nterritorio)
 - FijarCartas(ncarta)
 - FijarTropas(ntropas)
--GetColor()
--GetIDjugador()
--GetTerritoriosPersonales
--GetCartas()
--ObtenerTropas()
+- GetColor()
+- GetIDjugador()
+- GetTerritoriosPersonales
+- GetCartas()
+- ObtenerTropas()
 
