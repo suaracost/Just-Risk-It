@@ -16,6 +16,18 @@
 ### Comportamiento del objeto
 - Partida() : Operacion para crear una partida sin jugadores y jugadoresTurnos 
    - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6]
+- GetCartat(): Imprime todas las cartas que hay dentro de la partida
+- GetTurnos() : Imprime los turnos de los jugadores dentro de la partida
+- GetContinentes(): Ver el arreglo de continentes
+- GetJugadores(): Imprime los jugadores de la partida
+-  SetJuagadores(Jugador njugador) : Operacion para meter un jugador dentro la lista de jugadores
+  - Post:  jugadores.push_back(njugador)
+-  SetJugadorTurnos(Jugador njugador): Operacion para meter los jugadores en la cola de jugadores para ver todos los turno
+   - Post: jugadorTurnos.Push(njugador)
+-  SetContientes( String ncontienete) : Operacion para para meter un nuevo continente en el arreglo de contienetes
+   - Post: Continentes[6]= {ncontinente}
+-  SetCartat(Carta ncarta): Operacion para meter una nueva Carta en la lista de cartat
+   - Post: cartat.push_back(ncarta)
  
 ## TAD Continente
 ### Conjunto minimo de datos
@@ -24,6 +36,12 @@
 ### Comportamiento del objeto
 - Continente(String nnombre) : Operacion para crear un continente
    - Post: List<Territorio> territorios = new List<Territorio>(12) , Nombre = nnombre
+-  SetNombre(nnNombre)
+   - Post: Nombre = nnombre
+-  SetTerritorios(Territorio nterritorios)
+   - Post: territorios.push_back(nterritorio)
+- GetNombre() : Operacion para ver el nombre del contiente
+- GetTerritorios() : Operacion para ver los territorios
   
 ## TAD Jugador
 ### Conjunto minimo de datos
@@ -35,9 +53,20 @@
 ### Comportamiento del objeto
 - Jugador(id): Operacion para crear un Jugador
   - 
-
-## Tads Tropas
+- SetColor(ncolor) : Operacion para dar el color al jugador
+- SetIdjugador(Njugador) :
+- SetTerritoriosPersonales(nterritorio) :
+- SetCartas(ncarta) :
+- SetTropas(ntropas) :
+- GetColor() :
+- GetIDjugador() :
+- GetTerritoriosPersonales() :
+- GetCartas() :
+- GetTropas() :
+Tropas(String ttipo): Crear una tropa 
+## Tads Territorio
 ### Conjunto minimo de datos
-- tipo : String , Tipo de la tropa dentro del arsernal
+- nombreTerritorio: String, Nombre del territorio
+- numTropas: Entero , numero de tropas en el territorio
 ### Comportamiento del objeto
-
+- Territorios(String nnombreTerritorio): Crea un nuevo territorio
