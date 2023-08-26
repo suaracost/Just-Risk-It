@@ -26,7 +26,6 @@
 ### Comportamiento del objeto
 - Continente(String nnombre) : Operacion para crear un continente
    - Post: List<Territorio> territorios = new List<Territorio>(12) , Nombre = nnombre
-  
 ## TAD Jugador
 ### Conjunto minimo de datos
 - color: String , Color del jugador dentro de la partida
