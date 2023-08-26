@@ -1,10 +1,12 @@
+# Tads
+
 # tads Menu
 ## Conjunto minimo de datos
 - partidas (Partida): Lista <Partida>, Guarda todas las partidas que se guarden en un menu
 ### Comportamiento del objeto
 - Mapamundi(): Imprime el mapa mundi grafico de como es el mpara de risk
 - Menu(): Despliega el menu con todas la funciones de Risk
-#Tads Partidas
+# Tads Partidas
 ### Conjunto minimo de datos
 - jugadores (Jugador): Lista de Jugador, Indica todos los juagadores dentro de la partida
 - contienetes: Arreglo de tipo Continente, Indica todos los contientes que hay dentro de la partida
@@ -23,7 +25,7 @@
   -  Post: jugadorTurnos.Push(njugador)
 - FijarCartat( String ncontienete)
      - Post: Continentes[6]= {ncontinente}
-#Tads Continente
+# Tads Continente
 ### Conjunto minimo de datos
 - Nombre : String ,Nombre del contienete
 - territorios: Lista de Territorio, Indica todos los territorios que esten en el continente
@@ -36,7 +38,7 @@
      -Post:  territorios.push_back(nterritorio)
 - ObtenerNombre()
 - ObtenerTerritorios()
-#Tads Jugador
+# Tads Jugador
 ### Conjunto minimo de datos
 - Color: String : Color del jugador dentro de la partida
 - Idjugador: String : Identificacion del jugador
