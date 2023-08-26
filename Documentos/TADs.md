@@ -19,13 +19,13 @@
 - GetTurnos() : Imprime los turnos de los jugadores dentro de la partida
 - GetContinentes(): Ver el arreglo de continentes
 - GetJugadores(): Imprime los jugadores de la partida
-- FijarJuagadores(Jugador njugador) : Operacion para meter un jugador dentro la lista de jugadores
+-  SetJuagadores(Jugador njugador) : Operacion para meter un jugador dentro la lista de jugadores
   - Post:  jugadores.push_back(njugador)
-- FijarJugadorTurnos(Jugador njugador): Operacion para meter los jugadores en la cola de jugadores para ver todos los turno
+-  SetJugadorTurnos(Jugador njugador): Operacion para meter los jugadores en la cola de jugadores para ver todos los turno
   -  Post: jugadorTurnos.Push(njugador)
-- FijarContientes( String ncontienete) : Operacion para para meter un nuevo continente en el arreglo de contienetes
+-  SetContientes( String ncontienete) : Operacion para para meter un nuevo continente en el arreglo de contienetes
      - Post: Continentes[6]= {ncontinente}
-- FijarCartat(Carta ncarta): Operacion para meter una nueva Carta en la lista de cartat
+-  SetCartat(Carta ncarta): Operacion para meter una nueva Carta en la lista de cartat
      ' Post: cartat.
 ## Tads Continente
 ### Conjunto minimo de datos
@@ -34,9 +34,9 @@
 ### Comportamiento del objeto
 - Continente(String nnombre) : Operacion para crear un continente
    - Post: List<Territorio> territorios = new List<Territorio>(12) , Nombre = nnombre
-- FijarNombre(nnNombre)
+-  SetNombre(nnNombre)
    -Post: Nombre = nnombre
-- FijarTerritorios(Territorio nterritorios)
+-  SetTerritorios(Territorio nterritorios)
      -Post:  territorios.push_back(nterritorio)
 - GetNombre()
 - GetTerritorios()
@@ -48,11 +48,11 @@
 - cartas: Lista de Carta : Lista de todas las cartas que tiene el jugador
 - tropas: Lista de Tropa; Indica las tropas que tiene el jugador
 ### Comportamiento del objeto
-- FijarColor(ncolor):
-- FijarIDjugador(Njugador)
-- FijarTerritoriosPersonales(nterritorio)
-- FijarCartas(ncarta)
-- FijarTropas(ntropas)
+-  SetColor(ncolor):
+-  SetIDjugador(Njugador)
+-  SetTerritoriosPersonales(nterritorio)
+-  SetCartas(ncarta)
+-  SetTropas(ntropas)
 - GetColor()
 - GetIDjugador()
 - GetTerritoriosPersonales
