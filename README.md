@@ -12,5 +12,5 @@ Alejandro Suarez y Nicolas Quintana
 
 ### Proyecto
 -  [📑 Instrucciones (compilación, ejecucción y comandos) 📑](Documentos/instrucciones.md)
--  [🤖 Código 🤖](Entrega%200/archivosCodigos)
+-  [🤖 Código 🤖](Codigo)
 
