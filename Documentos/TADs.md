@@ -42,7 +42,7 @@ Tropas(String ttipo): Crear una tropa
 - nombreTerritorio: String, Nombre del territorio
 - numTropas: Entero , numero de tropas en el territorio
 ### Comportamiento del objeto
-- Territorios(String nnombreTerritorio): Crea un nuevo territorio
+- Territorio(String nnombreTerritorio): Crea un nuevo territorio
     - Post: Int numTropas =0 , nombreTerritorio=nnombreTerritorio
 ## Tads Cartas
 ### Conjunto minimo de datos
