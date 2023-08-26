@@ -3,7 +3,6 @@
 int main()
 {
   
-    Menu::mapamundi(); // llamado a las funciones 
-    Menu::menu();
-
+    Menu::menu();  // llamado a las funciones 
+  
 }
