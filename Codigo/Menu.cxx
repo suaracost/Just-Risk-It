@@ -1,4 +1,6 @@
 #include "Menu.h"
+#include "Clases.h"
+
 #include <iostream>
 
 // cosas que se necesitan para cambiar el color del texto
@@ -59,6 +61,7 @@ void Menu::mapamundi()
 
 void Menu::menu()
 {
+  mapamundi();
   
   // Menu de todos los comandos
 
@@ -168,7 +171,8 @@ void Menu::menu()
                <<"\n - guardar_comprimido: guarda toda la partida en un archivo binario" 
                <<"\n - inicializar_archivo: inicializa el juego con los datos contenidos en el archivo <nombre_archivo>" 
                <<"\n - costo_conquista: calcula el costo y la secuencia de territoriors conquistados para lograr controlar un territorio elegido." 
-               <<"\n - conquista_mas_barata: calcula de todos los territorios posibles aquel que pueda sacrificar el menor número de unidades perdidas\n"<<std::endl;
+               <<"\n - conquista_mas_barata: calcula de todos los territorios posibles aquel que pueda sacrificar el menor número de unidades perdidas"
+               <<"\n - limpiar: limpia la interfaz y todos los comandos que se han hecho antes\n"<<std::endl;
         
     }
 
