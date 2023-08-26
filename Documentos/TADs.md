@@ -17,7 +17,7 @@
 ### Comportamiento del objeto
 - Partida() : Operacion para crear una partida sin jugadores y jugadoresTurnos 
    - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6]
--  - Partida(Int idp) : Operacion para crear una partida sin jugadores y jugadoresTurnos 
+-  Partida(Int idp) : Operacion para crear una partida sin jugadores y jugadoresTurnos 
    - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6] , Idpartida = idp
 ## TAD Continente
 ### Conjunto minimo de datos
