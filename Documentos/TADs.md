@@ -9,6 +9,7 @@
   
 ## TAD Partidas
 ### Conjunto minimo de datos
+- Idpartida: Entero, Identificador del la partida 
 - jugadores (Jugador): Lista de Jugador, Indica todos los juagadores dentro de la partida
 - contienetes: Arreglo de tipo Continente, Indica todos los contientes que hay dentro de la partida
 - jugadoresTurnos: Cola de juagores, Indica los turnos de los jugadores de la partida en orden de llegada
@@ -16,19 +17,8 @@
 ### Comportamiento del objeto
 - Partida() : Operacion para crear una partida sin jugadores y jugadoresTurnos 
    - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6]
-- GetCartat(): Imprime todas las cartas que hay dentro de la partida
-- GetTurnos() : Imprime los turnos de los jugadores dentro de la partida
-- GetContinentes(): Ver el arreglo de continentes
-- GetJugadores(): Imprime los jugadores de la partida
--  SetJuagadores(Jugador njugador) : Operacion para meter un jugador dentro la lista de jugadores
-  - Post:  jugadores.push_back(njugador)
--  SetJugadorTurnos(Jugador njugador): Operacion para meter los jugadores en la cola de jugadores para ver todos los turno
-   - Post: jugadorTurnos.Push(njugador)
--  SetContientes( String ncontienete) : Operacion para para meter un nuevo continente en el arreglo de contienetes
-   - Post: Continentes[6]= {ncontinente}
--  SetCartat(Carta ncarta): Operacion para meter una nueva Carta en la lista de cartat
-   - Post: cartat.push_back(ncarta)
- 
+-  - Partida(Int idp) : Operacion para crear una partida sin jugadores y jugadoresTurnos 
+   - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6] , Idpartida = idp
 ## TAD Continente
 ### Conjunto minimo de datos
 - Nombre : String ,Nombre del contienete
@@ -36,12 +26,6 @@
 ### Comportamiento del objeto
 - Continente(String nnombre) : Operacion para crear un continente
    - Post: List<Territorio> territorios = new List<Territorio>(12) , Nombre = nnombre
--  SetNombre(nnNombre)
-   - Post: Nombre = nnombre
--  SetTerritorios(Territorio nterritorios)
-   - Post: territorios.push_back(nterritorio)
-- GetNombre() : Operacion para ver el nombre del contiente
-- GetTerritorios() : Operacion para ver los territorios
   
 ## TAD Jugador
 ### Conjunto minimo de datos
@@ -49,20 +33,10 @@
 - Idjugador: String , Identificacion del jugador
 - territoriospersonales: Lista de Territorio , lista de los territorios que tiene cada jugador dentro su ejercito
 - cartas: Lista de Carta , Lista de todas las cartas que tiene el jugador
-- tropas: Lista de Tropa, Indica las tropas que tiene el jugador
+- cantidadTropas: Entero, Numero de tropas del jugador
 ### Comportamiento del objeto
-- Jugador(id): Operacion para crear un Jugador
-  - 
-- SetColor(ncolor) : Operacion para dar el color al jugador
-- SetIdjugador(Njugador) :
-- SetTerritoriosPersonales(nterritorio) :
-- SetCartas(ncarta) :
-- SetTropas(ntropas) :
-- GetColor() :
-- GetIDjugador() :
-- GetTerritoriosPersonales() :
-- GetCartas() :
-- GetTropas() :
+- Jugador(id,String color): Operacion para crear un Jugador
+  - Pos: color=color,Idjugador=id,List<Territorio> territoriosPersonales = new List<Territorio>(0), List<Carta> cartas = new List<Carta>(0), Cantidadtropas=0
 Tropas(String ttipo): Crear una tropa 
 ## Tads Territorio
 ### Conjunto minimo de datos
@@ -70,3 +44,13 @@ Tropas(String ttipo): Crear una tropa
 - numTropas: Entero , numero de tropas en el territorio
 ### Comportamiento del objeto
 - Territorios(String nnombreTerritorio): Crea un nuevo territorio
+    - Post: Int numTropas =0 , nombreTerritorio=nnombreTerritorio
+## Tads Cartas
+### Conjunto minimo de datos
+NombreCarta: String, Nombre de la carta 
+tipocarta, String, Describe de que tipo es la carta dentro el juego
+descripcion: String, Descripcion breve de que es la carta tambien puede explicar si es una mision que tiene que hacer en la mision 
+### Comportamiento del objeto
+Cartas(string nombre,string tipo,string descri): para crear una carta
+ -Post:NombreCarta= nombre, Tipocarta = tipo , descripcion = descri
+
