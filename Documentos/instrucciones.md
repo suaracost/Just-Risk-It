@@ -4,7 +4,7 @@
    
 1. Compilación
 
-         g++ -std=c++11 main.cpp Menu.cxx Clases.cxx -o risk
+         g++ -std=c++11 main.cpp Menu.cxx Partida.cxx Carta.cxx Jugador.cxx Continente.cxx Territorio.cxx -o risk
 
    Los archivos que vamos a compilar son: "Menu.cxx" donde se encuentran las funciones que desarollamos para esta entrega y "main.cpp" donde se hace el llamado a las mismas.
    
