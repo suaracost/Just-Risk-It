@@ -12,5 +12,6 @@ Alejandro Suarez y Nicolas Quintana
 
 ### Proyecto
 -  [📑 Instrucciones (compilación, ejecucción y comandos) 📑](Documentos/instrucciones.md)
+-  [📖 TADs 📖](Documentos/TADs.md)
 -  [🤖 Código 🤖](Codigo)
 
