@@ -37,15 +37,12 @@
    - Post: List<Territorio> territorios = new List<Territorio>(0) , nombreContinente = nombreCon
 ## TAD Jugador
 ### Conjunto minimo de datos
-- color: String , Color del jugador dentro de la partida
-- Idjugador: String , Identificacion del jugador
-- territoriospersonales: Lista de Territorio , lista de los territorios que tiene cada jugador dentro su ejercito
-- cartas: Lista de Carta , Lista de todas las cartas que tiene el jugador
-- cantidadTropas: Entero, Numero de tropas del jugador
+- colorJugador: String , Color del jugador dentro de la partida
+- nombreJugador: String , Identificacion del jugador
+- cantiTropas: Entero, Numero de tropas del jugador
 ### Comportamiento del objeto
 - Jugador(String id,String color): Operacion para crear un Jugador
-  - Pos: color=color,Idjugador=id,List<Territorio> territoriosPersonales = new List<Territorio>(0), List<Carta> cartas = new List<Carta>(0), Cantidadtropas=0
-Tropas(String ttipo): Crear una tropa 
+  - Pos: nombreJugador = nombreJug, colorJugador = colorJug, cantiTropas = cantiTrop
 ## Tads Territorio
 ### Conjunto minimo de datos
 - nombreTerritorio: String, Nombre del territorio
