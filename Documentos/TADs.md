@@ -12,15 +12,16 @@
 ## TAD Partidas
 ### Conjunto minimo de datos
 - Idpartida: Entero, Identificador del la partida 
-- jugadores (Jugador): Lista de Jugador, Indica todos los juagadores dentro de la partida
+- jugadoresp: Lista de Jugador, Indica todos los juagadores dentro de la partida
 - contienetes: Arreglo de tipo Continente, Indica todos los contientes que hay dentro de la partida
-- jugadoresTurnos: Cola de juagores, Indica los turnos de los jugadores de la partida en orden de llegada
-- cartat: Lista de Carta: Indica todas las cartas que hay dentro de la partida
+- turnos: Cola de juagores, Indica los turnos de los jugadores de la partida en orden de llegada
+- cartap: Lista de Carta: Indica todas las cartas que hay dentro de la partida
 ### Comportamiento del objeto
 - Partida() : Operacion para crear una partida sin jugadores y jugadoresTurnos 
    - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6]
 -  Partida(Int idp) : Operacion para crear una partida sin jugadores y jugadoresTurnos 
-   - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6] , Idpartida = idp
+   - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) ,         Contienetes[6] , Idpartida = idp
+- 
 ## TAD Continente
 ### Conjunto minimo de datos
 - Nombre : String ,Nombre del contienete
