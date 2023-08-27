@@ -15,7 +15,7 @@
 - jugadores: Lista de Jugador, Indica todos los jugadores dentro de la partida
 - continentes: Arreglo de tipo Continente, Indica todos los continentes que hay dentro de la partida
 - turnos: Cola de jugadores, Indica los turnos de los jugadores de la partida en orden de llegada
-- cartas: Lista de Carta: Indica todas las cartas que hay dentro de la partida
+- cartasp: Lista de Carta: Indica todas las cartas que hay dentro de la partida
 ### Comportamiento del objeto
 - Partida() : Operación para crear una partida sin jugadores y jugadoresTurnos 
    - Post: List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartas = new List< Carta >(52) , Continentes[6]
