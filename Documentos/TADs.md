@@ -47,7 +47,7 @@
 ### Conjunto minimo de datos
 - nombreTerritorio: String, Nombre del territorio
 - numTropas: Entero , numero de tropas en el territorio
-- tomado
+- tomado: Booleano , Define si el territorio tiene due;o o no
 ### Comportamiento del objeto
 - Territorio(String nnombreTerritorio): Crea un nuevo territorio
     - Post: Int numTropas =0 , nombreTerritorio=nnombreTerritorio
