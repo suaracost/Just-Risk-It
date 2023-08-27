@@ -30,11 +30,11 @@
 -  
   ## TAD Continente
 ### Conjunto minimo de datos
-- Nombre : String ,Nombre del contienete
-- territorios: Lista de Territorio, Indica todos los territorios que esten en el continente
+- nombreContinente : String ,Nombre del contienete
+- territoriosC: Lista de Territorio, Indica todos los territorios que esten en el continente
 ### Comportamiento del objeto
-- Continente(String nnombre) : Operacion para crear un continente
-   - Post: List<Territorio> territorios = new List<Territorio>(0) , Nombre = nnombre
+- Continente(String nombreCon) : Operacion para crear un continente
+   - Post: List<Territorio> territorios = new List<Territorio>(0) , nombreContinente = nombreCon
 ## TAD Jugador
 ### Conjunto minimo de datos
 - color: String , Color del jugador dentro de la partida
@@ -50,6 +50,7 @@ Tropas(String ttipo): Crear una tropa
 ### Conjunto minimo de datos
 - nombreTerritorio: String, Nombre del territorio
 - numTropas: Entero , numero de tropas en el territorio
+- tomado
 ### Comportamiento del objeto
 - Territorio(String nnombreTerritorio): Crea un nuevo territorio
     - Post: Int numTropas =0 , nombreTerritorio=nnombreTerritorio
@@ -57,7 +58,8 @@ Tropas(String ttipo): Crear una tropa
 ### Conjunto minimo de datos
 - NombreCarta: String, Nombre de la carta 
 - tipocarta, String, Describe de que tipo es la carta dentro el juego
-- descripcion: String, Descripcion breve de que es la carta tambien puede explicar si es una mision que tiene que hacer en la mision 
+- descripcion: String, Descripcion breve de que es la carta tambien puede explicar si es una mision que tiene que hacer en la mision
+- tomado
 ### Comportamiento del objeto
 - Cartas(string nombre,string tipo,string descri): para crear una carta
     - Post:NombreCarta= nombre, Tipocarta = tipo , descripcion = descri
