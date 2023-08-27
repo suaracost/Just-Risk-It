@@ -6,6 +6,8 @@
 ### Comportamiento del objeto
 - Mapamundi(): Imprime el mapa mundi grafico de como es el mpara de risk
 - Menu(): Despliega el menu con todas la funciones de Risk
+- Inicio(): Inicia el juego donde cada jugador se crea eh inicia sus territorios
+    - Partida p = Partida(id)
   
 ## TAD Partidas
 ### Conjunto minimo de datos
