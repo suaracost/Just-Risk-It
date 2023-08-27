@@ -28,7 +28,7 @@
 -  nuevasTropas() : Dentro de la funcion turno, añade nuevas tropas segun el numero de terrirtorios que tengas, dentro un territorio en especifico
 -  atacar() : Dentro de la funcion turno, decide si quiere atacar a un territorio enemigo para conquistarlo o no.
 -  
-  ## TAD Continente
+## TAD Continente
 ### Conjunto minimo de datos
 - nombreContinente : String ,Nombre del contienete
 - territoriosC: Lista de Territorio, Indica todos los territorios que esten en el continente
@@ -49,15 +49,16 @@
 - numTropas: Entero , numero de tropas en el territorio
 - tomado: Booleano , Define si el territorio tiene due;o o no
 ### Comportamiento del objeto
-- Territorio(String nnombreTerritorio): Crea un nuevo territorio
-    - Post: Int numTropas =0 , nombreTerritorio=nnombreTerritorio
+- Territorio(String nombreTer): Crea un nuevo territorio
+    - Post: Int numTropas = 0 , nombreTerritorio = nombreTer, tomado = false
 ## Tads Cartas
 ### Conjunto minimo de datos
 - NombreCarta: String, Nombre de la carta 
 - tipocarta, String, Describe de que tipo es la carta dentro el juego
 - descripcion: String, Descripcion breve de que es la carta tambien puede explicar si es una mision que tiene que hacer en la mision
-- tomado
+- duenio: String, Define el de esa carta 
+- tomado: Booleano, Define si esa carata tiene o no dueño
 ### Comportamiento del objeto
 - Cartas(string nombre,string tipo,string descri): para crear una carta
-    - Post:NombreCarta= nombre, Tipocarta = tipo , descripcion = descri
+    - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
 
