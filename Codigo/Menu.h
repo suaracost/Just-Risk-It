@@ -8,6 +8,7 @@ class Menu
   public:
     static void mapamundi(); // métodos de la clase
     static void menu();
+    static void inicio();
 };
 
 #endif // __MENU__H__
