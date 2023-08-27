@@ -9,7 +9,7 @@
 - Inicio(): Inicia el juego donde cada jugador se crea eh inicia sus territorios
     - Partida p = Partida(id)
   
-## TAD Partidas
+## TAD Partida
 ### Conjunto minimo de datos
 - Idpartida: Entero, Identificador del la partida 
 - jugadoresp: Lista de Jugador, Indica todos los juagadores dentro de la partida
@@ -21,8 +21,14 @@
    - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) , Contienetes[6]
 -  Partida(Int idp) : Operacion para crear una partida sin jugadores y jugadoresTurnos 
    - Post:  List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartat = new List< Carta >(52) ,         Contienetes[6] , Idpartida = idp
-- 
-## TAD Continente
+-  mostrarTerritoriosDisponibles(): Muestra todos los territorios disponibles en la partida
+-  mostrarTerritoriosPropios(string jug): Muestrar todos los territorios del jugador jug
+-  mostrarTerritoriosEnemigos(string jug): Muestra todos los territorios enemigos del jugador jug
+-  turno() : Turno del jugador donde este puede agregar nuevas tropas , atacar o fortificar
+-  nuevasTropas() : Dentro de la funcion turno, añade nuevas tropas segun el numero de terrirtorios que tengas, dentro un territorio en especifico
+-  atacar() : Dentro de la funcion turno, decide si quiere atacar a un territorio enemigo para conquistarlo o no.
+-  
+  ## TAD Continente
 ### Conjunto minimo de datos
 - Nombre : String ,Nombre del contienete
 - territorios: Lista de Territorio, Indica todos los territorios que esten en el continente
