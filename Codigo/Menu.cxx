@@ -79,12 +79,13 @@ void Menu::menu()
 
     else if (comando.compare("inicializar") == 0) 
     {
-      std::cout<<"Posibles salidas: Juegos en curso e Inicializacion Satisfactoria\n"<<std::endl;
+      inicio();
     }
 
     else if (comando.compare("inicializar ?") == 0)
     {
       std::cout<< "La forma correcta de utilizar este comando es: inicializar\n"<<std::endl;
+      
     }
 
     // condicionales de turno 
@@ -195,3 +196,13 @@ void Menu::menu()
       std::cout<<red<<"El comando "<<reset<<comando<<red<<" no pudo ser reconocido, intente nuevamente\n"<<reset<<std::endl;
   }
 };
+
+void Menu::inicio()
+{
+  int id;
+  
+  std::cout<<"\nIngrese el id de la partida (solo ingrese numeros): ";
+  std::cin>>id;
+
+  Partida p = Partida(id);
+}
