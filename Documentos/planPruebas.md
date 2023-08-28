@@ -7,6 +7,8 @@ Entrada: inicializar
 
 Resultado Esperado: se crea el objeto de tipo partida y se llama su constructor.
 
+Resultado Obtenido: se crea el objeto de tipo partida y se llama su constructor.
+
 ### Ingresar comando "turno <id_jugador>"
 Entrada: turno <id_jugador>
 
@@ -31,12 +33,32 @@ Resultado Obtenido: limpia la terminal y solo queda el banner.
 ## Constructor Partida
 
 ### Ingresar numero de jugadores
+Entrada: un numero entero entre 3 y 6
+
+Resultado Esperado: si el numero cumple la condición sigue con el siguiente paso
+
+Resultado Obtenido: si el numero cumple la condición sigue con el siguiente paso
 
 ### Ingresar nombre de los jugadores
+Entrada: nombre del jugador 
+
+Resultado Esperado: muestra el nombre del jugador y el color que le tocó
+
+Resultado Obtenido: muestra el nombre del jugador y el color que le tocó
 
 ### Elegir territorios por turnos
+Entrada: nombre del territorio 
+
+Resultado Esperado: muestra el nombre del territorio y el jugador que lo eligió
+
+Resultado Obtenido: muestra el nombre del territorio y el jugador que lo eligió
 
 ### Asignar mas tropas por turnos
+Entrada: nombre del territorio 
+
+Resultado Esperado: muestra el nombre del territorio y la nueva cantidad de tropas
+
+Resultado Obtenido: muestra el nombre del territorio y la nueva cantidad de tropas
 
 ## Funcion turno
 
