@@ -103,7 +103,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
   std::system("clear");
   
-  while(aux < 6)//while(aux < 42)
+  while(aux < 42) // while(aux < 6)
   {
     bool puede = false, enc = false;
     std::list<Jugador>::iterator miIt;
@@ -193,7 +193,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   int conta = 0, auxi = 0;
   std::string sele2;
 
-  while(auxi < 6)//while(finito == false)
+  while(finito == false) // while(auxi < 6)
   {
     std::list<Jugador>::iterator miIt3;
 
