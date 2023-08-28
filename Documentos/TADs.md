@@ -68,9 +68,9 @@
     - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
 
 # Modelo Relacional
-![Banner]( https://github.com/suaracost/Just-Risk-It/blob/6430a6a972def3eab86b182c51775c812a133462/Images/Modelo%20de%20relacion%20_page-0001.jpg)
+![Banner](Images/foto_dibujo.jpg)
 
 Modelo
 #Diagrama Grafico
 
-![Banner](https://github.com/suaracost/Just-Risk-It/blob/7f0ecfb2894cf791335d034a103af7e03e00db35/Images/Diagrama_Grafico_Risk_page-0001.jpg)
+![Banner](Images/foto_modelo.jpg)
