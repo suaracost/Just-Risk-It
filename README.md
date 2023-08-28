@@ -14,4 +14,4 @@ Alejandro Suarez y Nicolas Quintana
 -  [📑 Instrucciones (compilación, ejecucción y comandos) 📑](Documentos/instrucciones.md)
 -  [📖 TADs 📖](Documentos/TADs.md)
 -  [🤖 Código 🤖](Codigo)
--  [⚠️ Plan de pruebas ⚠️]()
+-  [⚠️ Plan de pruebas ⚠️](Documentos/planPruebas.md) 
