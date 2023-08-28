@@ -68,8 +68,8 @@
     - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
 
 # Modelo Relacional
-![Banner](Images/foto_dibujo.jpg)
+![Banner](../Images/foto_dibujo.jpg)
 
 #Diagrama Grafico
 
-![Banner](Images/foto_modelo.jpg)
+![Banner](../Images/foto_modelo.jpg)
