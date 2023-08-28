@@ -47,6 +47,7 @@
 ### Conjunto mínimo de datos
 - nombreTerritorio: String, Nombre del territorio
 - numTropas: Entero , número de tropas en el territorio
+- duenio: String , ID del deu;o de ese terrirtorio
 - tomado: Booleano , Define si el territorio tiene dueño o no
 ### Comportamiento del objeto
 - Territorio(String nombreTer): Crea un nuevo territorio
