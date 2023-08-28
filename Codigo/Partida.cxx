@@ -1,4 +1,4 @@
-#include "Partida.h"
+f#include "Partida.h"
 
 #include <iostream>
 
@@ -344,7 +344,7 @@ void Partida::turno()
       std::cout<<"\nRespuesta no reconocida, intente nuevamente\n";
   }
 
-  //fortificar();
+  fortificar();
 
   std::string turn = turnos.front();
   turnos.pop();
