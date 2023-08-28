@@ -66,5 +66,7 @@
 # Modelo Relacional
 ![Banner]( https://github.com/suaracost/Just-Risk-It/blob/6af014b33e4b683c24a6f5365ad4f9dd2b954274/Images/Modelo%20de%20relacion_page-0001.jpg).
 
+Modelo
 #Diagrama Grafico
+
 ![Banner](https://github.com/suaracost/Just-Risk-It/blob/7f0ecfb2894cf791335d034a103af7e03e00db35/Images/Diagrama_Grafico_Risk_page-0001.jpg)
