@@ -64,7 +64,7 @@
 - Cartas(string nombre,string tipo,string descri): para crear una carta
     - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
 # Modelo Relacional
-![Banner]( https://github.com/suaracost/Just-Risk-It/blob/6af014b33e4b683c24a6f5365ad4f9dd2b954274/Images/Modelo%20de%20relacion_page-0001.jpg)
+![Banner]( https://github.com/suaracost/Just-Risk-It/blob/6430a6a972def3eab86b182c51775c812a133462/Images/Modelo%20de%20relacion%20_page-0001.jpg)
 
 Modelo
 #Diagrama Grafico
