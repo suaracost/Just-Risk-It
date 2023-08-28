@@ -27,3 +27,9 @@ Entrada: limpiar
 Resultado Esperado: limpia la terminal y solo queda el banner.
 
 Resultado Obtenido: limpia la terminal y solo queda el banner.
+
+## Constructor Partida
+
+
+
+## Funcion turno
