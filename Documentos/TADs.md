@@ -27,6 +27,7 @@
 -  turno() : Turno del jugador donde este puede agregar nuevas tropas , atacar o fortificar
 -  nuevasTropas() : Dentro de la función turno, añade nuevas tropas según el número de territorios que tengas, dentro de un territorio en específico
 -  atacar() : Dentro de la función turno, decide si quiere atacar a un territorio enemigo para conquistarlo o no.
+-  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
   
 ## TAD Continente
 ### Conjunto mínimo de datos
