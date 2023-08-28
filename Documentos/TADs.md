@@ -67,9 +67,8 @@
 - Cartas(string nombre,string tipo,string descri): para crear una carta
     - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
 
-# Modelo Relacional
+# Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
-#Diagrama Grafico
-
+# Modelo Relacional
 ![Banner](../Images/foto_modelo.jpg)
