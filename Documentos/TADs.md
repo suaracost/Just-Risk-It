@@ -70,7 +70,6 @@
 # Modelo Relacional
 ![Banner](Images/foto_dibujo.jpg)
 
-Modelo
 #Diagrama Grafico
 
 ![Banner](Images/foto_modelo.jpg)
