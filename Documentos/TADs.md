@@ -63,3 +63,4 @@
 ### Comportamiento del objeto
 - Cartas(string nombre,string tipo,string descri): para crear una carta
     - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
+# Modelo Relacional
