@@ -1,5 +1,4 @@
 #include "Menu.h"
-#include "Clases.h"
 
 #include <iostream>
 
@@ -62,24 +61,37 @@ void Menu::mapamundi()
 void Menu::menu()
 {
   mapamundi();
+  bool iniciado = false;
+  std::regex pattern("^turno .*$");
+  Partida p;
   
   // Menu de todos los comandos
 
-  std::string comando;
+  std::string comando, tu, tuJ;
   std::cout<<"\n";
   
   while(comando.compare("salir") != 0) // while para ingresar comandos
   {
     std::cout<<"$ "; 
     std::getline(std::cin, comando); // se lee la linea completa ingresada por el usuario
-
+    
+    if(comando.size() > 5)
+    {
+      tu = comando.substr(0, 5);
+      if (tu.compare("turno") == 0)
+      {
+        tuJ = comando.substr(6);
+      }
+    }
+  
     if(comando.compare("") == 0);
 
     // condicionales de inicializar 
 
     else if (comando.compare("inicializar") == 0) 
     {
-      inicio();
+      p = inicio();
+      iniciado = true;
     }
 
     else if (comando.compare("inicializar ?") == 0)
@@ -90,14 +102,44 @@ void Menu::menu()
 
     // condicionales de turno 
 
-    else if (comando.compare("turno") == 0) 
-    {
-      std::cout<<"Posibles salidas: Juego no inicializado, Juego terminado, Jugador no valido, Jugardor fuera de turno y Turno terminado Correctamente\n"<<std::endl;
-    }
-
     else if (comando.compare("turno ?") == 0)
     {
       std::cout<<"La forma correcta de utilizar este comando es: turno <id_jugador>\n"<<std::endl;
+    }
+
+    else if (std::regex_match(comando, pattern)) 
+    {
+      bool enc = false;
+      std::list<Jugador>::iterator miIt;
+      for (miIt = p.jugadoresP.begin(); miIt != p.jugadoresP.end(); miIt++)
+      {
+        if(tuJ.compare(miIt->nombreJugador) == 0)
+          enc = true;
+      }
+
+      if(iniciado == false)
+      {
+        std::cout<<"El juego no ha sido inicializado\n\n";
+      }
+      else 
+      {
+        if (enc == true)
+        {
+          if (tuJ.compare(p.turnos.front()) != 0)
+          {
+            std::cout<<"No es el turno de "<<tuJ<<" es el turno de "<<p.turnos.front()<<"\n\n";
+          }
+          else if (tuJ.compare(p.turnos.front()) == 0)
+          {
+            p.turno();
+          }
+        }
+        else if (enc == false)
+        {
+          std::cout<<"El jugador "<<tuJ<<" no hace parte de esta partida\n\n";
+        }
+
+      }
     }
 
     // condicionales de guardar 
@@ -197,7 +239,7 @@ void Menu::menu()
   }
 };
 
-void Menu::inicio()
+Partida Menu::inicio()
 {
   int id;
   
@@ -205,4 +247,6 @@ void Menu::inicio()
   std::cin>>id;
 
   Partida p = Partida(id);
+
+  return(p);
 }
