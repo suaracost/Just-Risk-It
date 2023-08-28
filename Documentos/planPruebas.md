@@ -30,6 +30,18 @@ Resultado Obtenido: limpia la terminal y solo queda el banner.
 
 ## Constructor Partida
 
+### Ingresar numero de jugadores
 
+### Ingresar nombre de los jugadores
+
+### Elegir territorios por turnos
+
+### Asignar mas tropas por turnos
 
 ## Funcion turno
+
+### Ingresar nuevas tropas
+
+### Atacar
+
+### Fortificar
