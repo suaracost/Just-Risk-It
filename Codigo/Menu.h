@@ -1,14 +1,16 @@
 #ifndef __MENU__H__
 #define __MENU__H__
 
+#include "Partida.h"
 #include <string> // librerías que usaremos
+#include <regex>
 
 class Menu
 {
   public:
     static void mapamundi(); // métodos de la clase
     static void menu();
-    static void inicio();
+    static Partida inicio();
 };
 
 #endif // __MENU__H__
