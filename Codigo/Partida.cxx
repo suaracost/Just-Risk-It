@@ -1,4 +1,4 @@
-f#include "Partida.h"
+#include "Partida.h"
 
 #include <iostream>
 
