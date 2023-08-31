@@ -641,10 +641,6 @@ void Partida::atacar()
 
 void Partida::fortificar()
 {
-  //Pruebas en github desktop
-  int una = 1;
-  std::cout<<una;
-
   std::string jug = turnos.front();
 
   bool puede = false, puede2 = false;
