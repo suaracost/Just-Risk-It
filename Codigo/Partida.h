@@ -23,7 +23,7 @@ class Partida
     Partida(int idP);
     Partida();
     void mostrarTerritoriosDisponibles();
-    void mostrarTerritoriosPropios(std::string jug);
+    void mostrarTerritoriosPropios(std::string jug, std::string col);
     void mostrarTerritoriosEnemigos(std::string jug);
     void turno();
     void nuevasTropas();

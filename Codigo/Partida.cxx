@@ -238,8 +238,9 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
       { 
         if(miIt3->cantiTropas > 0)
         {
-          std::string manda = miIt3->nombreJugador;
-          mostrarTerritoriosPropios(manda);
+          std::string nom = miIt3->nombreJugador;
+          std::string col = miIt3->colorJugador;
+          mostrarTerritoriosPropios(nom, col);
           
           bool puede2 = false;
 
@@ -389,7 +390,7 @@ void Partida::mostrarTerritoriosDisponibles()
   }
 }
 
-void Partida::mostrarTerritoriosPropios(std::string jug)
+void Partida::mostrarTerritoriosPropios(std::string jug, std::string col)
 {
   std::cout<<"\nEstos son los territorios de: "<<jug<<"\n";
   
@@ -524,7 +525,18 @@ void Partida::nuevasTropas()
 
   std::cout<<"El jugador "<<jug<<" tiene "<< nuevos<<" nuevas tropas";
 
-  mostrarTerritoriosPropios(jug);
+  std::string col;
+  std::list<Jugador>::iterator miIt2;
+
+  for(miIt2 = jugadoresP.begin(); miIt2 != jugadoresP.end(); miIt2++)
+  {
+    if(jug.compare(miIt2->nombreJugador) == 0)
+    {
+      col = miIt2->colorJugador;
+    }
+  }
+
+  mostrarTerritoriosPropios(jug, col);
   
   bool puede = false;
   std::string sele;
@@ -569,7 +581,18 @@ void Partida::atacar()
   bool puede = false, puede2 = false, cancelar = false;
   std::string sele, sele2;
 
-  mostrarTerritoriosPropios(jug);
+  std::string col;
+  std::list<Jugador>::iterator miIt2;
+
+  for(miIt2 = jugadoresP.begin(); miIt2 != jugadoresP.end(); miIt2++)
+  {
+    if(jug.compare(miIt2->nombreJugador) == 0)
+    {
+      col = miIt2->colorJugador;
+    }
+  }
+
+  mostrarTerritoriosPropios(jug, col);
   while (puede == false)
   {
     std::cout<<"\nDesde que territorio desea atacar? ";
@@ -756,7 +779,18 @@ void Partida::fortificar()
   bool puede = false, puede2 = false;
   std::string sele, sele2;
 
-  mostrarTerritoriosPropios(jug);
+  std::string col;
+  std::list<Jugador>::iterator miIt2;
+
+  for(miIt2 = jugadoresP.begin(); miIt2 != jugadoresP.end(); miIt2++)
+  {
+    if(jug.compare(miIt2->nombreJugador) == 0)
+    {
+      col = miIt2->colorJugador;
+    }
+  }
+
+  mostrarTerritoriosPropios(jug, col);
   while (puede == false)
   {
     std::cout<<"\nDesde que territorio desea Fortificar? ";
