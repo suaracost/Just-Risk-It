@@ -777,28 +777,31 @@ void Partida::atacar()
       std::string deci2;
       bool sigue2 = false;
 
-      while(sigue2 == false)
+      if (final == false)
       {
-        std::cout<<"\nDesea terminar el ataque? (si o no) ";
-        std::cin>>deci2;
+        while(sigue2 == false)
+        {
+          std::cout<<"\nDesea terminar el ataque? (si o no) ";
+          std::cin>>deci2;
 
-        if(deci2.compare("si") == 0)
-        {
-          final = true;
-          sigue2 = true;
-        }
-        else if (deci2.compare("no") == 0)
-        {
-          if (check == 1)
+          if(deci2.compare("si") == 0)
           {
-            std::cout<<"El territorio "<<sele<<" ya no puede seguir atacando \n\n";
-            sigue2 = false; 
-          }
-          else 
+            final = true;
             sigue2 = true;
+          }
+          else if (deci2.compare("no") == 0)
+          {
+            if (check == 1)
+            {
+              std::cout<<"El territorio "<<sele<<" ya no puede seguir atacando \n\n";
+              sigue2 = false; 
+            }
+            else 
+              sigue2 = true;
+          }
+          else
+            std::cout<<"\nRespuesta no reconocida, intente nuevamente\n";
         }
-        else
-          std::cout<<"\nRespuesta no reconocida, intente nuevamente\n";
       }
     }
   }
