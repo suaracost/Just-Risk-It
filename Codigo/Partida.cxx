@@ -392,7 +392,32 @@ void Partida::mostrarTerritoriosDisponibles()
 
 void Partida::mostrarTerritoriosPropios(std::string jug, std::string col)
 {
-  std::cout<<"\nEstos son los territorios de: "<<jug<<"\n";
+  if(col.compare("azul") == 0)
+  {
+    std::cout<<blue;
+  }
+  else if(col.compare("rojo") == 0)
+  {
+    std::cout<<red;
+  }
+  else if(col.compare("verde") == 0)
+  {
+    std::cout<<green;
+  }
+  else if(col.compare("amarillo") == 0)
+  {
+    std::cout<<yellow;
+  }
+  else if(col.compare("magenta") == 0)
+  {
+    std::cout<<magenta;
+  }
+  else if(col.compare("cyan") == 0)
+  {
+    std::cout<<cyan;
+  }
+  
+  std::cout<<"\nEstos son los territorios de: "<<jug<<"\n"<<reset;
   
   for(int i=0; i<6; i++)
   {
