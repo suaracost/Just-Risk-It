@@ -166,7 +166,34 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
                 puede = true;
                 enc = true;
 
-                std::cout<<"El territorio "<<sele<<" es de "<<miIt->nombreJugador<<"\n";
+                std::string aux3 = miIt->colorJugador;
+
+                if(aux3.compare("azul") == 0)
+                {
+                  std::cout<<blue;
+                }
+                else if(aux3.compare("rojo") == 0)
+                {
+                  std::cout<<red;
+                }
+                else if(aux3.compare("verde") == 0)
+                {
+                  std::cout<<green;
+                }
+                else if(aux3.compare("amarillo") == 0)
+                {
+                  std::cout<<yellow;
+                }
+                else if(aux3.compare("magenta") == 0)
+                {
+                  std::cout<<magenta;
+                }
+                else if(aux3.compare("cyan") == 0)
+                {
+                  std::cout<<cyan;
+                }
+
+                std::cout<<"El territorio "<<sele<<" es de "<<miIt->nombreJugador<<"\n"<<reset;
 
               }
               else if (sele.compare(miIt2->nombreTerritorio) == 0 && miIt2->tomado == true)
@@ -218,6 +245,33 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
           while(puede2 == false)
           {
+            std::string aux4 = miIt3->colorJugador;
+
+            if(aux4.compare("azul") == 0)
+            {
+              std::cout<<blue;
+            }
+            else if(aux4.compare("rojo") == 0)
+            {
+              std::cout<<red;
+            }
+            else if(aux4.compare("verde") == 0)
+            {
+              std::cout<<green;
+            }
+            else if(aux4.compare("amarillo") == 0)
+            {
+              std::cout<<yellow;
+            }
+            else if(aux4.compare("magenta") == 0)
+            {
+              std::cout<<magenta;
+            }
+            else if(aux4.compare("cyan") == 0)
+            {
+              std::cout<<cyan;
+            }
+            
             std::cout<<"\nEs el turno de "<<miIt3->nombreJugador<<" para asignar mas tropas\n";
             std::cout<<"\nQue territorio desea elegir? ";
             std::getline(std::cin, sele2);
@@ -254,7 +308,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
                   auxi++;
 
                   std::system("clear");
-                  std::cout<<"El territorio "<<sele2<<" de "<<miIt3->nombreJugador<<" ahora tiene "<<miIt4->numTropas<<" tropas\n";
+                  std::cout<<"El territorio "<<sele2<<" de "<<miIt3->nombreJugador<<" ahora tiene "<<miIt4->numTropas<<" tropas\n"<<reset;
                 }
                 else
                 {
@@ -264,12 +318,39 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
             }
 
             if(puede2 == false)
-              std::cout<<"El territorio "<<sele2<<" no existe o no es tuyo\n";
+              std::cout<<"\nEl territorio "<<sele2<<" no existe o no es tuyo\n";
           }
         }
         else
         {
-          std::cout<<"\nEl jugador "<<miIt3->nombreJugador<<" ya no tiene mas tropas\n";
+          std::string aux5 = miIt3->colorJugador;
+
+          if(aux5.compare("azul") == 0)
+          {
+            std::cout<<blue;
+          }
+          else if(aux5.compare("rojo") == 0)
+          {
+            std::cout<<red;
+          }
+          else if(aux5.compare("verde") == 0)
+          {
+            std::cout<<green;
+          }
+          else if(aux5.compare("amarillo") == 0)
+          {
+            std::cout<<yellow;
+          }
+          else if(aux5.compare("magenta") == 0)
+          {
+            std::cout<<magenta;
+          }
+          else if(aux5.compare("cyan") == 0)
+          {
+            std::cout<<cyan;
+          }
+          
+          std::cout<<"\nEl jugador "<<miIt3->nombreJugador<<" ya no tiene mas tropas\n"<<reset;
           auxi++;
           conta++;
         }
