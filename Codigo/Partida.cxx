@@ -166,7 +166,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
                 puede = true;
                 enc = true;
 
-                std::cout<<"El territorio "<<sele<<" es de "<<miIt->nombreJugador<<"\n\n";
+                std::cout<<"El territorio "<<sele<<" es de "<<miIt->nombreJugador<<"\n";
 
               }
               else if (sele.compare(miIt2->nombreTerritorio) == 0 && miIt2->tomado == true)
@@ -176,8 +176,12 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
               }
             }
           }
+          
+          if (aux == 0)
+          {
 
-          if (enc == false)
+          }
+          else if (enc == false)
           {
             std::cout<<"No se pudo encontrar el territorio "<<sele<<"\n\n";
           } 
@@ -250,7 +254,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
                   auxi++;
 
                   std::system("clear");
-                  std::cout<<"El territorio "<<sele2<<" de "<<miIt3->nombreJugador<<" ahora tiene "<<miIt4->numTropas<<" tropas\n\n";
+                  std::cout<<"El territorio "<<sele2<<" de "<<miIt3->nombreJugador<<" ahora tiene "<<miIt4->numTropas<<" tropas\n";
                 }
                 else
                 {
@@ -260,11 +264,15 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
             }
 
             if(puede2 == false)
-              std::cout<<"El territorio "<<sele2<<" no existe o no es tuyo\n\n";
+              std::cout<<"El territorio "<<sele2<<" no existe o no es tuyo\n";
           }
         }
         else
+        {
+          std::cout<<"\nEl jugador "<<miIt3->nombreJugador<<" ya no tiene mas tropas\n";
+          auxi++;
           conta++;
+        }
       }
     }
     std::string turn = turnos.front();
