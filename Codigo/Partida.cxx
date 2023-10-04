@@ -103,7 +103,9 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
   std::system("clear");
   
-  while(aux < 42) // while(aux < 6)
+  //while(aux < 42) 
+  // 
+  while(aux < 6)
   {
     bool puede = false, enc = false;
     std::list<Jugador>::iterator miIt;
@@ -193,7 +195,9 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   int conta = 0, auxi = 0;
   std::string sele2;
 
-  while(finito == false) // while(auxi < 6)
+  //while(finito == false) 
+  // 
+  while(auxi < 6)
   {
     std::list<Jugador>::iterator miIt3;
 
@@ -221,10 +225,27 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
               {
                 if(sele2.compare(miIt4->nombreTerritorio) == 0 && miIt4->duenio ==  miIt3->nombreJugador)
                 {
-                  int nueva = miIt4->numTropas;
-                  miIt4->numTropas = nueva + 1;
-                  int canti = miIt3->cantiTropas;
-                  miIt3->cantiTropas = canti - 1;
+                  bool puede3 = false;
+                  while (puede3 == false)
+                  { 
+                    int mandar;
+                    std::cout<<"\nCuantas tropas quiere agregar? (tiene "<<miIt3->cantiTropas<<" tropas) ";
+                    std::cin>>mandar;
+                    if (mandar <= miIt3->cantiTropas)
+                    { 
+                      int nueva = miIt4->numTropas;
+                      miIt4->numTropas = nueva + mandar;
+
+                      int canti = miIt3->cantiTropas;
+                      miIt3->cantiTropas = canti - mandar;
+
+                      puede3=true;
+                    }
+                    else
+                    {
+                      std::cout<<"\nNo tiene suficientes tropas\n";
+                    }
+                  }
                   puede2 = true;
                   auxi++;
 
