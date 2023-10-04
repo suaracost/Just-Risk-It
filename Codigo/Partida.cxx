@@ -548,7 +548,7 @@ void Partida::nuevasTropas()
 
   nuevos = conta/3;
 
-  std::cout<<"El jugador "<<jug<<" tiene "<< nuevos<<" nuevas tropas";
+  std::cout<<"\nEl jugador "<<jug<<" tiene "<< nuevos<<" nuevas tropas";
 
   std::string col;
   std::list<Jugador>::iterator miIt2;
@@ -582,8 +582,6 @@ void Partida::nuevasTropas()
           int aux = miIt3->numTropas;
           aux = aux + nuevos;
           miIt3->numTropas = aux;
-
-          std::system("clear");
           std::cout<<"\nEl territorio "<<sele<<" ahora tiene "<<miIt3->numTropas<<" tropas\n\n";
 
           puede = true;
@@ -631,7 +629,7 @@ void Partida::atacar()
         if(sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0 && miIt3->numTropas > 1)
         {
           std::system("clear");
-          std::cout<<"\nEl jugador "<<miIt3->duenio<<" va a atacar desde "<<sele<<"\n\n";
+          std::cout<<"\nEl jugador "<<miIt3->duenio<<" va a atacar desde "<<sele<<"\n";
 
           puede = true;
         }
@@ -689,6 +687,7 @@ void Partida::atacar()
 
     while(final == false)
     {
+      int check;
       int dadoAtq = 1 + std::rand() % 6; // Genera un número entre 1 y 6
       std::cout<<"\nEl atacante saco un: "<<dadoAtq;
       int dadoDef = 1 + std::rand() % 6;
@@ -705,6 +704,7 @@ void Partida::atacar()
             {
               int aux = miIt5->numTropas;
               aux = aux - 1;
+              check = aux;
               miIt5->numTropas = aux;
               if (aux == 0)
               {
@@ -732,6 +732,7 @@ void Partida::atacar()
             {
               int aux = miIt6->numTropas;
               aux = aux - 1;
+              check = aux;
               miIt6->numTropas = aux;
               if (aux == 1)
               {
@@ -757,10 +758,11 @@ void Partida::atacar()
             {
               int aux = miIt7->numTropas;
               aux = aux - 1;
+              check = aux;
               miIt7->numTropas = aux;
               if (aux == 1)
               {
-                std::cout<<"El territorio "<<miIt7->nombreTerritorio<<" ya no puede seguir atacando \n\n";
+                std::cout<<"El territorio "<<miIt7->nombreTerritorio<<" ya no puede seguir atacando \n";
                 final = true;
               }
             }
@@ -787,8 +789,13 @@ void Partida::atacar()
         }
         else if (deci2.compare("no") == 0)
         {
-          // revisar que le quedan mas de 1 tropas
-          sigue2 = true;
+          if (check == 1)
+          {
+            std::cout<<"El territorio "<<sele<<" ya no puede seguir atacando \n\n";
+            sigue2 = false; 
+          }
+          else 
+            sigue2 = true;
         }
         else
           std::cout<<"\nRespuesta no reconocida, intente nuevamente\n";
