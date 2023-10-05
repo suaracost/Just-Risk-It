@@ -464,7 +464,7 @@ void Partida::turno()
 
   while(sigue == false)
   {
-    std::cout<<"\nDesea atacar? (si o no) ";
+    std::cout<<"Desea atacar? (si o no) ";
     std::cin>>deci;
 
     if(deci.compare("si") == 0)
@@ -570,33 +570,40 @@ void Partida::nuevasTropas()
   std::string sele;
 
   //insertar las nuevas tropas
-  while (puede == false)
+  if(nuevos > 0)
   {
-    std::cout<<"\nEn que territorio desea poner mas tropas? ";
-    std::getline(std::cin, sele);
-
-    std::list<Territorio>::iterator miIt3;
-    for(int i=0; i<6; i++)
+    while (puede == false)
     {
-      for (miIt3 = contiP[i]->territoriosC.begin(); miIt3 != contiP[i]->territoriosC.end(); miIt3++)
-      {
-        if(sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0)
-        {
-          int aux = miIt3->numTropas;
-          aux = aux + nuevos;
-          miIt3->numTropas = aux;
-          std::cout<<"\nEl territorio "<<sele<<" ahora tiene "<<miIt3->numTropas<<" tropas\n\n";
+      std::cout<<"\nEn que territorio desea poner mas tropas? ";
+      std::getline(std::cin, sele);
 
-          puede = true;
-        }
-        else
+      std::list<Territorio>::iterator miIt3;
+      for(int i=0; i<6; i++)
+      {
+        for (miIt3 = contiP[i]->territoriosC.begin(); miIt3 != contiP[i]->territoriosC.end(); miIt3++)
         {
-          
+          if(sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0)
+          {
+            int aux = miIt3->numTropas;
+            aux = aux + nuevos;
+            miIt3->numTropas = aux;
+            std::cout<<"\nEl territorio "<<sele<<" ahora tiene "<<miIt3->numTropas<<" tropas\n\n";
+
+            puede = true;
+          }
+          else
+          {
+            
+          }
         }
       }
+      if(puede == false)
+        std::cout<<"El territorio "<<sele<<" no existe o no es tuyo\n\n";
     }
-    if(puede == false)
-      std::cout<<"El territorio "<<sele<<" no existe o no es tuyo\n\n";
+  }
+  else
+  {
+    std::cout<<"\nEl jugador "<<jug<<" no tiene nuevas tropas\n\n";
   }
 }
 
