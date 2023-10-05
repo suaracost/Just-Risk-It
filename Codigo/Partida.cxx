@@ -453,7 +453,41 @@ void Partida::mostrarTerritoriosEnemigos(std::string jug)
     {
       if(jug.compare(miIt->duenio) != 0)
       {
-        std::cout<<conta<<". "<<miIt->nombreTerritorio<<"\t-->\tTropas: "<<miIt->numTropas<<"\n";
+        std::list<Jugador>::iterator miIt2;
+        for(miIt2 = jugadoresP.begin(); miIt2 != jugadoresP.end(); miIt2++)
+        {
+          if(miIt->duenio.compare(miIt2->nombreJugador) == 0)
+          {
+            std::string aux = miIt2->colorJugador;
+
+            if(aux.compare("azul") == 0)
+            {
+              std::cout<<blue;
+            }
+            else if(aux.compare("rojo") == 0)
+            {
+              std::cout<<red;
+            }
+            else if(aux.compare("verde") == 0)
+            {
+              std::cout<<green;
+            }
+            else if(aux.compare("amarillo") == 0)
+            {
+              std::cout<<yellow;
+            }
+            else if(aux.compare("magenta") == 0)
+            {
+              std::cout<<magenta;
+            }
+            else if(aux.compare("cyan") == 0)
+            {
+              std::cout<<cyan;
+            }
+          }
+        }
+
+        std::cout<<conta<<". "<<miIt->nombreTerritorio<<"\t-->\tTropas: "<<miIt->numTropas<<"\n"<<reset;
         conta++;
       }
     }
