@@ -715,6 +715,21 @@ void Partida::atacar()
               aux = aux - 1;
               check = aux;
               miIt5->numTropas = aux;
+              
+              std::cout<<"El territorio "<<miIt5->nombreTerritorio<<" ahora tiene "<<miIt5->numTropas<<" tropas\n";
+
+              std::list<Territorio>::iterator miItX;
+              for(int j=0; j<6; j++)
+              {
+                for (miItX = contiP[i]->territoriosC.begin(); miItX != contiP[i]->territoriosC.end(); miItX++)
+                {
+                  if(sele.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
+                  {
+                    std::cout<<"El territorio "<<miItX->nombreTerritorio<<" ahora tiene "<<miItX->numTropas<<" tropas\n";
+                  }
+                }
+              }
+              
               if (aux == 0)
               {
                 miIt5->duenio = jug;
@@ -743,6 +758,21 @@ void Partida::atacar()
               aux = aux - 1;
               check = aux;
               miIt6->numTropas = aux;
+              
+              std::cout<<"El territorio "<<miIt6->nombreTerritorio<<" ahora tiene "<<miIt6->numTropas<<" tropas\n";
+
+              std::list<Territorio>::iterator miItX;
+              for(int j=0; j<6; j++)
+              {
+                for (miItX = contiP[i]->territoriosC.begin(); miItX != contiP[i]->territoriosC.end(); miItX++)
+                {
+                  if(sele.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
+                  {
+                    std::cout<<"El territorio "<<miItX->nombreTerritorio<<" ahora tiene "<<miItX->numTropas<<" tropas\n";
+                  }
+                }
+              }
+
               if (aux == 1)
               {
                 std::cout<<"El territorio "<<miIt6->nombreTerritorio<<" ya no puede seguir atacando \n\n";
@@ -769,6 +799,19 @@ void Partida::atacar()
               aux = aux - 1;
               check = aux;
               miIt7->numTropas = aux;
+
+              std::list<Territorio>::iterator miItX;
+              for(int j=0; j<6; j++)
+              {
+                for (miItX = contiP[i]->territoriosC.begin(); miItX != contiP[i]->territoriosC.end(); miItX++)
+                {
+                  if(sele.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
+                  {
+                    std::cout<<"El territorio "<<miItX->nombreTerritorio<<" ahora tiene "<<miItX->numTropas<<" tropas\n";
+                  }
+                }
+              }
+
               if (aux == 1)
               {
                 std::cout<<"El territorio "<<miIt7->nombreTerritorio<<" ya no puede seguir atacando \n";
@@ -818,7 +861,7 @@ void Partida::atacar()
 
 void Partida::fortificar()
 {
-  std::system("clear");
+  //std::system("clear");
   std::cout<<"\nFortificar\n";
 
   std::string jug = turnos.front();
