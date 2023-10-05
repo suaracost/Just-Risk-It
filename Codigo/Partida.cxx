@@ -226,9 +226,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   int conta = 0, auxi = 0;
   std::string sele2;
 
-  //while(finito == false) 
-  // 
-  while(auxi < 6)
+  while(finito == false) 
   {
     std::list<Jugador>::iterator miIt3;
 
@@ -551,7 +549,7 @@ void Partida::nuevasTropas()
 
   nuevos = conta/3;
 
-  std::cout<<"\nEl jugador "<<jug<<" tiene "<< nuevos<<" nuevas tropas";
+  std::cout<<"\nEl jugador "<<jug<<" tiene "<< nuevos<<" tropas nuevas\n\n";
 
   std::string col;
   std::list<Jugador>::iterator miIt2;
@@ -598,12 +596,12 @@ void Partida::nuevasTropas()
         }
       }
       if(puede == false)
-        std::cout<<"El territorio "<<sele<<" no existe o no es tuyo\n\n";
+        std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
     }
   }
   else
   {
-    std::cout<<"\nEl jugador "<<jug<<" no tiene nuevas tropas\n\n";
+    std::cout<<"\nEl jugador "<<jug<<" no tiene tropas nuevas\n\n";
   }
 }
 
@@ -657,7 +655,7 @@ void Partida::atacar()
       }
     }
     if(puede == false)
-      std::cout<<"El territorio "<<sele<<" no existe o no es tuyo\n\n";
+      std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
   }
 
   if(cancelar == true)
@@ -863,7 +861,7 @@ void Partida::fortificar()
       }
     }
     if(puede == false)
-      std::cout<<"El territorio "<<sele<<" no existe o no es tuyo\n\n";
+      std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
   }
   
   while (puede2 == false)
