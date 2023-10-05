@@ -530,6 +530,9 @@ void Partida::turno()
 
 void Partida::nuevasTropas()
 {
+  system("clear");
+  std::cout<<"\nNuevas Tropas\n";
+  
   //Calcular nuevas tropas 
   std::string jug = turnos.front();
   int conta = 0, nuevos;
@@ -599,6 +602,9 @@ void Partida::nuevasTropas()
 
 void Partida::atacar()
 {
+  std::system("clear");
+  std::cout<<"\nAtacar\n";
+
   std::string jug = turnos.front();
 
   bool puede = false, puede2 = false, cancelar = false;
@@ -628,7 +634,6 @@ void Partida::atacar()
       {
         if(sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0 && miIt3->numTropas > 1)
         {
-          std::system("clear");
           std::cout<<"\nEl jugador "<<miIt3->duenio<<" va a atacar desde "<<sele<<"\n";
 
           puede = true;
@@ -667,7 +672,6 @@ void Partida::atacar()
         {
           if(sele2.compare(miIt4->nombreTerritorio) == 0 && jug.compare(miIt4->duenio) != 0)
           {
-            std::system("clear");
             std::cout<<"\nEl jugador "<<miIt4->duenio<<" va a atacar "<<sele2<<"\n\n";
 
             puede2 = true;
@@ -809,6 +813,9 @@ void Partida::atacar()
 
 void Partida::fortificar()
 {
+  std::system("clear");
+  std::cout<<"\nFortificar\n";
+
   std::string jug = turnos.front();
 
   bool puede = false, puede2 = false;
@@ -838,7 +845,6 @@ void Partida::fortificar()
       {
         if(sele.compare(miIt->nombreTerritorio) == 0 && jug.compare(miIt->duenio) == 0 && miIt->numTropas > 1)
         {
-          std::system("clear");
           std::cout<<"\nEl jugador "<<miIt->duenio<<" va a Fortificar desde "<<sele<<"\n\n";
 
           puede = true;
@@ -865,7 +871,6 @@ void Partida::fortificar()
       {
         if(sele2.compare(miIt2->nombreTerritorio) == 0 && jug.compare(miIt2->duenio) == 0)
         {
-          std::system("clear");
           std::cout<<"\nEl jugador "<<miIt2->duenio<<" va a fortificar "<<sele2<<"\n\n";
           puede2 = true;
         }
