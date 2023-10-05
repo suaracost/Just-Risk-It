@@ -223,7 +223,6 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   }
 
   bool finito = false;
-  int auxi = 0;
   std::string sele2;
 
   while(finito == false) 
@@ -304,7 +303,6 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
                     }
                   }
                   puede2 = true;
-                  auxi++;
 
                   std::system("clear");
                   std::cout<<"El territorio "<<sele2<<" de "<<miIt3->nombreJugador<<" ahora tiene "<<miIt4->numTropas<<" tropas\n"<<reset;
@@ -350,7 +348,6 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
           }
           
           std::cout<<"\nEl jugador "<<miIt3->nombreJugador<<" ya no tiene mas tropas\n"<<reset;
-          auxi++;
         }
       }
     }
@@ -359,7 +356,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
     turnos.push(turn);
 
     int conta = 0;
-    
+
     std::list<Jugador>::iterator miItX;
     for(miItX = jugadoresP.begin(); miItX != jugadoresP.end(); miItX++)
     {
@@ -465,6 +462,10 @@ void Partida::mostrarTerritoriosEnemigos(std::string jug)
 
 void Partida::turno()
 {
+  std::string cont;
+  std::cout<<"\nPresione enter para continuar ";
+  std::getline(std::cin, cont);
+  
   nuevasTropas();
   
   std::string deci;
@@ -487,6 +488,10 @@ void Partida::turno()
     else
       std::cout<<"\nRespuesta no reconocida, intente nuevamente\n";
   }
+
+  std::string cont2;
+  std::cout<<"\nPresione enter para continuar ";
+  std::getline(std::cin, cont2);
 
   fortificar();
 
@@ -731,7 +736,7 @@ void Partida::atacar()
               std::list<Territorio>::iterator miItX;
               for(int j=0; j<6; j++)
               {
-                for (miItX = contiP[i]->territoriosC.begin(); miItX != contiP[i]->territoriosC.end(); miItX++)
+                for (miItX = contiP[j]->territoriosC.begin(); miItX != contiP[j]->territoriosC.end(); miItX++)
                 {
                   if(sele.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
                   {
@@ -774,7 +779,7 @@ void Partida::atacar()
               std::list<Territorio>::iterator miItX;
               for(int j=0; j<6; j++)
               {
-                for (miItX = contiP[i]->territoriosC.begin(); miItX != contiP[i]->territoriosC.end(); miItX++)
+                for (miItX = contiP[j]->territoriosC.begin(); miItX != contiP[j]->territoriosC.end(); miItX++)
                 {
                   if(sele.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
                   {
@@ -813,7 +818,7 @@ void Partida::atacar()
               std::list<Territorio>::iterator miItX;
               for(int j=0; j<6; j++)
               {
-                for (miItX = contiP[i]->territoriosC.begin(); miItX != contiP[i]->territoriosC.end(); miItX++)
+                for (miItX = contiP[j]->territoriosC.begin(); miItX != contiP[j]->territoriosC.end(); miItX++)
                 {
                   if(sele.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
                   {
@@ -871,7 +876,7 @@ void Partida::atacar()
 
 void Partida::fortificar()
 {
-  //std::system("clear");
+  std::system("clear");
   std::cout<<"\nFortificar\n";
 
   std::string jug = turnos.front();
