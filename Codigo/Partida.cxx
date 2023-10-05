@@ -465,7 +465,7 @@ void Partida::turno()
   nuevasTropas();
 
   std::string cont;
-  std::cout<<"Presione enter para continuar";
+  std::cout<<"Presione enter para continuar ";
   std::getline(std::cin, cont);
   
   std::string deci;
@@ -543,7 +543,7 @@ void Partida::turno()
 
 void Partida::nuevasTropas()
 {
-  system("clear");
+  std::system("clear");
   std::cout<<"\nNuevas Tropas\n";
   
   //Calcular nuevas tropas 
@@ -564,7 +564,7 @@ void Partida::nuevasTropas()
 
   nuevos = conta/3;
 
-  std::cout<<"\nEl jugador "<<jug<<" tiene "<< nuevos<<" tropas nuevas\n\n";
+  std::cout<<"\nEl jugador "<<jug<<" tiene "<< nuevos<<" tropas nuevas\n";
 
   std::string col;
   std::list<Jugador>::iterator miIt2;
@@ -670,7 +670,7 @@ void Partida::atacar()
       }
     }
     if(puede == false)
-      std::cout<<"El territorio "<<sele<<" no existe o no es tuyo\n\n";
+      std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
   }
 
   if(cancelar == true)
@@ -703,7 +703,7 @@ void Partida::atacar()
         }
       }
       if(puede2 == false)
-        std::cout<<"El territorio "<<sele2<<" no existe o es tuyo\n\n";
+        std::cout<<"\nEl territorio "<<sele2<<" no existe o es tuyo\n\n";
     }
 
     bool final = false;
@@ -743,13 +743,13 @@ void Partida::atacar()
                 }
               }
 
-              std::cout<<"El territorio "<<miIt5->nombreTerritorio<<" ahora tiene "<<miIt5->numTropas<<" tropas";
+              std::cout<<"El territorio "<<miIt5->nombreTerritorio<<" ahora tiene "<<miIt5->numTropas<<" tropas\n";
               
               if (aux == 0)
               {
                 miIt5->duenio = jug;
                 miIt5->numTropas = 1;
-                std::cout<<"El territorio "<<miIt5->nombreTerritorio<<" ahora es del jugador "<<jug<<"\n\n";
+                std::cout<<"\nEl territorio "<<miIt5->nombreTerritorio<<" ahora es del jugador "<<jug<<"\n\n";
                 final = true;
               }
             }
@@ -781,7 +781,7 @@ void Partida::atacar()
               {
                 for (miItX = contiP[j]->territoriosC.begin(); miItX != contiP[j]->territoriosC.end(); miItX++)
                 {
-                  if(sele2.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
+                  if(sele2.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) != 0)
                   {
                     std::cout<<"El territorio "<<miItX->nombreTerritorio<<" ahora tiene "<<miItX->numTropas<<" tropas";
                   }
@@ -822,7 +822,7 @@ void Partida::atacar()
               {
                 for (miItX = contiP[j]->territoriosC.begin(); miItX != contiP[j]->territoriosC.end(); miItX++)
                 {
-                  if(sele2.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) == 0)
+                  if(sele2.compare(miItX->nombreTerritorio) == 0 && jug.compare(miItX->duenio) != 0)
                   {
                     std::cout<<"El territorio "<<miItX->nombreTerritorio<<" ahora tiene "<<miItX->numTropas<<" tropas";
                   }
