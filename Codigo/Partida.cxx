@@ -462,11 +462,11 @@ void Partida::mostrarTerritoriosEnemigos(std::string jug)
 
 void Partida::turno()
 {
+  nuevasTropas();
+
   std::string cont;
   std::cout<<"\nPresione enter para continuar ";
   std::getline(std::cin, cont);
-  
-  nuevasTropas();
   
   std::string deci;
   bool sigue = false;
