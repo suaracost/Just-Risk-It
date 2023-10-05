@@ -223,7 +223,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   }
 
   bool finito = false;
-  int conta = 0, auxi = 0;
+  int auxi = 0;
   std::string sele2;
 
   while(finito == false) 
@@ -351,13 +351,23 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
           
           std::cout<<"\nEl jugador "<<miIt3->nombreJugador<<" ya no tiene mas tropas\n"<<reset;
           auxi++;
-          conta++;
         }
       }
     }
     std::string turn = turnos.front();
     turnos.pop();
     turnos.push(turn);
+
+    int conta = 0;
+    
+    std::list<Jugador>::iterator miItX;
+    for(miItX = jugadoresP.begin(); miItX != jugadoresP.end(); miItX++)
+    {
+      if(miItX->cantiTropas == 0)
+      {
+        conta++;
+      }
+    }
 
     if (conta == num)
       finito = true;
