@@ -55,6 +55,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
     std::string nom;
     std::cout<<"\nIngrese el nombre del jugador: ";
     std::cin>>nom;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::string color;
     if (i == 0)
@@ -510,7 +511,7 @@ void Partida::turno()
   {
     std::cout<<"Desea atacar? (si o no) ";
     std::cin>>deci;
-
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     if(deci.compare("si") == 0)
     {
@@ -889,6 +890,7 @@ void Partida::atacar()
         {
           std::cout<<"\nDesea terminar el ataque? (si o no) ";
           std::cin>>deci2;
+          std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
           if(deci2.compare("si") == 0)
           {
