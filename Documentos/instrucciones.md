@@ -2,13 +2,19 @@
 
 ### Compilación y ejecucción
    
-1. Compilación
+1. Ir a la carpeta donde esta el código
+
+         cd Codigo
+   
+   Los archivos del codigo estan en la carpeta "Codigo" dentro del repositorio.
+   
+3. Compilación
 
          g++ -std=c++11 main.cpp Menu.cxx Partida.cxx Carta.cxx Jugador.cxx Continente.cxx Territorio.cxx -o risk
 
    Los archivos que vamos a compilar son: "Menu.cxx" donde se encuentran las funciones que desarollamos para esta entrega y "main.cpp" donde se hace el llamado a las mismas.
    
-3. Ejecucción
+4. Ejecucción
 
          ./risk
 
