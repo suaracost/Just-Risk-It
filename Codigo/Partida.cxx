@@ -765,7 +765,6 @@ void Partida::atacar()
             {
               int aux = miIt5->numTropas;
               aux = aux - 1;
-              check = aux;
               miIt5->numTropas = aux;
               
               std::list<Territorio>::iterator miItX;
