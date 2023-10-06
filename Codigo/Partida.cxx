@@ -511,6 +511,8 @@ void Partida::turno()
     std::cout<<"Desea atacar? (si o no) ";
     std::cin>>deci;
 
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     if(deci.compare("si") == 0)
     {
       atacar();
