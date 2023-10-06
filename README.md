@@ -7,11 +7,16 @@ Alejandro Suarez y Nicolas Quintana
 
 ----
 
-### ¿Quienes somos?
+## ¿Quienes somos?
 - [🪪🍻 Wiki 🍻🪪](https://github.com/suaracost/Just-Risk-It/wiki)
 
-### Proyecto
--  [📑 Instrucciones (compilación, ejecucción y comandos) 📑](Documentos/instrucciones.md)
+## Proyecto
+
+### Instrucciones
+-  [📚 Manual de juego 📚]()
+-  [📑 Instrucciones implementación 📑](Documentos/instrucciones.md)
+
+### Implementación
 -  [📖 TADs 📖](Documentos/TADs.md)
 -  [🤖 Código 🤖](Codigo)
 -  [⚠️ Plan de pruebas ⚠️](Documentos/planPruebas.md) 
