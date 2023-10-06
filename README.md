@@ -6,10 +6,7 @@
 Alejandro Suarez y Nicolas Quintana
 
 ### Objetivo del proyecto 🎯
-
 Poner aqui una introducción al proyecto y el objetivo
-
-----
 
 ### ¿Quienes somos?
 - [🪪🍻 Wiki 🍻🪪](https://github.com/suaracost/Just-Risk-It/wiki)
