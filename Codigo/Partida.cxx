@@ -523,11 +523,11 @@ void Partida::turno()
       sigue = true;
     }
     else
-      std::cout<<"\nRespuesta no reconocida, intente nuevamente\n";
+      std::cout<<"\nRespuesta no reconocida, intente nuevamente\n\n";
   }
 
   std::string cont2;
-  std::cout<<"\nPresione enter para continuar ";
+  std::cout<<"Presione enter para continuar ";
   std::getline(std::cin, cont2);
 
   fortificar();
