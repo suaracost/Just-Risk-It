@@ -787,7 +787,6 @@ void Partida::atacar()
                 miIt5->duenio = jug;
                 miIt5->numTropas = 1;
                 std::cout<<"\nEl territorio "<<miIt5->nombreTerritorio<<" ahora es del jugador "<<jug<<"\n\n";
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 final = true;
               }
             }
