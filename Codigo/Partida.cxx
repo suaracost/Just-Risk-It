@@ -827,7 +827,7 @@ void Partida::atacar()
 
               if (aux == 1)
               {
-                std::cout<<"El territorio "<<miIt6->nombreTerritorio<<" ya no puede seguir atacando \n\n";
+                std::cout<<"\nEl territorio "<<miIt6->nombreTerritorio<<" ya no puede seguir atacando \n\n";
                 final = true;
               }
             }
@@ -868,7 +868,7 @@ void Partida::atacar()
 
               if (aux == 1)
               {
-                std::cout<<"El territorio "<<miIt7->nombreTerritorio<<" ya no puede seguir atacando \n";
+                std::cout<<"\nEl territorio "<<miIt7->nombreTerritorio<<" ya no puede seguir atacando \n";
                 final = true;
               }
             }
