@@ -527,7 +527,7 @@ void Partida::turno()
   }
 
   std::string cont2;
-  std::cout<<"Presione enter para continuar ";
+  std::cout<<"\nPresione enter para continuar ";
   std::getline(std::cin, cont2);
 
   fortificar();
