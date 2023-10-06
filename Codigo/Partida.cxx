@@ -899,7 +899,7 @@ void Partida::atacar()
           {
             if (check == 1)
             {
-              std::cout<<"El territorio "<<sele<<" ya no puede seguir atacando \n\n";
+              std::cout<<"\nEl territorio "<<sele<<" ya no puede seguir atacando \n\n";
               sigue2 = false; 
             }
             else 
