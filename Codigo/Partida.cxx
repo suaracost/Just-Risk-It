@@ -953,109 +953,111 @@ void Partida::fortificar()
   }
 
   else 
-    mostrarTerritoriosPropios(jug, col);
-  
-  while (puede == false)
   {
-    std::cout<<"\nDesde que territorio desea Fortificar? ";
-    std::getline(std::cin, sele);
-
-    std::list<Territorio>::iterator miIt;
-    for(int i=0; i<6; i++)
+      mostrarTerritoriosPropios(jug, col);
+    
+    while (puede == false)
     {
-      for (miIt = contiP[i]->territoriosC.begin(); miIt != contiP[i]->territoriosC.end(); miIt++)
+      std::cout<<"\nDesde que territorio desea Fortificar? ";
+      std::getline(std::cin, sele);
+
+      std::list<Territorio>::iterator miIt;
+      for(int i=0; i<6; i++)
       {
-        if(sele.compare(miIt->nombreTerritorio) == 0 && jug.compare(miIt->duenio) == 0 && miIt->numTropas > 1)
+        for (miIt = contiP[i]->territoriosC.begin(); miIt != contiP[i]->territoriosC.end(); miIt++)
         {
-          std::cout<<"\nEl jugador "<<miIt->duenio<<" va a Fortificar desde "<<sele<<"\n\n";
-
-          puede = true;
-        }
-        else if (sele.compare(miIt->nombreTerritorio) == 0 && jug.compare(miIt->duenio) == 0 && miIt->numTropas < 2)
-        {
-          pocas = true;
-        }
-      }
-    }
-    if(puede == false)
-    {
-      if (pocas == true)
-        std::cout<<"\nEste territorio no puede Fortificar porque solo tiene 1 tropa\n\n";
-      else
-        std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
-    }
-  }
-  
-  while (puede2 == false)
-  {
-    std::cout<<"\nQue territorio desea Fortificar? ";
-    std::getline(std::cin, sele2);
-
-    std::list<Territorio>::iterator miIt2;
-    for(int i=0; i<6; i++)
-    {
-      for (miIt2 = contiP[i]->territoriosC.begin(); miIt2 != contiP[i]->territoriosC.end(); miIt2++)
-      {
-        if(sele2.compare(miIt2->nombreTerritorio) == 0 && jug.compare(miIt2->duenio) == 0)
-        {
-          std::cout<<"\nEl jugador "<<miIt2->duenio<<" va a fortificar "<<sele2<<"\n\n";
-          puede2 = true;
-        }
-        else
-        {
-          
-        }
-      }
-    }
-    if(puede2 == false)
-      std::cout<<"El territorio "<<sele2<<" no existe o es tuyo\n\n";
-  }
-
-  // 
-
-  bool puede3 = false;
-  int trop;
-  
-  while (puede3 == false)
-  {
-    std::cout<<"\nCuantas tropas desea mandar? ";
-    std::cin>>trop;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-    std::list<Territorio>::iterator miIt3;
-    for(int i=0; i<6; i++)
-    {
-      for (miIt3 = contiP[i]->territoriosC.begin(); miIt3 != contiP[i]->territoriosC.end(); miIt3++)
-      {
-        if(sele.compare(miIt3->nombreTerritorio) == 0 && trop < miIt3->numTropas)
-        {
-          std::list<Territorio>::iterator miIt4;
-          for(int i=0; i<6; i++)
+          if(sele.compare(miIt->nombreTerritorio) == 0 && jug.compare(miIt->duenio) == 0 && miIt->numTropas > 1)
           {
-            for (miIt4 = contiP[i]->territoriosC.begin(); miIt4 != contiP[i]->territoriosC.end(); miIt4++)
-            {
-              if(sele2.compare(miIt4->nombreTerritorio) == 0)
-              {
-                int quita = miIt3->numTropas;
-                quita = quita - trop;
-                miIt3->numTropas = quita;
+            std::cout<<"\nEl jugador "<<miIt->duenio<<" va a Fortificar desde "<<sele<<"\n";
 
-                int da = miIt4->numTropas;
-                da = da + trop;
-                miIt4->numTropas = da;
-
-                puede3 = true;
-
-                std::cout<<"\nEl territorio "<<miIt3->nombreTerritorio<<" quedo con "<<miIt3->numTropas<<" tropas";
-                std::cout<<"\nEl territorio "<<miIt4->nombreTerritorio<<" quedo con "<<miIt4->numTropas<<" tropas";
-              }
-            }
-          }   
+            puede = true;
+          }
+          else if (sele.compare(miIt->nombreTerritorio) == 0 && jug.compare(miIt->duenio) == 0 && miIt->numTropas < 2)
+          {
+            pocas = true;
+          }
         }
       }
+      if(puede == false)
+      {
+        if (pocas == true)
+          std::cout<<"\nEste territorio no puede Fortificar porque solo tiene 1 tropa\n";
+        else
+          std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n";
+      }
+    }
+    
+    while (puede2 == false)
+    {
+      std::cout<<"\nQue territorio desea Fortificar? ";
+      std::getline(std::cin, sele2);
+
+      std::list<Territorio>::iterator miIt2;
+      for(int i=0; i<6; i++)
+      {
+        for (miIt2 = contiP[i]->territoriosC.begin(); miIt2 != contiP[i]->territoriosC.end(); miIt2++)
+        {
+          if(sele2.compare(miIt2->nombreTerritorio) == 0 && jug.compare(miIt2->duenio) == 0)
+          {
+            std::cout<<"\nEl jugador "<<miIt2->duenio<<" va a fortificar "<<sele2<<"\n";
+            puede2 = true;
+          }
+          else
+          {
+            
+          }
+        }
+      }
+      if(puede2 == false)
+        std::cout<<"\nEl territorio "<<sele2<<" no existe o es tuyo\n\n";
     }
 
-    if (puede3 == false)
-      std::cout<<"\nNo se han podido enviar tropas, intente nuevamente\n\n";
+    // 
+
+    bool puede3 = false;
+    int trop;
+    
+    while (puede3 == false)
+    {
+      std::cout<<"\nCuantas tropas desea mandar? ";
+      std::cin>>trop;
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+      std::list<Territorio>::iterator miIt3;
+      for(int i=0; i<6; i++)
+      {
+        for (miIt3 = contiP[i]->territoriosC.begin(); miIt3 != contiP[i]->territoriosC.end(); miIt3++)
+        {
+          if(sele.compare(miIt3->nombreTerritorio) == 0 && trop < miIt3->numTropas)
+          {
+            std::list<Territorio>::iterator miIt4;
+            for(int i=0; i<6; i++)
+            {
+              for (miIt4 = contiP[i]->territoriosC.begin(); miIt4 != contiP[i]->territoriosC.end(); miIt4++)
+              {
+                if(sele2.compare(miIt4->nombreTerritorio) == 0)
+                {
+                  int quita = miIt3->numTropas;
+                  quita = quita - trop;
+                  miIt3->numTropas = quita;
+
+                  int da = miIt4->numTropas;
+                  da = da + trop;
+                  miIt4->numTropas = da;
+
+                  puede3 = true;
+
+                  std::cout<<"\nEl territorio "<<miIt3->nombreTerritorio<<" quedo con "<<miIt3->numTropas<<" tropas";
+                  std::cout<<"\nEl territorio "<<miIt4->nombreTerritorio<<" quedo con "<<miIt4->numTropas<<" tropas\n";
+                }
+              }
+            }   
+          }
+        }
+      }
+
+      if (puede3 == false)
+        std::cout<<"\nNo se han podido enviar tropas, intente nuevamente\n\n";
+    }
   }
 }
