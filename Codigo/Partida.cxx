@@ -1061,7 +1061,7 @@ void Partida::fortificar()
       }
 
       if (puede3 == false)
-        std::cout<<"\nNo se han podido enviar tropas, intente nuevamente\n\n";
+        std::cout<<"\nNo se han podido enviar tropas, intente nuevamente\n";
     }
   }
 }
