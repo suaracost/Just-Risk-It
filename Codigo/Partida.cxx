@@ -695,7 +695,7 @@ void Partida::atacar()
 
           puede = true;
         }
-        else if (sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0 && miIt3->numTropas < 1)
+        else if (sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0 && miIt3->numTropas < 2)
         {
           std::cout<<"\nEste territorio no puede atacar\n";
           cancelar = true;
@@ -785,7 +785,7 @@ void Partida::atacar()
               {
                 miIt5->duenio = jug;
                 miIt5->numTropas = 1;
-                std::cout<<"\nEl territorio "<<miIt5->nombreTerritorio<<" ahora es del jugador "<<jug<<"\n\n";
+                std::cout<<"\nEl territorio "<<miIt5->nombreTerritorio<<" ahora es del jugador "<<jug<<"\n";
                 final = true;
               }
             }
