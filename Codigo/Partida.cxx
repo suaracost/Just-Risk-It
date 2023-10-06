@@ -517,7 +517,6 @@ void Partida::turno()
     {
       atacar();
       sigue = true;
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
     else if (deci.compare("no") == 0)
     {
