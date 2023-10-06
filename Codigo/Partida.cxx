@@ -511,12 +511,12 @@ void Partida::turno()
     std::cout<<"Desea atacar? (si o no) ";
     std::cin>>deci;
 
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     if(deci.compare("si") == 0)
     {
       atacar();
       sigue = true;
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
     else if (deci.compare("no") == 0)
     {
@@ -527,7 +527,7 @@ void Partida::turno()
   }
 
   std::string cont2;
-  std::cout<<"Presione enter para continuar ";
+  std::cout<<"\nPresione enter para continuar ";
   std::getline(std::cin, cont2);
 
   fortificar();
@@ -729,7 +729,7 @@ void Partida::atacar()
         {
           if(sele2.compare(miIt4->nombreTerritorio) == 0 && jug.compare(miIt4->duenio) != 0)
           {
-            std::cout<<"\nEl jugador "<<miIt4->duenio<<" va a atacar "<<sele2<<"\n";
+            std::cout<<"\nEl jugador "<<jug<<" va a atacar "<<sele2<<"\n";
 
             puede2 = true;
           }
