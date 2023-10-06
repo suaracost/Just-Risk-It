@@ -1,6 +1,7 @@
 #include "Partida.h"
 
 #include <iostream>
+#include <limits>
 
 // cosas que se necesitan para cambiar el color del texto
 #define reset "\033[0m"
@@ -28,6 +29,8 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   {
   std::cout<<"\nIngrese la cantidad de jugadores: ";
   std::cin>>num;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
   } while (num < 3 || num > 6);
 
   if (num == 3)
@@ -287,6 +290,8 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
                     int mandar;
                     std::cout<<"\nCuantas tropas quiere agregar? (tiene "<<miIt3->cantiTropas<<" tropas) ";
                     std::cin>>mandar;
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
                     if (mandar <= miIt3->cantiTropas)
                     { 
                       int nueva = miIt4->numTropas;
@@ -988,6 +993,7 @@ void Partida::fortificar()
   {
     std::cout<<"\nCuantas tropas desea mandar? ";
     std::cin>>trop;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::list<Territorio>::iterator miIt3;
     for(int i=0; i<6; i++)
