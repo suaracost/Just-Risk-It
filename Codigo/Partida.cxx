@@ -918,7 +918,7 @@ void Partida::fortificar()
 
   std::string jug = turnos.front();
 
-  bool puede = false, puede2 = false;
+  bool puede = false, puede2 = false, pocas = false;
   std::string sele, sele2;
 
   std::string col;
@@ -932,7 +932,29 @@ void Partida::fortificar()
     }
   }
 
-  mostrarTerritoriosPropios(jug, col);
+  std::list<Territorio>::iterator miIt3;
+  int conta = 0;
+
+  for(int i=0; i<6; i++)
+  {
+    for(miIt3 = contiP[i]->territoriosC.begin(); miIt3 != contiP[i]->territoriosC.end(); miIt3++)
+    {
+      if(jug.compare(miIt3->duenio) == 0)
+      {
+        conta++;
+      }
+    }
+  }
+
+  if(conta == 1)
+  {
+    puede = true;
+    std::cout<<"\nEl jugador "<<jug<<" solo tiene un territorio, no puede Fortificar\n\n";
+  }
+
+  else 
+    mostrarTerritoriosPropios(jug, col);
+  
   while (puede == false)
   {
     std::cout<<"\nDesde que territorio desea Fortificar? ";
@@ -949,14 +971,19 @@ void Partida::fortificar()
 
           puede = true;
         }
-        else
+        else if (sele.compare(miIt->nombreTerritorio) == 0 && jug.compare(miIt->duenio) == 0 && miIt->numTropas < 2)
         {
-          
+          pocas = true;
         }
       }
     }
     if(puede == false)
-      std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
+    {
+      if (pocas == true)
+        std::cout<<"\nEste territorio no puede Fortificar porque solo tiene 1 tropa\n\n";
+      else
+        std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
+    }
   }
   
   while (puede2 == false)
@@ -1025,11 +1052,10 @@ void Partida::fortificar()
             }
           }   
         }
-        else
-        {
-          std::cout<<"\nNo se han podido enviar tropas, intente nuevamente\n\n";
-        }
       }
     }
+
+    if (puede3 == false)
+      std::cout<<"\nNo se han podido enviar tropas, intente nuevamente\n\n";
   }
 }
