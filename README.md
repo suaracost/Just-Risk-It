@@ -5,6 +5,10 @@
 # Proyecto Estructuras de datos 🗺️
 Alejandro Suarez y Nicolas Quintana
 
+### Objetivo del proyecto 🎯
+
+Poner aqui una introducción al proyecto y el objetivo
+
 ----
 
 ### ¿Quienes somos?
