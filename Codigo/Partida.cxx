@@ -524,6 +524,8 @@ void Partida::turno()
       std::cout<<"\nRespuesta no reconocida, intente nuevamente\n";
   }
 
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
   std::string cont2;
   std::cout<<"Presione enter para continuar ";
   std::getline(std::cin, cont2);
@@ -679,6 +681,8 @@ void Partida::atacar()
   mostrarTerritoriosPropios(jug, col);
   while (puede == false)
   {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     std::cout<<"\nDesde que territorio desea atacar? ";
     std::getline(std::cin, sele);
 
