@@ -13,7 +13,7 @@ Alejandro Suarez y Nicolas Quintana
 ## Proyecto
 
 ### Instrucciones
--  [📚 Manual de juego 📚]()
+-  [📚 Manual de juego 📚](Documentos/manual.md)
 -  [📑 Instrucciones implementación 📑](Documentos/instrucciones.md)
 
 ### Implementación
