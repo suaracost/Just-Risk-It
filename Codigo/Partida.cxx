@@ -508,7 +508,7 @@ void Partida::turno()
 
   while(sigue == false)
   {
-    std::cout<<"\nDesea atacar? (si o no) ";
+    std::cout<<"Desea atacar? (si o no) ";
     std::cin>>deci;
 
     if(deci.compare("si") == 0)
@@ -961,6 +961,8 @@ void Partida::fortificar()
       std::cout<<"\nDesde que territorio desea Fortificar? ";
       std::getline(std::cin, sele);
 
+      pocas = false;
+
       std::list<Territorio>::iterator miIt;
       for(int i=0; i<6; i++)
       {
@@ -1048,7 +1050,7 @@ void Partida::fortificar()
                   puede3 = true;
 
                   std::cout<<"\nEl territorio "<<miIt3->nombreTerritorio<<" quedo con "<<miIt3->numTropas<<" tropas";
-                  std::cout<<"\nEl territorio "<<miIt4->nombreTerritorio<<" quedo con "<<miIt4->numTropas<<" tropas\n";
+                  std::cout<<"\nEl territorio "<<miIt4->nombreTerritorio<<" quedo con "<<miIt4->numTropas<<" tropas\n\n";
                 }
               }
             }   
