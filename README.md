@@ -14,7 +14,7 @@ La codificación de Huffman es un algoritmo de compresión de datos que utiliza 
 
 ## Comandos
 
-### Función guardar:
+### Guardar:
 
        guardarguardar <nombre_archivo>
 
