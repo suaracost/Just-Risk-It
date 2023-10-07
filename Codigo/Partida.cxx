@@ -750,7 +750,7 @@ void Partida::atacar()
     while(final == false)
     {
       int check;
-      int dadoAtq, dadoDef, numD;
+      int dadoAtq, dadoDef, numD = 6;
 
       while (numD < 0 && numD > 3)
       {
