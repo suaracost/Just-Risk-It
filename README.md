@@ -26,8 +26,6 @@ El comando guardar guarda el estado actual del juego en un archivo de texto plan
   - La cantidad de países que ocupa.
   - El identificador de cada país junto con la cantidad de unidades de ejército en él.
   - La cantidad de tarjetas que posee.
-  - El identificador de cada tarjeta.
-  - Función guardar_comprimido:
 ### Guardar Comprimido
 
         guardar_comprimido <nombre_archivo>
