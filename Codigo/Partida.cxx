@@ -759,26 +759,14 @@ void Partida::atacar()
       if(numD == 1)
       {
         sig = true;
-        dadoAtq = 1 + std::rand() % 6; // Genera un número entre 1 y 6
-        std::cout<<"\nEl atacante saco un: "<<dadoAtq;
-        dadoDef = 1 + std::rand() % 6;
-        std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
       }
       else if (numD == 2)
       {
         sig = true;
-        dadoAtq = 1 + std::rand() % 12; // Genera un número entre 1 y 12
-        std::cout<<"\nEl atacante saco un: "<<dadoAtq;
-        dadoDef = 1 + std::rand() % 12;
-        std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
       }
       else if (numD == 3)
       {
         sig = true;
-        dadoAtq = 1 + std::rand() % 18; // Genera un número entre 1 y 18
-        std::cout<<"\nEl atacante saco un: "<<dadoAtq;
-        dadoDef = 1 + std::rand() % 18;
-        std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
       }
       else
       {
@@ -789,6 +777,28 @@ void Partida::atacar()
     while(final == false)
     {
       int check;
+
+      if(numD == 1)
+      {
+        dadoAtq = 1 + std::rand() % 6; // Genera un número entre 1 y 6
+        std::cout<<"\nEl atacante saco un: "<<dadoAtq;
+        dadoDef = 1 + std::rand() % 6;
+        std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
+      }
+      else if (numD == 2)
+      {
+        dadoAtq = 1 + std::rand() % 12; // Genera un número entre 1 y 12
+        std::cout<<"\nEl atacante saco un: "<<dadoAtq;
+        dadoDef = 1 + std::rand() % 12;
+        std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
+      }
+      else if (numD == 3)
+      {
+        dadoAtq = 1 + std::rand() % 18; // Genera un número entre 1 y 18
+        std::cout<<"\nEl atacante saco un: "<<dadoAtq;
+        dadoDef = 1 + std::rand() % 18;
+        std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
+      }
 
       if (dadoAtq>dadoDef)
       {
