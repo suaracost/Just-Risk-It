@@ -1,4 +1,4 @@
-\![Banner](Images/header.jpg)
+![Banner](Images/header.jpg)
 
 <sub> Imagen tomada de: [Steam: Risk](https://store.steampowered.com/app/1128810/RISK_Global_Domination/?l=latam) </sub>
 
@@ -6,42 +6,7 @@
 Alejandro Suarez y Nicolas Quintana
 
 ### Objetivo del proyecto 🎯
-El objetivo del componente 2 es implementar un árbol de Huffman para codificar y decodificar archivos de juego de Risk. Este objetivo es importante para el desarrollo de un juego de Risk digital porque permite a los usuarios guardar y cargar partidas de manera eficiente.
-
-### Codificación de Huffman:
-
-![Banner](Images/download.png)
-
-La codificación de Huffman es un algoritmo de compresión de datos que utiliza un árbol binario para asignar a cada símbolo del mensaje una secuencia de bits de longitud variable. Los símbolos que aparecen con mayor frecuencia se codifican con secuencias de bits más cortas, mientras que los símbolos que aparecen con menor frecuencia se codifican con secuencias de bits más largas.Este algoritmo permite reducir el tamaño de los archivos de juego, lo que hace que sea más eficiente guardarlos y cargarlos. Esto es importante porque los juegos de Risk pueden ser grandes, especialmente si se han jugado durante muchas rondas. Además de reducir el tamaño de los archivos, la codificación de Huffman también puede ayudar a mejorar el rendimiento del juego. Esto se debe a que los archivos más pequeños se pueden leer y escribir más rápidamente.
-
-## Comandos
-
-### Guardar:
-
-       guardarguardar <nombre_archivo>
-
-El comando guardar guarda el estado actual del juego en un archivo de texto plano. El archivo debe contener la siguiente información:
-- La cantidad de jugadores.
-- Para cada jugador:
-  - El nombre del jugador.
-  - El color del jugador.
-  - La cantidad de países que ocupa.
-  - El identificador de cada país junto con la cantidad de unidades de ejército en él.
-  - La cantidad de tarjetas que posee.
-### Guardar Comprimido
-
-        guardar_comprimido <nombre_archivo>
-
-Comando guardar_comprimido guarda el estado actual del juego en un archivo binario comprimido utilizando la codificación de Huffman. El archivo binario debe tener la siguiente estructura:
-- n: Un número entero de 2 bytes que representa la cantidad de caracteres diferentes presentes en el archivo de juego que se va a almacenar.
-- ci y fi: Dos números enteros de 1 y 8 bytes, respectivamente, que representan un caracter (código ASCII) y su frecuencia asociada (cuántas veces aparece en el archivo).
-- w: Un número entero de 8 bytes que representa la longitud del archivo, es decir, la cantidad de caracteres que incluye originalmente.
-- binary_code: La secuencia binaria que representa la i-ésima secuencia.
-### Función inicializar:
-
-          inicializar <nombre_archivo>
-
-- inicializar inicializa el juego con los datos contenidos en un archivo de juego. El archivo debe contener la información descrita en la función guardar.
+El proyecto "Just Risk It" es una iniciativa desarrollada por estudiantes de la Universidad Javeriana con el propósito de aplicar los conocimientos adquiridos en la clase de Estructura de Datos. Su objetivo principal es la creación del juego Risk en c++, este programa será capaz de recibir comandos textuales y estará compuesto por diversos componentes. Estos componentes desempeñarán un papel fundamental en la implementación, permitiendo no solo disfrutar del juego de Risk siguiendo todas sus reglas tradicionales, sino también ampliar sus funcionalidades. Esto incluirá características como el guardado de partidas, la determinación del costo para alcanzar un territorio específico y la identificación de la conquista más económica, lo que ayudará a los jugadores a encontrar el camino más eficiente y económico para alcanzar sus objetivos. Estas funcionalidades se llevarán a cabo mediante el uso de estructuras de datos lineales, árboles y grafos, lo que permitirá una implementación sólida y versátil del sistema.
 
 ### ¿Quienes somos?
 - [🪪🍻 Wiki 🍻🪪](https://github.com/suaracost/Just-Risk-It/wiki)
