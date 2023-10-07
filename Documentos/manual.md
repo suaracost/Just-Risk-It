@@ -57,4 +57,6 @@ Para ganar Risk, es importante desarrollar una estrategia adecuada. Una buena es
 - Conquistar territorios: El objetivo del juego es conquistar el mundo, por lo que es importante conquistar territorios.
 - Proteger los territorios: Una vez que se han conquistado territorios, es importante protegerlos de los ataques de los otros jugadores.
 - Formar alianzas: Las alianzas pueden ser útiles para derrotar a los otros jugadores.
+### Fin del juego
 
+El juego termina cuando un jugador conquista todos los territorios de los otros jugadores. El jugador vencedor es el ganador del juego.
