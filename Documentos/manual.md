@@ -14,7 +14,7 @@ Fortaleza: Un jugador puede mover sus ejércitos de un territorio a otro.
 Refuerzo: Un jugador recibe un número de refuerzos igual al número de territorios que controla.
 Objetivo: Un jugador puede reclamar la victoria si cumple con el objetivo de la carta de objetivo.
 
-## Ataque
+### Ataque
 Bbjetivo de un ataque es capturar un territorio derrotando a todos los ejércitos enemigos que ya están en él. Para atacar un territorio el jugador La batalla se libra tirando los dados un jugador debe tirar los dados y sumar el resultado de los dados a la fuerza de su ejército. La fuerza de un ejército es el número de piezas que lo componen.
 
 El jugador atacante debe tirar los dados dos veces. El primer dado determina el número de ataques que realizará el jugador atacante. El segundo dado determina el número de defensas que realizará el jugador defensor.
@@ -29,7 +29,7 @@ Si decides no atacar, aún puedes fortificar tu posición si lo deseas.
 - Se necesita al menos un ejército para atacar.
 - Se puede atacar un territorio tantas veces como se quiera, hasta que se conquiste o se cambie de objetivo.
 
-## Fortaleza
+### Fortaleza
 
 La fortificación es una acción que permite a un jugador aumentar la fuerza de un ejército en un territorio. Para fortificar un ejército, el jugador debe gastar un ejército de su reserva.
 
@@ -40,7 +40,7 @@ Reglas
 - La fuerza del ejército fortificado aumenta en 2.
 - Un ejército solo puede fortificarse una vez.
 
-## Refuerza
+### Refuerza
 los refuerzos son ejércitos nuevos que los jugadores reciben al final de cada turno. La cantidad de refuerzos que recibe un jugador depende del número de territorios que controle.
 
 Reglas
@@ -50,7 +50,7 @@ Reglas
 - Un jugador no puede tener más de 12 ejércitos en un solo territorio.
 - Si un jugador tiene más de 12 ejércitos en un solo territorio, los ejércitos extras se pierden.
 
-## Estrategia
+### Estrategia
 
 Para ganar Risk, es importante desarrollar una estrategia adecuada. Una buena estrategia incluye los siguientes elementos:
 
