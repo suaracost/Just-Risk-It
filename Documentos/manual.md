@@ -1,18 +1,13 @@
 # Manual
 
-Risk es un juego de estrategia para 2 a 6 jugadores, en el que cada jugador asume el control de sus territorios con el objetivo de  conquistar el mundo, conquistando todos los territorios de los otros jugadores rivales.
-
-## Objetivo
-
-El objetivo de la carta de objetivo es conquistar un número determinado de territorios de un determinado color. Un jugador puede reclamar la victoria si cumple con el objetivo de la carta de objetivo.
+Risk es un juego de estrategia para 2-6 jugadores, en el que cada jugador asume el control de sus territorios con el objetivo de  conquistar el mundo, conquistando todos los territorios de los otros jugadores rivales.
 
 ## Reglas
-El juego se desarrolla en turnos, comenzando por el jugador que haya sido el último en ganar un juego de Risk. En su turno, cada jugador debe realizar una de las siguientes acciones:
+El juego se desarrolla en turnos donde cada jugador puede hacer estas acciones:
 
-Ataque: Un jugador puede atacar a un territorio controlado por otro jugador. Para ello, debe tirar los dados y sumar el resultado de los dados a la fuerza de su ejército. Si el resultado es mayor que la fuerza del ejército defensor, el jugador atacante conquista el territorio.
-Fortaleza: Un jugador puede mover sus ejércitos de un territorio a otro.
-Refuerzo: Un jugador recibe un número de refuerzos igual al número de territorios que controla.
-Objetivo: Un jugador puede reclamar la victoria si cumple con el objetivo de la carta de objetivo.
+Nuevas tropas: Un jugador recibe nuevas tropas dependiendo del número de territorios que controla, se le dara una tropa nueva por cada 3 territorios que tenga.
+Ataque: Un jugador puede atacar a un territorio controlado por otro jugador. Para ello, debe tirar los dados y el resultado de los dados es la fuerza de su ejército. Si el resultado es mayor que la fuerza del ejército defensor, el jugador atacante le quita la cantidad de tropas equivalente al numero de dados que se hayan tirado. En caso contrario las tropas seran restadas del ejercito atacante.
+Fortificar: Un jugador puede mover sus ejércitos de un territorio a otro.
 
 ### Ataque
 Bbjetivo de un ataque es capturar un territorio derrotando a todos los ejércitos enemigos que ya están en él. Para atacar un territorio el jugador La batalla se libra tirando los dados un jugador debe tirar los dados y sumar el resultado de los dados a la fuerza de su ejército. La fuerza de un ejército es el número de piezas que lo componen.
