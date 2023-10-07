@@ -31,23 +31,12 @@ Reglas
 - El jugador decide cuantas tropas decide enviar a otro territorio.
 - Solo se puede fortificar una vez por turno.
 
-### Refuerza
-los refuerzos son ejércitos nuevos que los jugadores reciben al final de cada turno. La cantidad de refuerzos que recibe un jugador depende del número de territorios que controle.
-
-Reglas
-
-- Al final de cada turno, cada jugador recibe un número de refuerzos igual al número de territorios que controle.
-- Los refuerzos se colocan en los territorios controlados por el jugador.
-- Un jugador no puede tener más de 12 ejércitos en un solo territorio.
-- Si un jugador tiene más de 12 ejércitos en un solo territorio, los ejércitos extras se pierden.
-
 ### Estrategia
-
 Para ganar Risk, es importante desarrollar una estrategia adecuada. Una buena estrategia incluye los siguientes elementos:
 
 - Conquistar territorios: El objetivo del juego es conquistar el mundo, por lo que es importante conquistar territorios.
 - Proteger los territorios: Una vez que se han conquistado territorios, es importante protegerlos de los ataques de los otros jugadores.
 - Formar alianzas: Las alianzas pueden ser útiles para derrotar a los otros jugadores.
-### Fin del juego
 
+### Fin del juego
 El juego termina cuando un jugador conquista todos los territorios de los otros jugadores. El jugador vencedor es el ganador del juego.
