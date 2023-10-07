@@ -1,6 +1,6 @@
 # Manual 📚
 
-Risk es un juego de estrategia para 2-6 jugadores, en el que cada jugador asume el control de sus territorios con el objetivo de  conquistar el mundo, conquistando todos los territorios de los otros jugadores rivales.
+Risk es un juego de estrategia para 3-6 jugadores, en el que cada jugador asume el control de sus territorios con el objetivo de  conquistar el mundo, conquistando todos los territorios de los otros jugadores rivales.
 
 ## Reglas 📜
 El juego se desarrolla en turnos donde cada jugador puede hacer estas acciones:
