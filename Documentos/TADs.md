@@ -1,6 +1,6 @@
 # Tads
 
-## TAD Menu
+## TAD Menu 📱
 ### Conjunto mínimo de datos
 - partidas (Partida): Lista <Partida>, Guarda todas las partidas que se guarden en un menú
 ### Comportamiento del objeto
@@ -9,7 +9,7 @@
 - Inicio(): Inicia el juego donde cada jugador se crea y inicia sus territorios
     - Partida p = Partida(id)
   
-## TAD Partida
+## TAD Partida 🎯
 ### Conjunto mínimo de datos
 - Idpartida: Entero, Identificador de la partida 
 - jugadores: Lista de Jugador, Indica todos los jugadores dentro de la partida
@@ -29,7 +29,7 @@
 -  atacar() : Dentro de la función turno, decide si quiere atacar a un territorio enemigo para conquistarlo o no.
 -  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
   
-## TAD Continente
+## TAD Continente 🗺️
 ### Conjunto mínimo de datos
 - nombreContinente : String , Nombre del continente
 - territoriosC: Lista de Territorio, Indica todos los territorios que estén en el continente
@@ -37,7 +37,7 @@
 - Continente(String nombreCon) : Operación para crear un continente
    - Post: List<Territorio> territorios = new List<Territorio>(0) , nombreContinente = nombreCon
  
-## TAD Territorio
+## TAD Territorio 🌐
 ### Conjunto mínimo de datos
 - nombreTerritorio: String, Nombre del territorio
 - numTropas: Entero , número de tropas en el territorio
@@ -47,7 +47,7 @@
 - Territorio(String nombreTer): Crea un nuevo territorio
     - Post: Int numTropas = 0 , nombreTerritorio = nombreTer, tomado = false
 
-## TAD Jugador
+## TAD Jugador 🤖
 ### Conjunto mínimo de datos
 - colorJugador: String , Color del jugador dentro de la partida
 - nombreJugador: String , Identificación del jugador
@@ -56,7 +56,7 @@
 - Jugador(String id,String color): Operación para crear un Jugador
   - Pos: nombreJugador = nombreJug, colorJugador = colorJug, cantiTropas = cantiTrop
 
-## TAD Carta
+## TAD Carta 🃏
 ### Conjunto mínimo de datos
 - NombreCarta: String, Nombre de la carta 
 - tipoCarta, String, Describe de qué tipo es la carta dentro del juego
