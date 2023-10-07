@@ -3,7 +3,6 @@
 #include <iostream>
 #include <limits>
 #include <fstream>
-#include <sstream>
 
 // cosas que se necesitan para cambiar el color del texto
 #define reset "\033[0m"
