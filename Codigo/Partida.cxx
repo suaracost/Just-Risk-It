@@ -679,6 +679,7 @@ void Partida::atacar()
   }
 
   mostrarTerritoriosPropios(jug, col);
+  
   while (puede == false)
   {
     std::cout<<"\nDesde que territorio desea atacar? ";
@@ -749,10 +750,40 @@ void Partida::atacar()
     while(final == false)
     {
       int check;
-      int dadoAtq = 1 + std::rand() % 6; // Genera un número entre 1 y 6
-      std::cout<<"\nEl atacante saco un: "<<dadoAtq;
-      int dadoDef = 1 + std::rand() % 6;
-      std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
+      int dadoAtq, dadoDef, numD;
+
+      while (numD < 0 && numD > 3)
+      {
+        std::cout<<"\nCuantos dados desea tirar? (1, 2 o 3) ";
+        std::cin>>numD;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        if(numD == 1)
+        {
+          dadoAtq = 1 + std::rand() % 6; // Genera un número entre 1 y 6
+          std::cout<<"\nEl atacante saco un: "<<dadoAtq;
+          dadoDef = 1 + std::rand() % 6;
+          std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
+        }
+        else if (numD == 2)
+        {
+          dadoAtq = 1 + std::rand() % 12; // Genera un número entre 1 y 12
+          std::cout<<"\nEl atacante saco un: "<<dadoAtq;
+          dadoDef = 1 + std::rand() % 12;
+          std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
+        }
+        else if (numD == 3)
+        {
+          dadoAtq = 1 + std::rand() % 18; // Genera un número entre 1 y 18
+          std::cout<<"\nEl atacante saco un: "<<dadoAtq;
+          dadoDef = 1 + std::rand() % 18;
+          std::cout<<"\nEl defensor saco un: "<<dadoDef<<"\n\n";
+        }
+        else
+        {
+          std::cout<<"\nRespuesta no reconocida, intente nuevamente\n\n";
+        }
+      }
 
       if (dadoAtq>dadoDef)
       {
@@ -764,7 +795,12 @@ void Partida::atacar()
             if(sele2.compare(miIt5->nombreTerritorio) == 0 && jug.compare(miIt5->duenio) != 0)
             {
               int aux = miIt5->numTropas;
-              aux = aux - 1;
+              
+              if(aux < numD+1)
+                aux = 0;
+              else 
+                aux = aux - numD;
+
               miIt5->numTropas = aux;
               
               std::list<Territorio>::iterator miItX;
@@ -806,7 +842,12 @@ void Partida::atacar()
             if(sele.compare(miIt6->nombreTerritorio) == 0 && jug.compare(miIt6->duenio) == 0)
             {
               int aux = miIt6->numTropas;
-              aux = aux - 1;
+
+              if(aux < numD+1)
+                aux = 0;
+              else 
+                aux = aux - numD;
+              
               check = aux;
               miIt6->numTropas = aux;
               
@@ -847,7 +888,12 @@ void Partida::atacar()
             if(sele.compare(miIt7->nombreTerritorio) == 0 && jug.compare(miIt7->duenio) == 0)
             {
               int aux = miIt7->numTropas;
-              aux = aux - 1;
+              
+              if(aux < numD+1)
+                aux = 0;
+              else 
+                aux = aux - numD;
+              
               check = aux;
               miIt7->numTropas = aux;
 
