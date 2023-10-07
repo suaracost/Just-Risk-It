@@ -1137,6 +1137,8 @@ bool Partida::guardarNormal(std::string nombreArchivo)
 
   if(archivo.is_open())
   {
+    archivo<<"- Numero de jugadores: "<<jugadoresP.size()<<"\n";
+    
     archivo<<"- Territorios\n";
     for(int i=0; i<6; i++)
     {
