@@ -156,7 +156,13 @@ void Menu::menu()
 
     else if (std::regex_match(comando, pattern2))
     {
-      std::cout<<"Se ha guardado la partida en "<<guN<<std::endl;
+      bool guardado = p.guardarNormal(guN);
+      
+      if (guardado == true)
+        std::cout<<"\nSe ha guardado la partida en "<<guN<<"\n\n";
+
+      else if (guardado == false)
+        std::cout<<"\nNo se ha podido guardar la partida, intente nuevamente\n\n";
     }
 
     else if (comando.compare("guardar ?") == 0)

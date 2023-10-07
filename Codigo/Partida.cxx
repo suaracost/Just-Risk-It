@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <limits>
+#include <fstream>
+#include <sstream>
 
 // cosas que se necesitan para cambiar el color del texto
 #define reset "\033[0m"
@@ -1125,4 +1127,53 @@ void Partida::fortificar()
         std::cout<<"\nNo se han podido enviar tropas, intente nuevamente\n";
     }
   }
+}
+
+bool Partida::guardarNormal(std::string nombreArchivo)
+{
+  bool guardado = false;
+
+  std::ofstream archivo(nombreArchivo);
+
+  if(archivo.is_open())
+  {
+    archivo<<"Territorios\n";
+    for(int i=0; i<6; i++)
+    {
+      archivo<<contiP[i]->nombreContinente;
+      std::list<Territorio>::iterator miIt;
+      for (miIt = contiP[i]->territoriosC.begin(); miIt != contiP[i]->territoriosC.end(); miIt++)
+      {
+        archivo<<miIt->nombreTerritorio<<","<<miIt->duenio<<","<<miIt->numTropas<<","<<miIt->tomado<<"\n";
+      }
+    }
+
+    archivo<<"Jugadores\n";
+    std::list<Jugador>::iterator miIt2;
+    for(miIt2 = jugadoresP.begin(); miIt2 != jugadoresP.end(); miIt2++)
+    {
+      archivo<<miIt2->nombreJugador<<","<<miIt2->colorJugador<<","<<miIt2->cantiTropas<<"\n";
+    }
+
+    archivo<<"Turnos\n";
+    while(!turnos.empty())
+    {
+      archivo<<turnos.front();
+      turnos.pop();
+
+      if (!turnos.empty()) 
+      {
+        archivo << "\n";
+      }
+    }
+
+    guardado = true;
+    archivo.close();
+  }
+  else
+  {
+    guardado = false;
+  }
+
+  return guardado;
 }

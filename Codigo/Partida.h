@@ -29,6 +29,7 @@ class Partida
     void nuevasTropas();
     void atacar();
     void fortificar();
+    bool guardarNormal(std::string nombreArchivo);
 };
 
 #endif 
