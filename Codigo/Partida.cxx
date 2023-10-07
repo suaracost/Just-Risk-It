@@ -1137,10 +1137,10 @@ bool Partida::guardarNormal(std::string nombreArchivo)
 
   if(archivo.is_open())
   {
-    archivo<<"Territorios\n";
+    archivo<<"- Territorios\n";
     for(int i=0; i<6; i++)
     {
-      archivo<<contiP[i]->nombreContinente;
+      archivo<<contiP[i]->nombreContinente<<"\n";
       std::list<Territorio>::iterator miIt;
       for (miIt = contiP[i]->territoriosC.begin(); miIt != contiP[i]->territoriosC.end(); miIt++)
       {
@@ -1148,14 +1148,14 @@ bool Partida::guardarNormal(std::string nombreArchivo)
       }
     }
 
-    archivo<<"Jugadores\n";
+    archivo<<"- Jugadores\n";
     std::list<Jugador>::iterator miIt2;
     for(miIt2 = jugadoresP.begin(); miIt2 != jugadoresP.end(); miIt2++)
     {
       archivo<<miIt2->nombreJugador<<","<<miIt2->colorJugador<<","<<miIt2->cantiTropas<<"\n";
     }
 
-    archivo<<"Turnos\n";
+    archivo<<"- Turnos\n";
     while(!turnos.empty())
     {
       archivo<<turnos.front();
