@@ -10,11 +10,8 @@ Ataque: Un jugador puede atacar a un territorio controlado por otro jugador. Par
 Fortificar: Un jugador puede mover sus ejércitos de un territorio a otro.
 
 ### Ataque
-Bbjetivo de un ataque es capturar un territorio derrotando a todos los ejércitos enemigos que ya están en él. Para atacar un territorio el jugador La batalla se libra tirando los dados un jugador debe tirar los dados y sumar el resultado de los dados a la fuerza de su ejército. La fuerza de un ejército es el número de piezas que lo componen.
-
-El jugador atacante debe tirar los dados dos veces. El primer dado determina el número de ataques que realizará el jugador atacante. El segundo dado determina el número de defensas que realizará el jugador defensor.
-
-Si el resultado del ataque es mayor que el resultado de la defensa, el jugador atacante conquista el territorio.
+El objetivo de un ataque es capturar un territorio derrotando a todos los ejércitos enemigos que ya están en él. Para atacar, el atacante y el
+defensor, deben tirar los dados y el resultado de los dados es la fuerza de su ejército. Si el resultado atacante es mayor que la fuerza del ejército defensor, el jugador atacante le quita la cantidad de tropas equivalente al numero de dados que se hayan tirado. En caso contrario las tropas seran restadas del ejercito atacante.
 
 Si decides no atacar, aún puedes fortificar tu posición si lo deseas.
 
@@ -22,18 +19,17 @@ Si decides no atacar, aún puedes fortificar tu posición si lo deseas.
  
  - Solo se puede atacar a un territorio adyacente o conectado por una línea de puntos.
 - Se necesita al menos un ejército para atacar.
-- Se puede atacar un territorio tantas veces como se quiera, hasta que se conquiste o se cambie de objetivo.
+- Se puede atacar un territorio tantas veces como se quiera, hasta que se conquiste o hasta que el atacante decida parar.
 
-### Fortaleza
+### Fortificar
 
-La fortificación es una acción que permite a un jugador aumentar la fuerza de un ejército en un territorio. Para fortificar un ejército, el jugador debe gastar un ejército de su reserva.
+La fortificación es una acción que permite a un jugador aumentar la fuerza de un ejército en un territorio. Para fortificar un ejército, el jugador debe enviar tropas de otro territorio que controle al que se desea fortificar.
 
 Reglas
 
-- Un jugador puede fortificar un ejército en cualquier territorio que controle.
-- El jugador debe gastar un ejército de su reserva para fortificar un ejército.
-- La fuerza del ejército fortificado aumenta en 2.
-- Un ejército solo puede fortificarse una vez.
+- Un jugador puede fortificar cualquier territorio que controle.
+- El jugador decide cuantas tropas decide enviar a otro territorio.
+- Solo se puede fortificar una vez por turno.
 
 ### Refuerza
 los refuerzos son ejércitos nuevos que los jugadores reciben al final de cada turno. La cantidad de refuerzos que recibe un jugador depende del número de territorios que controle.
