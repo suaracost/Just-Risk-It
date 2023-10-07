@@ -750,9 +750,10 @@ void Partida::atacar()
     while(final == false)
     {
       int check;
-      int dadoAtq, dadoDef, numD = 6;
+      int dadoAtq, dadoDef, numD;
+      bool sig = false;
 
-      while (numD < 0 && numD > 3)
+      while (sig == false)
       {
         std::cout<<"\nCuantos dados desea tirar? (1, 2 o 3) ";
         std::cin>>numD;
@@ -760,6 +761,7 @@ void Partida::atacar()
 
         if(numD == 1)
         {
+          sig = true;
           dadoAtq = 1 + std::rand() % 6; // Genera un número entre 1 y 6
           std::cout<<"\nEl atacante saco un: "<<dadoAtq;
           dadoDef = 1 + std::rand() % 6;
@@ -767,6 +769,7 @@ void Partida::atacar()
         }
         else if (numD == 2)
         {
+          sig = true;
           dadoAtq = 1 + std::rand() % 12; // Genera un número entre 1 y 12
           std::cout<<"\nEl atacante saco un: "<<dadoAtq;
           dadoDef = 1 + std::rand() % 12;
@@ -774,6 +777,7 @@ void Partida::atacar()
         }
         else if (numD == 3)
         {
+          sig = true;
           dadoAtq = 1 + std::rand() % 18; // Genera un número entre 1 y 18
           std::cout<<"\nEl atacante saco un: "<<dadoAtq;
           dadoDef = 1 + std::rand() % 18;
