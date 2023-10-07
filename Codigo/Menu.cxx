@@ -63,11 +63,12 @@ void Menu::menu()
   mapamundi();
   bool iniciado = false;
   std::regex pattern("^turno .*$");
+  std::regex pattern2("^guardar .*.txt$");
   Partida p;
   
   // Menu de todos los comandos
 
-  std::string comando, tu, tuJ;
+  std::string comando, tu, tuJ, gu, guN;
   std::cout<<"\n";
   
   while(comando.compare("salir") != 0) // while para ingresar comandos
@@ -81,6 +82,15 @@ void Menu::menu()
       if (tu.compare("turno") == 0)
       {
         tuJ = comando.substr(6);
+      }
+    }
+
+    if(comando.size() > 7)
+    {
+      gu = comando.substr(0, 7);
+      if (gu.compare("guardar") == 0)
+      {
+        guN = comando.substr(8);
       }
     }
   
@@ -144,9 +154,9 @@ void Menu::menu()
 
     // condicionales de guardar 
 
-    else if (comando.compare("guardar") == 0)
+    else if (std::regex_match(comando, pattern2))
     {
-      std::cout<<"Posibles salidas: Juego no inicializado, Comando correcto y Error al Guardar\n"<<std::endl;
+      std::cout<<"Se ha guardado la partida en "<<guN<<std::endl;
     }
 
     else if (comando.compare("guardar ?") == 0)
