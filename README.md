@@ -9,7 +9,7 @@ Alejandro Suarez y Nicolas Quintana
 El objetivo del componente 2 es implementar un árbol de Huffman para codificar y decodificar archivos de juego de Risk.
 
 Codificación de Huffman:
-
+![Banner](
 La codificación de Huffman es un algoritmo de compresión de datos que utiliza un árbol binario para asignar a cada símbolo del mensaje una secuencia de bits de longitud variable. Los símbolos que aparecen con mayor frecuencia se codifican con secuencias de bits más cortas, mientras que los símbolos que aparecen con menor frecuencia se codifican con secuencias de bits más largas.
 
 ## Comandos
