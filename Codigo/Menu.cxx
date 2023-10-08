@@ -347,7 +347,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             contiP[numPaises] = new Continente(nombreContinente, 0);
             numPaises++;
           }
-          else
+          /*else
           {
             std::string nombreTerritorio = linea.substr(0, linea.find(","));
             linea = linea.substr(linea.find(",") + 1);
@@ -365,9 +365,8 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
 
             contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
-          }
+          }*/
         }
-        /*
         else if (seccionActual == "Jugadores")
         {
           std::string nombreJugador = linea.substr(0, linea.find(","));
@@ -387,7 +386,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
         {
           std::getline(archivo, linea);
           turnos.push(linea);
-        }*/
+        }
       }
     }
 
@@ -396,7 +395,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   
   //Partida p; // = Partida(idP, contiP, jugadoresP, turnos);
 
-  for(int i=0; i<6; i++)
+  /*for(int i=0; i<6; i++)
   {
     std::list<Territorio>::iterator it;
     std::cout<<contiP[i]->nombreContinente<<std::endl;
@@ -406,7 +405,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
     }
   }
 
-  /*std::list<Jugador>::iterator it;
+  std::list<Jugador>::iterator it;
   for(it=jugadoresP.begin(); it!=jugadoresP.end(); it++)
   {
     std::cout<<it->nombreJugador<<"-"<<it->colorJugador<<"-"<<it->cantiTropas<<std::endl;
