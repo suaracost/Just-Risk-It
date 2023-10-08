@@ -1232,7 +1232,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
               
               Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
 
-              contiP[numPaises-1]->territoriosC.push_back(nuevoTerritorio);
+              contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
             }
           }
         }
