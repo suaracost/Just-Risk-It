@@ -323,8 +323,12 @@ void Menu::abrirNormal(std::string nombreArchivo)
 
   if (archivo.is_open())
   {
+    std::cout<<"\n-- Este es el archivo que se ha leido --\n";
+
     while (std::getline(archivo, linea))
     {
+      std::cout<<linea<<std::endl;
+      
       if (linea.find("Numero de jugadores:") != std::string::npos)
       {
         std::string nume = linea.substr(linea.find(":") + 2);
@@ -350,7 +354,6 @@ void Menu::abrirNormal(std::string nombreArchivo)
           if (linea.find(")") != std::string::npos)
           {
             std::string nombreContinente = linea.substr(linea.find(")") + 2);
-            std::cout<<nombreContinente<<std::endl;
             contiP[numPaises] = new Continente(nombreContinente);
 
             while (!contiP[numPaises]->territoriosC.empty())
@@ -411,8 +414,7 @@ void Menu::abrirNormal(std::string nombreArchivo)
       }
     }
 
-    std::cout<<"aqui muere\n";
-
+    std::cout<<"\n------------ Fin de archivo ------------\n";
     archivo.close();
   }
 
