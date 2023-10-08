@@ -353,7 +353,10 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             std::cout<<nombreContinente<<std::endl;
             contiP[numPaises] = new Continente(nombreContinente);
 
-            contiP[numPaises]->territoriosC.clear();
+            while (!contiP[numPaises]->territoriosC.empty())
+            {
+              contiP[numPaises]->territoriosC.pop_front();
+            }
 
             numPaises++;
           }
