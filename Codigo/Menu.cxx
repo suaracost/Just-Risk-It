@@ -394,7 +394,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
     archivo.close();
   }
   
-  /*Partida p; // = Partida(idP, contiP, jugadoresP, turnos);
+  //Partida p; // = Partida(idP, contiP, jugadoresP, turnos);
 
   for(int i=0; i<6; i++)
   {
@@ -418,5 +418,5 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
     turnos.pop();
   }
 
-  return p;*/
+  //return p;
 }
