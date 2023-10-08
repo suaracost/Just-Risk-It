@@ -1240,8 +1240,8 @@ bool Partida::abrirNormal(std::string nombreArchivo)
             contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
           }
         }
-        /*aqui pasa el segmentation error
-        /else if (seccionActual == "Jugadores")
+        //aqui pasa el segmentation error
+        else if (seccionActual == "Jugadores")
         {
           std::string nombreJugador = linea.substr(0, linea.find(","));
           linea = linea.substr(linea.find(",") + 1);
@@ -1252,11 +1252,11 @@ bool Partida::abrirNormal(std::string nombreArchivo)
           std::string cantiT = (linea.substr(0, linea.find(",")));
           int cantiTropas = std::stoi(cantiT);
 
-          Jugador nuevoJugador = Jugador(nombreJugador, colorJugador, cantiTropas);
+          Jugador nuevoJugador(nombreJugador, colorJugador, cantiTropas);
 
           jugadoresP.push_back(nuevoJugador);
         }
-        else if (seccionActual == "Turnos")
+        /*else if (seccionActual == "Turnos")
         {
           std::getline(archivo, linea);
           turnos.push(linea);
