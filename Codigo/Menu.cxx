@@ -396,7 +396,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   
   //Partida p; // = Partida(idP, contiP, jugadoresP, turnos);
 
-  /*for(int i=0; i<6; i++)
+  for(int i=0; i<6; i++)
   {
     std::list<Territorio>::iterator it;
     std::cout<<contiP[i]->nombreContinente<<std::endl;
@@ -406,7 +406,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
     }
   }
 
-  std::list<Jugador>::iterator it;
+  /*std::list<Jugador>::iterator it;
   for(it=jugadoresP.begin(); it!=jugadoresP.end(); it++)
   {
     std::cout<<it->nombreJugador<<"-"<<it->colorJugador<<"-"<<it->cantiTropas<<std::endl;
