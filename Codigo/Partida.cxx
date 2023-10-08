@@ -127,7 +127,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
           if(aux2.compare("azul") == 0)
           {
-            std::cout<<blue;
+            std::cout<<"\n"<<blue;
           }
           else if(aux2.compare("rojo") == 0)
           {
@@ -135,19 +135,19 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
           }
           else if(aux2.compare("verde") == 0)
           {
-            std::cout<<green;
+            std::cout<<"\n"<<green;
           }
           else if(aux2.compare("amarillo") == 0)
           {
-            std::cout<<yellow;
+            std::cout<<"\n"<<yellow;
           }
           else if(aux2.compare("magenta") == 0)
           {
-            std::cout<<magenta;
+            std::cout<<"\n"<<magenta;
           }
           else if(aux2.compare("cyan") == 0)
           {
-            std::cout<<cyan;
+            std::cout<<"\n"<<cyan;
           }
 
           std::cout<<"\nEs el turno de "<<miIt->nombreJugador<<" para elegir territorio\n";

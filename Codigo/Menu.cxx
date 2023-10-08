@@ -65,7 +65,7 @@ void Menu::menu()
   bool iniciado = false;
   std::regex pattern("^turno .*$");
   std::regex pattern2("^guardar .*.txt$");
-  std::regex pattern3("^inicializar_archivo .*.txt$");
+  std::regex pattern3("^inicializar_archivo .*$");
   std::regex pattern4("^.*.txt$");
   std::regex pattern5("^.*.bin$");
   Partida p;
@@ -119,7 +119,7 @@ void Menu::menu()
 
     else if (comando.compare("inicializar ?") == 0)
     {
-      std::cout<< "La forma correcta de utilizar este comando es: inicializar\n"<<std::endl;
+      std::cout<< "\nLa forma correcta de utilizar este comando es: inicializar\n"<<std::endl;
       
     }
 
@@ -127,7 +127,7 @@ void Menu::menu()
 
     else if (comando.compare("turno ?") == 0)
     {
-      std::cout<<"La forma correcta de utilizar este comando es: turno <id_jugador>\n"<<std::endl;
+      std::cout<<"\nLa forma correcta de utilizar este comando es: turno <id_jugador>\n"<<std::endl;
     }
 
     else if (std::regex_match(comando, pattern)) 
@@ -142,7 +142,7 @@ void Menu::menu()
 
       if(iniciado == false)
       {
-        std::cout<<"El juego no ha sido inicializado\n\n";
+        std::cout<<"\nEl juego no ha sido inicializado\n\n";
       }
       else 
       {
@@ -150,7 +150,7 @@ void Menu::menu()
         {
           if (tuJ.compare(p.turnos.front()) != 0)
           {
-            std::cout<<"No es el turno de "<<tuJ<<" es el turno de "<<p.turnos.front()<<"\n\n";
+            std::cout<<"\nNo es el turno de "<<tuJ<<" es el turno de "<<p.turnos.front()<<"\n\n";
           }
           else if (tuJ.compare(p.turnos.front()) == 0)
           {
@@ -159,7 +159,7 @@ void Menu::menu()
         }
         else if (enc == false)
         {
-          std::cout<<"El jugador "<<tuJ<<" no hace parte de esta partida\n\n";
+          std::cout<<"\nEl jugador "<<tuJ<<" no hace parte de esta partida\n\n";
         }
 
       }
@@ -180,19 +180,19 @@ void Menu::menu()
 
     else if (comando.compare("guardar ?") == 0)
     {
-      std::cout<<"La forma correcta de utilizar este comando es: guardar <nombre_archivo>\n"<<std::endl;
+      std::cout<<"\nLa forma correcta de utilizar este comando es: guardar <nombre_archivo>\n"<<std::endl;
     }
 
     // condicionales de guardar_comprimido 
       
     else if (comando.compare("guardar_comprimido") == 0)
     {
-      std::cout<<"Posibles salidas: Juego no inicializado, Comando correcto y Error al Guardar\n"<<std::endl;
+      std::cout<<"\nPosibles salidas: Juego no inicializado, Comando correcto y Error al Guardar\n"<<std::endl;
     }
 
     else if (comando.compare("guardar_comprimido ?") == 0)
     {
-      std::cout<<"La forma correcta de utilizar este comando es: guardar_comprimido <nombre_archivo>\n"<<std::endl;
+      std::cout<<"\nLa forma correcta de utilizar este comando es: guardar_comprimido <nombre_archivo>\n"<<std::endl;
     }
 
     // condicionales de inicializar_archivo
@@ -210,51 +210,51 @@ void Menu::menu()
         //abrirComprimido(abN)
       }
       else  
-        std::cout<<"El archivo no tiene la extensión correcta, intente nuevamente\n\n";
+        std::cout<<"\nEl archivo no tiene la extensión correcta, intente nuevamente\n\n";
     }
 
     else if (comando.compare("inicializar_archivo ?") == 0)
     {
-      std::cout<<"La forma correcta de utilizar este comando es: inicializar_archivo <nombre_archivo>\n"<<std::endl;
+      std::cout<<"\nLa forma correcta de utilizar este comando es: inicializar_archivo <nombre_archivo>\n"<<std::endl;
     }
 
     // condicionales de costo_conquista 
 
     else if (comando.compare("costo_conquista") == 0)
     {
-      std::cout<<"Posibles salidas: Juego no inicializado, Juego terminado y Comando correcto\n"<<std::endl;
+      std::cout<<"\nPosibles salidas: Juego no inicializado, Juego terminado y Comando correcto\n"<<std::endl;
     }
 
     else if (comando.compare("costo_conquista ?") == 0)
     {
-      std::cout<<"La forma correcta de utilizar este comando es: costo_conquista <territorio>\n"<<std::endl;
+      std::cout<<"\nLa forma correcta de utilizar este comando es: costo_conquista <territorio>\n"<<std::endl;
     }
 
     // condicionales de conquista_mas_barata 
 
     else if (comando.compare("conquista_mas_barata") == 0)
     {
-      std::cout<<"Posibles salidas: Juego no inicializado, Juego terminado y Comando correcto\n"<<std::endl;
+      std::cout<<"\nPosibles salidas: Juego no inicializado, Juego terminado y Comando correcto\n"<<std::endl;
     }
 
     else if (comando.compare("conquista_mas_barata ?") == 0)
     {
-      std::cout<<"La forma correcta de utilizar este comando es: conquista_mas_barata\n"<<std::endl;
+      std::cout<<"\nLa forma correcta de utilizar este comando es: conquista_mas_barata\n"<<std::endl;
     }
 
     // condicional de help
 
     else if(comando.compare("ayuda") == 0)
     {
-      std::cout<<"Los comandos disponibles son:"
-               <<"\n - inicializar: inicia el juego donde le va a preguntar al usuario la cantidad de jugadores, luego pregunta el nombre de cada uno de los jugadores para poder identificarlos durante la partida. Después, por turnos, cada jugador seleccionará en que territorio desea ubicar sus unidades de ejército."
-               <<"\n - turno: Describe que puede hacer el jugador en este turno como: Fortificar terriorio, Atacar un territorio Vecino o Obtener nuevas unidades" 
+      std::cout<<"\nLos comandos disponibles son:"
+               <<"\n - inicializar: inicia el juego donde le va a preguntar al usuario la cantidad de jugadores,\n   luego pregunta el nombre de cada uno de los jugadores para poder identificarlos durante la\n   partida. Después, por turnos, cada jugador seleccionará en que territorio desea ubicar sus\n   unidades de ejército."
+               <<"\n - turno: Describe que puede hacer el jugador en este turno como: Fortificar terriorio, Atacar\n   un territorio Vecino o Obtener nuevas unidades" 
                <<"\n - salir: termina la ejecución del programa." 
                <<"\n - guardar: guarda toda la partida en un archivo de texto plano" 
                <<"\n - guardar_comprimido: guarda toda la partida en un archivo binario" 
                <<"\n - inicializar_archivo: inicializa el juego con los datos contenidos en el archivo <nombre_archivo>" 
-               <<"\n - costo_conquista: calcula el costo y la secuencia de territoriors conquistados para lograr controlar un territorio elegido." 
-               <<"\n - conquista_mas_barata: calcula de todos los territorios posibles aquel que pueda sacrificar el menor número de unidades perdidas"
+               <<"\n - costo_conquista: calcula el costo y la secuencia de territoriors conquistados para lograr\n   controlar un territorio elegido." 
+               <<"\n - conquista_mas_barata: calcula de todos los territorios posibles aquel que pueda sacrificar\n   el menor número de unidades perdidas"
                <<"\n - limpiar: limpia la interfaz y todos los comandos que se han hecho antes\n"<<std::endl;
         
     }
@@ -269,13 +269,13 @@ void Menu::menu()
       
     else if (comando.compare("salir") == 0)
     {
-      std::cout<<"Gracias por jugar RISK!\n"<<std::endl; //aunque el enunciado dice que no tiene salida decidimos poner este mensaje 
+      std::cout<<"\nGracias por jugar RISK!\n"<<std::endl; //aunque el enunciado dice que no tiene salida decidimos poner este mensaje 
     }
 
     // condicional en caso de que no se ingrese un comando válido
 
     else
-      std::cout<<red<<"El comando "<<reset<<comando<<red<<" no pudo ser reconocido, intente nuevamente\n"<<reset<<std::endl;
+      std::cout<<red<<"\nEl comando "<<reset<<comando<<red<<" no pudo ser reconocido, intente nuevamente\n"<<reset<<std::endl;
   }
 };
 
@@ -390,12 +390,12 @@ void Menu::abrirNormal(std::string nombreArchivo)
       }
     }
 
-    std::cout<<"\n------------ Fin de archivo ------------\n";
+    std::cout<<"\n------------ Fin de archivo ------------\n\n";
     archivo.close();
   }
   else
   {
-    std::cout<<"No se pudo abrir el archivo\n";
+    std::cout<<"\nNo se pudo abrir el archivo\n";
   }
 
   Partida p = Partida(contiP, jugadoresP, turnos);
