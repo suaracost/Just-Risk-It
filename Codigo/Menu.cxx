@@ -367,6 +367,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
           }
         }
+        /*
         else if (seccionActual == "Jugadores")
         {
           std::string nombreJugador = linea.substr(0, linea.find(","));
@@ -386,7 +387,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
         {
           std::getline(archivo, linea);
           turnos.push(linea);
-        }
+        }*/
       }
     }
 
