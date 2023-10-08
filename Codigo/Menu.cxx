@@ -203,6 +203,7 @@ void Menu::menu()
       if(std::regex_match(abN, pattern4))
       {
         p = abrirNormal(abN);
+        iniciado = true;
       }
       //revisa si es un archivo .bin
       else if(std::regex_match(abN, pattern4))
