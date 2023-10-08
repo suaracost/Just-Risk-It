@@ -350,15 +350,16 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
           if (linea.find(")") != std::string::npos)
           {
             std::string nombreContinente = linea.substr(linea.find(")") + 2);
-            contiP[numPaises] = new Continente(nombreContinente);
+            std::cout<<nombreContinente<<std::endl;
+            //contiP[numPaises] = new Continente(nombreContinente);
 
-            contiP[numPaises]->territoriosC.clear();
+            //contiP[numPaises]->territoriosC.clear();
 
-            numPaises++;
+            //numPaises++;
           }
           else
           {
-            std::string nombreTerritorio = linea.substr(0, linea.find(","));
+            /*std::string nombreTerritorio = linea.substr(0, linea.find(","));
             linea = linea.substr(linea.find(",") + 1);
 
             std::string duenio = linea.substr(0, linea.find(","));
@@ -376,7 +377,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             nuevoTerritorio.numTropas = numTropas;
             nuevoTerritorio.tomado = tomado;
 
-            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
+            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);*/
           }
         }
         else if (seccionActual == "Jugadores")
