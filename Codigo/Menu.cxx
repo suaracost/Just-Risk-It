@@ -306,3 +306,100 @@ Partida Menu::inicio()
 
   return(p);
 }
+
+static Partida abrirNormal(std::string nombreArchivo)
+{
+  std::string linea;
+  std::ifstream archivo(nombreArchivo);
+
+  int numJugadores = 0, numPaises = 0;
+  std::string seccionActual;
+
+  Continente* contiP[6];
+  std::list<Jugador> jugadoresP;
+  std::queue<std::string> turnos;
+
+  if (archivo.is_open())
+  {
+    while (std::getline(archivo, linea))
+    {
+      if (linea.find("Numero de jugadores:") != std::string::npos)
+      {
+        std::string nume = linea.substr(linea.find(":") + 2);
+        numJugadores = std::stoi(nume);
+      }
+      else if (linea == "- Territorios")
+      {
+        seccionActual = "Territorios";
+        numPaises = 0;
+      }
+      else if (linea == "- Jugadores")
+      {
+        seccionActual = "Jugadores";
+      }
+      else if (linea == "- Turnos")
+      {
+        seccionActual = "Turnos";
+      }
+      else
+      {
+        if (seccionActual == "Territorios")
+        {
+          if (linea.find(")") != std::string::npos)
+          {
+            std::string nombreContinente = linea.substr(linea.find(")") + 2);
+            contiP[numPaises] = new Continente(nombreContinente);
+
+            contiP[numPaises]->territoriosC.clear();
+
+            numPaises++;
+          }
+          else
+          {
+            std::string nombreTerritorio = linea.substr(0, linea.find(","));
+            linea = linea.substr(linea.find(",") + 1);
+
+            std::string duenio = linea.substr(0, linea.find(","));
+            linea = linea.substr(linea.find(",") + 1);
+            
+            std::string numT = (linea.substr(0, linea.find(",")));
+            linea = linea.substr(linea.find(",") + 1);
+            int numTropas = std::stoi(numT);
+
+            std::string toma = (linea.substr(0, linea.find(",")));
+            int tomado = std::stoi(toma);
+            
+            Territorio nuevoTerritorio = Territorio(nombreTerritorio);
+            nuevoTerritorio.duenio = duenio;
+            nuevoTerritorio.numTropas = numTropas;
+            nuevoTerritorio.tomado = tomado;
+
+            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
+          }
+        }
+        else if (seccionActual == "Jugadores")
+        {
+          std::string nombreJugador = linea.substr(0, linea.find(","));
+          linea = linea.substr(linea.find(",") + 1);
+
+          std::string colorJugador = linea.substr(0, linea.find(","));
+          linea = linea.substr(linea.find(",") + 1);
+
+          std::string cantiT = (linea.substr(0, linea.find(",")));
+          int cantiTropas = std::stoi(cantiT);
+
+          Jugador nuevoJugador(nombreJugador, colorJugador, cantiTropas);
+
+          jugadoresP.push_back(nuevoJugador);
+        }
+        else if (seccionActual == "Turnos")
+        {
+          std::getline(archivo, linea);
+          turnos.push(linea);
+        }
+      }
+    }
+
+    archivo.close();
+  }
+}
