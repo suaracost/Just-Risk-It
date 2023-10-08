@@ -198,6 +198,8 @@ void Menu::menu()
 
     else if (std::regex_match(comando, pattern3))
     {
+      p = Partida();
+      
       //revisa si es un archivo .txt
       if(std::regex_match(abN, pattern4))
       {
