@@ -203,8 +203,6 @@ void Menu::menu()
       if(std::regex_match(abN, pattern4))
       {
         abrirNormal(abN);
-
-        std::cout<<"o muere aqui?\n";
         
         bool abierto; // = p.abrirNormal(abN);
 
@@ -311,7 +309,7 @@ Partida Menu::inicio()
   return(p);
 }
 
-Partida Menu::abrirNormal(std::string nombreArchivo)
+void Menu::abrirNormal(std::string nombreArchivo)
 {
   std::string linea;
   std::ifstream archivo(nombreArchivo);
@@ -415,7 +413,6 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
 
     std::cout<<"aqui muere\n";
 
-    //archivo.close();
+    archivo.close();
   }
-
-  }
+}
