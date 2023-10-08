@@ -202,6 +202,8 @@ void Menu::menu()
       //revisa si es un archivo .txt
       if(std::regex_match(abN, pattern4))
       {
+        abrirNormal(abN);
+        
         bool abierto; // = p.abrirNormal(abN);
 
         if(abierto == true)
