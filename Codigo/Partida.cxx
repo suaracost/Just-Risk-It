@@ -1179,7 +1179,7 @@ bool Partida::guardarNormal(std::string nombreArchivo)
   return guardado;
 }
 
-bool abrirNormal(std::string nombreArchivo)
+bool Partida::abrirNormal(std::string nombreArchivo)
 {
   bool abierto = false;
   std::string linea;
