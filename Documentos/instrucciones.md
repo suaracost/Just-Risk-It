@@ -1,30 +1,30 @@
 # Instrucciones
 
-### Compilación y ejecucción
+### Compilación y ejecucción 📡
    
-1. Ir a la carpeta donde esta el código
+1. Ir a la carpeta donde esta el código 📂
 
          cd Codigo
    
    Los archivos del codigo estan en la carpeta "Codigo" dentro del repositorio.
    
-3. Compilación
+3. Compilación 💻
 
          g++ -std=c++11 main.cpp Menu.cxx Partida.cxx Carta.cxx Jugador.cxx Continente.cxx Territorio.cxx -o risk
 
    Los archivos que vamos a compilar son: "Menu.cxx" donde se encuentran las funciones que desarollamos para esta entrega y "main.cpp" donde se hace el llamado a las mismas.
    
-4. Ejecucción
+4. Ejecucción 📲
 
          ./risk
 
    Al ejecutar el programa podras ver menu que desarollamos, a continuación listamos cuales son los comandos que puedes ejecutar para que el programa funcione de forma correcta.
 
-### Comandos
+### Comandos 🖥️
 
 Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos sin la información que se pide de la siguiente manera: < "texto" >
 
-1. Empezar juego
+1. Empezar juego 🛫
 
          inicializar
 
@@ -32,7 +32,7 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          inicializar ?
    
-3. Turno del jugador
+3. Turno del jugador 🎏
 
          turno <id_jugador>
 
@@ -40,13 +40,13 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          turno ?
 
-5. Salida de la aplicacion
+5. Salida de la aplicacion 🧟
 
          salir
 
       Este comando termina la ejecución del programa. Este comando no tiene salidas. 
 
-7. Guardado el juego
+7. Guardado el juego 💾
 
          guardar <nombre_archivo>
 
@@ -54,7 +54,7 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          guardar ?
 
-9. Guardar el juego en un archivo comprimido
+9. Guardar el juego en un archivo comprimido 💽
 
          guardar_comprimido <nombre_archivo>
 
@@ -62,7 +62,7 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          guardar_comprimido ?
 
-11. Inicializar a partir de un archivo
+11. Inicializar a partir de un archivo 🗃️
 
          inicializar_archivo <nombre_archivo>
 
@@ -70,7 +70,7 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
           inicializar_archivo ?
 
-13. Calcular costo conquista
+13. Calcular costo conquista 🤔
 
          costo_conquista <territorio>       
 
@@ -78,7 +78,7 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
          costo_conquista ?
 
-14. Calcular costo de conquista mas bajo
+14. Calcular costo de conquista mas bajo 🤑
 
          conquista_mas_barata
 
@@ -86,13 +86,13 @@ Importante: solo se desarolló la interfaz, para la entrega 0 ejecutar comandos 
 
           conquista_mas_barata ?
 
-16. Ayuda
+16. Ayuda 🆘
 
          ayuda
    
       Al ejecutar este comando en la terminal te saldran todos los posibles comandos, es decir los que fueron listados previamente. Sirve para explicar todos los comandos disponibles y una breve explicacion de cada uno
 
-10. Limpiar
+10. Limpiar 🧹
                     
           Limpiar
 
