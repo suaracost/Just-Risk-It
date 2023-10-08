@@ -380,7 +380,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             nuevoTerritorio.numTropas = numTropas;
             nuevoTerritorio.tomado = tomado;
 
-            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
+            contiP[numPaises-1]->territoriosC.push_back(nuevoTerritorio);
           }
         }
         else if (seccionActual == "Jugadores")
