@@ -1182,89 +1182,80 @@ bool Partida::guardarNormal(std::string nombreArchivo)
 bool Partida::abrirNormal(std::string nombreArchivo)
 {
   bool abierto = false;
-  std::string linea, linea2;
-
+  std::string linea;
   std::ifstream archivo(nombreArchivo);
 
-  int numJugadores, numPaises = 0;
+  int numJugadores = 0, numPaises;
+  std::string seccionActual;
 
-  if(archivo.is_open())
+  if (archivo.is_open())
   {
-    while(!archivo.eof())
+    while (std::getline(archivo, linea))
     {
-      std::getline(archivo, linea);
-      
-      if (linea.find("Numero de jugadores:") != std::string::npos) 
+      if (linea.find("Numero de jugadores:") != std::string::npos)
       {
-        // Extraer el número de jugadores desde la línea
         std::string nume = linea.substr(linea.find(":") + 2);
         numJugadores = std::stoi(nume);
       }
-      else if (linea == "- Territorios") 
+      else if (linea == "- Territorios")
       {
-        // Extraer los territorios
-        while(linea2.compare("- Jugadores") != 0)
-        {
-          std::getline(archivo, linea2);
-          
-          if(linea2.compare("- Jugadores") != 0)
-          {
-            if (std::isdigit(linea2[0]) && linea2[1] == ')') 
-            {
-              std::string nombreContinente = linea2.substr(linea.find(")") + 2);
-              contiP[numPaises]->nombreContinente = nombreContinente;
-              numPaises++;
-            }
-            else
-            {
-              std::string nombreTerritorio = linea2.substr(0, linea2.find(","));
-              linea2 = linea2.substr(linea2.find(",") + 1);
-
-              std::string duenio = linea2.substr(0, linea2.find(","));
-              linea2 = linea2.substr(linea2.find(",") + 1);
-              
-              std::string numT = (linea2.substr(0, linea2.find(",")));
-              linea2 = linea2.substr(linea2.find(",") + 1);
-              int numTropas = std::stoi(numT);
-
-              std::string toma = (linea2.substr(0, linea2.find(",")));
-              int tomado = std::stoi(toma);
-              
-              Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
-
-              contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
-            }
-          }
-        }
+        seccionActual = "Territorios";
+        numPaises = 0;
       }
       else if (linea == "- Jugadores")
       {
-        //Extraer los jugadores
-        while(linea2.compare("- Turnos") != 0)
+        seccionActual = "Jugadores";
+      }
+      else if (linea == "- Turnos")
+      {
+        seccionActual = "Turnos";
+      }
+      else
+      {
+        if (seccionActual == "Territorios")
         {
-          std::getline(archivo, linea2);
-
-          if(linea2.compare("- Turnos") != 0)
+          if (linea.find(")") != std::string::npos)
           {
-            std::string nombreJugador = linea2.substr(0, linea2.find(","));
-            linea2 = linea2.substr(linea2.find(",") + 1);
+            std::string nombreContinente = linea.substr(linea.find(")") + 2);
+            contiP[numPaises]->nombreContinente = nombreContinente;
+            numPaises++;
+          }
+          else
+          {
+            std::string nombreTerritorio = linea.substr(0, linea.find(","));
+            linea = linea.substr(linea.find(",") + 1);
 
-            std::string colorJugador = linea2.substr(0, linea2.find(","));
-            linea2 = linea2.substr(linea2.find(",") + 1);
+            std::string duenio = linea.substr(0, linea.find(","));
+            linea = linea.substr(linea.find(",") + 1);
+            
+            std::string numT = (linea.substr(0, linea.find(",")));
+            linea = linea.substr(linea.find(",") + 1);
+            int numTropas = std::stoi(numT);
 
-            std::string cantiT = (linea2.substr(0, linea2.find(",")));
-            int cantiTropas = std::stoi(cantiT);
+            std::string toma = (linea.substr(0, linea.find(",")));
+            int tomado = std::stoi(toma);
+            
+            Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
 
-            Jugador nuevoJugador = Jugador(nombreJugador, colorJugador, cantiTropas);
-
-            jugadoresP.push_back(nuevoJugador);
+            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
           }
         }
-      }
-      else if(linea == "- Turnos")
-      {
-        //Extraer los turnos
-        while(!archivo.eof())
+        else if (seccionActual == "Jugadores")
+        {
+          std::string nombreJugador = linea.substr(0, linea.find(","));
+          linea = linea.substr(linea.find(",") + 1);
+
+          std::string colorJugador = linea.substr(0, linea.find(","));
+          linea = linea.substr(linea.find(",") + 1);
+
+          std::string cantiT = (linea.substr(0, linea.find(",")));
+          int cantiTropas = std::stoi(cantiT);
+
+          Jugador nuevoJugador = Jugador(nombreJugador, colorJugador, cantiTropas);
+
+          jugadoresP.push_back(nuevoJugador);
+        }
+        else if (seccionActual == "Turnos")
         {
           std::getline(archivo, linea);
           turnos.push(linea);
@@ -1272,31 +1263,6 @@ bool Partida::abrirNormal(std::string nombreArchivo)
       }
     }
 
-    //Mostrar los datos extraidos
-
-    std::cout<<numJugadores<<"\n";
-
-    for(int i=0; i<6; i++)
-    {
-      std::list<Territorio>::iterator miIt;
-      for (miIt = contiP[i]->territoriosC.begin(); miIt != contiP[i]->territoriosC.end(); miIt++)
-      {
-        std::cout<<miIt->nombreTerritorio<<","<<miIt->duenio<<","<<miIt->numTropas<<","<<miIt->tomado<<"\n";
-      }
-    }
-
-    std::list<Jugador>::iterator miIt2;
-    for(miIt2 = jugadoresP.begin(); miIt2 != jugadoresP.end(); miIt2++)
-    {
-      std::cout<<miIt2->nombreJugador<<","<<miIt2->colorJugador<<","<<miIt2->cantiTropas<<"\n";
-    }
-
-    while(!turnos.empty())
-    {
-      std::cout<<turnos.front()<<"\n";
-      turnos.pop();
-    }
-  
     abierto = true;
     archivo.close();
   }
