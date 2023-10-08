@@ -70,7 +70,7 @@ Continente::Continente(std::string nombreCon) : territoriosC()
   
 }
 
-Continente::Continente(std::string nombreCon, int aux) : territoriosC()
+Continente::Continente(std::string nombreCon, int aux)
 {
   nombreContinente = nombreCon;
 }

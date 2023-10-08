@@ -311,7 +311,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   std::string seccionActual;
 
   int idP = 0;
-  Continente *contiP[6];
+  Continente* contiP[6];
   std::list<Jugador> jugadoresP;
   std::queue<std::string> turnos;
 
@@ -347,7 +347,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             contiP[numPaises] = new Continente(nombreContinente, 0);
             numPaises++;
           }
-          /*else
+          else
           {
             std::string nombreTerritorio = linea.substr(0, linea.find(","));
             linea = linea.substr(linea.find(",") + 1);
@@ -365,7 +365,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
 
             contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
-          }*/
+          }
         }
         else if (seccionActual == "Jugadores")
         {
