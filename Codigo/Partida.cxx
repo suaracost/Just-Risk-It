@@ -1211,7 +1211,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
           {
             if (std::isdigit(linea2[0]) && linea2[1] == ')') 
             {
-              std::string nombreContinente = linea2.substr(linea.find(")") + 1);
+              std::string nombreContinente = linea2.substr(linea.find(")") + 2);
               contiP[numPaises]->nombreContinente = nombreContinente;
               numPaises++;
             }
