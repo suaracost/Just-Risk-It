@@ -380,6 +380,8 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             nuevoTerritorio.numTropas = numTropas;
             nuevoTerritorio.tomado = tomado;
 
+            std::cout<<nuevoTerritorio.nombreTerritorio<<std::endl;
+
             contiP[numPaises-1]->territoriosC.push_back(nuevoTerritorio);
           }
         }
@@ -394,12 +396,16 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
           std::string cantiT = (linea.substr(0, linea.find(",")));
           int cantiTropas = std::stoi(cantiT);
 
+          std::cout<<nombreJugador<<std::endl;
+
           Jugador nuevoJugador(nombreJugador, colorJugador, cantiTropas);
 
           jugadoresP.push_back(nuevoJugador);
         }
         else if (seccionActual == "Turnos")
         {
+          std::cout<<linea<<std::endl;
+          
           turnos.push(linea);
         }
       }
@@ -409,4 +415,5 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
 
     //archivo.close();
   }
-}
+
+  }
