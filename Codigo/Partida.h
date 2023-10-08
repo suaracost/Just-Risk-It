@@ -22,6 +22,7 @@ class Partida
   public: //Metodos
     Partida(int idP);
     Partida();
+    Partida(Continente* contiP[], std::list<Jugador> jugadoresP, std::queue<std::string> turnos);
     void mostrarTerritoriosDisponibles();
     void mostrarTerritoriosPropios(std::string jug, std::string col);
     void mostrarTerritoriosEnemigos(std::string jug);

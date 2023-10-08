@@ -383,6 +383,18 @@ Partida::Partida()
   
 }
 
+Partida::Partida(Continente* contiPa[], std::list<Jugador> jugadoresPa, std::queue<std::string> turnosPa)
+{
+  for(int i=0; i<6; i++)
+  {
+    contiP[i] = contiPa[i];
+  }
+
+  jugadoresP = jugadoresPa;
+
+  turnos = turnosPa;
+}
+
 void Partida::mostrarTerritoriosDisponibles()
 {
   std::cout<<"\nEstos son los territorios disponibles:\n";

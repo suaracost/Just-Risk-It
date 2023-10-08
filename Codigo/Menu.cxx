@@ -415,4 +415,6 @@ void Menu::abrirNormal(std::string nombreArchivo)
 
     archivo.close();
   }
+
+  Partida p = Partida(contiP, jugadoresP, turnos);
 }
