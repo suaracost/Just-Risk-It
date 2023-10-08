@@ -378,9 +378,9 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   }
 }
 
-Partida::Partida()
+Partida::Partida() 
 {
-  
+
 }
 
 void Partida::mostrarTerritoriosDisponibles()
@@ -1217,7 +1217,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
           if (linea.find(")") != std::string::npos)
           {
             std::string nombreContinente = linea.substr(linea.find(")") + 2);
-            contiP[numPaises]->nombreContinente = nombreContinente;
+            contiP[numPaises] = new Continente(nombreContinente);
             numPaises++;
           }
           else
