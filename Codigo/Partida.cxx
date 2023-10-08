@@ -1178,3 +1178,29 @@ bool Partida::guardarNormal(std::string nombreArchivo)
 
   return guardado;
 }
+
+bool abrirNormal(std::string nombreArchivo)
+{
+  bool abierto = false;
+  std::string linea;
+
+  std::ifstream archivo(nombreArchivo);
+
+  if(archivo.is_open())
+  {
+    while(!archivo.eof())
+    {
+      std::getline(archivo, linea);
+      std::cout<<linea<<"\n";
+    }
+  
+    abierto = true;
+    archivo.close();
+  }
+  else
+  {
+    abierto = false;
+  }
+
+  return abierto;
+}

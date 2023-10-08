@@ -64,11 +64,14 @@ void Menu::menu()
   bool iniciado = false;
   std::regex pattern("^turno .*$");
   std::regex pattern2("^guardar .*.txt$");
+  std::regex pattern3("^inicializar_archivo .*.txt$");
+  std::regex pattern4("^.*.txt$");
+  std::regex pattern5("^.*.bin$");
   Partida p;
   
   // Menu de todos los comandos
 
-  std::string comando, tu, tuJ, gu, guN;
+  std::string comando, tu, tuJ, gu, guN, ab, abN;
   std::cout<<"\n";
   
   while(comando.compare("salir") != 0) // while para ingresar comandos
@@ -91,6 +94,15 @@ void Menu::menu()
       if (gu.compare("guardar") == 0)
       {
         guN = comando.substr(8);
+      }
+    }
+
+    if(comando.size() > 19)
+    {
+      ab = comando.substr(0, 19);
+      if (ab.compare("inicializar_archivo") == 0)
+      {
+        abN = comando.substr(20);
       }
     }
   
@@ -184,9 +196,36 @@ void Menu::menu()
 
     // condicionales de inicializar_archivo
 
-    else if (comando.compare("inicializar_archivo") == 0)
+    else if (std::regex_match(comando, pattern3))
     {
-      std::cout<<"Posibles salidas: Juego en curso y Archivo vacio o incompleto\n"<<std::endl;
+      //revisa si es un archivo .txt
+      if(std::regex_match(abN, pattern4))
+      {
+        bool abierto = p.abrirNormal(abN);
+
+        if(abierto == true)
+        {
+          std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
+          iniciado = true;
+        }
+        else if(abierto == false)
+          std::cout<<"\nNo se ha podido abrir el archivo, intente nuevamente\n\n";
+      }
+      //revisa si es un archivo .bin
+      else if(std::regex_match(abN, pattern4))
+      {
+        bool abierto; // = p.abrirComprimido(abN);
+
+        if(abierto == true)
+        {
+          std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
+          iniciado = true;
+        }
+        else if(abierto == false)
+          std::cout<<"\nNo se ha podido abrir el archivo, intente nuevamente\n\n";
+      }
+      else  
+        std::cout<<"El archivo no tiene la extensión correcta, intente nuevamente\n\n";
     }
 
     else if (comando.compare("inicializar_archivo ?") == 0)
