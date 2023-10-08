@@ -1219,11 +1219,13 @@ bool Partida::abrirNormal(std::string nombreArchivo)
 
             std::string duenio = linea2.substr(0, linea2.find(","));
             linea2 = linea2.substr(linea2.find(",") + 1);
-
-            int numTropas = std::stoi(linea2.substr(0, linea2.find(",")));
+            
+            std::string numT = (linea2.substr(0, linea2.find(",")));
             linea2 = linea2.substr(linea2.find(",") + 1);
+            int numTropas = std::stoi(numT);
 
-            bool tomado = std::stoi(linea2.substr(0, linea2.find(",")));
+            std::string toma = (linea2.substr(0, linea2.find(",")));
+            int tomado = std::stoi(toma);
             
             Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
 
@@ -1242,8 +1244,9 @@ bool Partida::abrirNormal(std::string nombreArchivo)
           std::string colorJugador = linea2.substr(0, linea2.find(",") + 1);
           linea2 = linea2.substr(linea2.find(",") + 1);
 
-          int cantiTropas = std::stoi(linea2.substr(0, linea2.find(",")));
+          std::string cantiT = (linea2.substr(0, linea2.find(",")));
           linea2 = linea2.substr(linea2.find(",") + 1);
+          int cantiTropas = std::stoi(cantiT);
 
           Jugador nuevoJugador = Jugador(nombreJugador, colorJugador, cantiTropas);
 
@@ -1262,7 +1265,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
     }
 
     //Mostrar los datos extraidos
-    
+
     std::cout<<numJugadores<<"\n";
 
     for(int i=0; i<6; i++)
