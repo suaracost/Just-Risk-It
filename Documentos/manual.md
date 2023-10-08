@@ -41,7 +41,7 @@ Dependiendo del número de jugadores, se les entrega una cantidad de tropas.
 
 Por turnos cada jugador va eligiendo un territorio hasta que se acaben. Cuando ya no hay mas territorios, por turnos, van poniendo la cantidad de tropas que quieran en sus territorios (siempre y cuando no se pasen de las tropas que tienen)
 
-### Ataque ⚔️
+### Ataque 🤺
 El objetivo de un ataque es capturar un territorio derrotando a todos los ejércitos enemigos que ya están en él. Para atacar, el atacante y el
 defensor, deben tirar los dados y el resultado de los dados es la fuerza de su ejército. Si el resultado atacante es mayor que la fuerza del ejército defensor, el jugador atacante le quita la cantidad de tropas equivalente al numero de dados que se hayan tirado. En caso contrario las tropas seran restadas del ejercito atacante.
 
