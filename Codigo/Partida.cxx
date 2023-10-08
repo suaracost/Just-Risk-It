@@ -1239,14 +1239,13 @@ bool Partida::abrirNormal(std::string nombreArchivo)
         //Extraer los jugadores
         while(linea2.compare("- Turnos") != 0)
         {
-          std::string nombreJugador = linea2.substr(0, linea2.find(",") + 1);
+          std::string nombreJugador = linea2.substr(0, linea2.find(","));
           linea2 = linea2.substr(linea2.find(",") + 1);
 
-          std::string colorJugador = linea2.substr(0, linea2.find(",") + 1);
+          std::string colorJugador = linea2.substr(0, linea2.find(","));
           linea2 = linea2.substr(linea2.find(",") + 1);
 
           std::string cantiT = (linea2.substr(0, linea2.find(",")));
-          linea2 = linea2.substr(linea2.find(",") + 1);
           int cantiTropas = std::stoi(cantiT);
 
           Jugador nuevoJugador = Jugador(nombreJugador, colorJugador, cantiTropas);
