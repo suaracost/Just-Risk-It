@@ -309,7 +309,7 @@ Partida Menu::inicio()
   return(p);
 }
 
-static Partida abrirNormal(std::string nombreArchivo)
+Partida Menu::abrirNormal(std::string nombreArchivo)
 {
   std::string linea;
   std::ifstream archivo(nombreArchivo);
