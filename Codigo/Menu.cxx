@@ -264,6 +264,7 @@ void Menu::menu()
     {
       std::system("clear");
       mapamundi();
+      std::cout<<"\n";
     }
 
     // condicional de salir
