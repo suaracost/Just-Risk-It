@@ -1,6 +1,6 @@
 # Plan de pruebas
 
-## Menu
+## Menu 📱
 
 ### - Ingresar comando "inicializar"
 Entrada: inicializar
@@ -16,6 +16,13 @@ Resultado Esperado: la partida no ha iniciado, no se encuentra el jugador, no es
 
 Resultado Obtenido: la partida no ha iniciado, no se encuentra el jugador, no es el turno del jugador o se llama a la funcion turno() del objeto partida mencionado anteriormente.
 
+### - Ingresar comando "guardar <nombre_archivo>"
+Entrada: guardar <nombre_archivo>
+
+Resultado Esperado: no se ha podido guardar el archivo o si fue guardado exitosamente.
+
+Resultado Obtenido: no se ha podido guardar el archivo o si fue guardado exitosamente.
+
 ### - Ingresar comando "ayuda"
 Entrada: ayuda
 
@@ -30,7 +37,7 @@ Resultado Esperado: limpia la terminal y solo queda el banner.
 
 Resultado Obtenido: limpia la terminal y solo queda el banner.
 
-## Constructor Partida
+## Constructor Partida 🎮
 
 ### - Ingresar numero de jugadores
 Entrada: un numero entero entre 3 y 6
@@ -60,7 +67,7 @@ Resultado Esperado: muestra el nombre del territorio y la nueva cantidad de trop
 
 Resultado Obtenido: muestra el nombre del territorio y la nueva cantidad de tropas.
 
-## Funcion turno
+## Funcion turno 🎏
 
 ### - Ingresar nuevas tropas
 Entrada: nombre del territorio 
