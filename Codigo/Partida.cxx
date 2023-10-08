@@ -518,7 +518,7 @@ void Partida::turno()
   nuevasTropas();
   
   std::string deci;
-  bool sigue = false;
+  bool sigue = false, sigue2 = false;
 
   while(sigue == false)
   {
@@ -542,6 +542,25 @@ void Partida::turno()
   std::string cont2;
   std::cout<<"\nPresione enter para continuar ";
   std::getline(std::cin, cont2);
+
+  while(sigue2 == false)
+  {
+    std::cout<<"Desea fortificar? (si o no) ";
+    std::cin>>deci;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    if(deci.compare("si") == 0)
+    {
+      atacar();
+      sigue2 = true;
+    }
+    else if (deci.compare("no") == 0)
+    {
+      sigue2 = true;
+    }
+    else
+      std::cout<<"\nRespuesta no reconocida, intente nuevamente\n\n";
+  }
 
   fortificar();
 
