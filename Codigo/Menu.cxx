@@ -367,7 +367,6 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
           }
         }
-        //aqui pasa el segmentation error
         else if (seccionActual == "Jugadores")
         {
           std::string nombreJugador = linea.substr(0, linea.find(","));
@@ -396,7 +395,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   
   //Partida p; // = Partida(idP, contiP, jugadoresP, turnos);
 
-  for(int i=0; i<6; i++)
+  /*for(int i=0; i<6; i++)
   {
     std::list<Territorio>::iterator it;
     std::cout<<contiP[i]->nombreContinente<<std::endl;
@@ -416,7 +415,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   {
     std::cout<<turnos.front()<<std::endl;
     turnos.pop();
-  }
+  }*/
 
   //return p;
 }
