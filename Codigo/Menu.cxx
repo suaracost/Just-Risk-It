@@ -202,15 +202,10 @@ void Menu::menu()
       //revisa si es un archivo .txt
       if(std::regex_match(abN, pattern4))
       {
-        bool abierto = p.abrirNormal(abN);
+        abrirNormal(abN);
 
-        if(abierto == true)
-        {
-          std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
-          iniciado = true;
-        }
-        else if(abierto == false)
-          std::cout<<"\nNo se ha podido abrir el archivo, intente nuevamente\n\n";
+        std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
+        iniciado = true;
       }
       //revisa si es un archivo .bin
       else if(std::regex_match(abN, pattern4))
