@@ -14,6 +14,7 @@ class Territorio
 
   public: //Metodos
     Territorio(std::string nombreTer); 
+    Territorio(std::string nombreTer, std::string duenioTer, int numTropasTer, bool tomadoTer);
 };
 
 #endif
