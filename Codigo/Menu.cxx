@@ -202,7 +202,7 @@ void Menu::menu()
       //revisa si es un archivo .txt
       if(std::regex_match(abN, pattern4))
       {
-        abrirNormal(abN);
+        p = abrirNormal(abN);
       }
       //revisa si es un archivo .bin
       else if(std::regex_match(abN, pattern4))
@@ -291,7 +291,7 @@ Partida Menu::inicio()
   return(p);
 }
 
-void Menu::abrirNormal(std::string nombreArchivo)
+Partida Menu::abrirNormal(std::string nombreArchivo)
 {
   std::string linea;
   std::ifstream archivo(nombreArchivo);
@@ -399,4 +399,6 @@ void Menu::abrirNormal(std::string nombreArchivo)
   }
 
   Partida p = Partida(contiP, jugadoresP, turnos);
+
+  return p;
 }
