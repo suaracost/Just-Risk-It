@@ -18,4 +18,4 @@ El proyecto "Just Risk It" es una iniciativa desarrollada por estudiantes de la 
 ### Implementación
 -  [📖 TADs 📖](Documentos/TADs.md)
 -  [🤖 Código 🤖](Codigo)
--  [⚠️ Plan de pruebas ⚠️](Documentos/planPruebas.md) 
+-  [⚠️ Plan de pruebas ⚠️](Documentos/planPruebas.md)
