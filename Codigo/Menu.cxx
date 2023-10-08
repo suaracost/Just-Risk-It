@@ -339,7 +339,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
       }
       else
       {
-        if (seccionActual == "Territorios")
+        /*if (seccionActual == "Territorios")
         {
           if (linea.find(")") != std::string::npos)
           {
@@ -367,7 +367,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
           }
         }
-        else if (seccionActual == "Jugadores")
+        else */if (seccionActual == "Jugadores")
         {
           std::string nombreJugador = linea.substr(0, linea.find(","));
           linea = linea.substr(linea.find(",") + 1);
