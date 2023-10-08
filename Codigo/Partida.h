@@ -30,7 +30,6 @@ class Partida
     void atacar();
     void fortificar();
     bool guardarNormal(std::string nombreArchivo);
-    bool abrirNormal(std::string nombreArchivo);
 };
 
 #endif 

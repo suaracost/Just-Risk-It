@@ -202,10 +202,15 @@ void Menu::menu()
       //revisa si es un archivo .txt
       if(std::regex_match(abN, pattern4))
       {
-        abrirNormal(abN);
+        bool abierto; // = p.abrirNormal(abN);
 
-        std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
-        iniciado = true;
+        if(abierto == true)
+        {
+          std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
+          iniciado = true;
+        }
+        else if(abierto == false)
+          std::cout<<"\nNo se ha podido abrir el archivo, intente nuevamente\n\n";
       }
       //revisa si es un archivo .bin
       else if(std::regex_match(abN, pattern4))
@@ -300,122 +305,4 @@ Partida Menu::inicio()
   Partida p = Partida(id);
 
   return(p);
-}
-
-Partida Menu::abrirNormal(std::string nombreArchivo)
-{
-  std::string linea;
-  std::ifstream archivo(nombreArchivo);
-
-  int numJugadores = 0, numPaises;
-  std::string seccionActual;
-
-  int idP = 0;
-  Continente* contiP[6];
-  std::list<Jugador> jugadoresP;
-  std::queue<std::string> turnos;
-
-  if (archivo.is_open())
-  {
-    while (std::getline(archivo, linea))
-    {
-      if (linea.find("Numero de jugadores:") != std::string::npos)
-      {
-        std::string nume = linea.substr(linea.find(":") + 2);
-        numJugadores = std::stoi(nume);
-      }
-      else if (linea == "- Territorios")
-      {
-        seccionActual = "Territorios";
-        numPaises = 0;
-      }
-      else if (linea == "- Jugadores")
-      {
-        seccionActual = "Jugadores";
-      }
-      else if (linea == "- Turnos")
-      {
-        seccionActual = "Turnos";
-      }
-      else
-      {
-        /*if (seccionActual == "Territorios")
-        {
-          if (linea.find(")") != std::string::npos)
-          {
-            std::string nombreContinente = linea.substr(linea.find(")") + 2);
-            contiP[numPaises] = new Continente(nombreContinente, 0);
-            numPaises++;
-          }
-          else
-          {
-            std::string nombreTerritorio = linea.substr(0, linea.find(","));
-            linea = linea.substr(linea.find(",") + 1);
-
-            std::string duenio = linea.substr(0, linea.find(","));
-            linea = linea.substr(linea.find(",") + 1);
-            
-            std::string numT = (linea.substr(0, linea.find(",")));
-            linea = linea.substr(linea.find(",") + 1);
-            int numTropas = std::stoi(numT);
-
-            std::string toma = (linea.substr(0, linea.find(",")));
-            int tomado = std::stoi(toma);
-            
-            Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
-
-            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
-          }
-        }
-        else */if (seccionActual == "Jugadores")
-        {
-          std::string nombreJugador = linea.substr(0, linea.find(","));
-          linea = linea.substr(linea.find(",") + 1);
-
-          std::string colorJugador = linea.substr(0, linea.find(","));
-          linea = linea.substr(linea.find(",") + 1);
-
-          std::string cantiT = (linea.substr(0, linea.find(",")));
-          int cantiTropas = std::stoi(cantiT);
-
-          Jugador nuevoJugador(nombreJugador, colorJugador, cantiTropas);
-
-          jugadoresP.push_back(nuevoJugador);
-        }
-        else if (seccionActual == "Turnos")
-        {
-          std::getline(archivo, linea);
-          turnos.push(linea);
-        }
-      }
-    }
-
-    archivo.close();
-  }
-  
-  //Partida p; // = Partida(idP, contiP, jugadoresP, turnos);
-
-  /*for(int i=0; i<6; i++)
-  {
-    std::list<Territorio>::iterator it;
-    std::cout<<contiP[i]->nombreContinente<<std::endl;
-    for(it=contiP[i]->territoriosC.begin(); it!=contiP[i]->territoriosC.end(); it++)
-    {
-      std::cout<<it->nombreTerritorio<<"-"<<it->duenio<<"-"<<it->numTropas<<"-"<<it->tomado<<std::endl;
-    }
-  }
-
-  std::list<Jugador>::iterator it;
-  for(it=jugadoresP.begin(); it!=jugadoresP.end(); it++)
-  {
-    std::cout<<it->nombreJugador<<"-"<<it->colorJugador<<"-"<<it->cantiTropas<<std::endl;
-  }
-
-  while(!turnos.empty())
-  {
-    std::cout<<turnos.front()<<std::endl;
-    turnos.pop();
-  }*/
-
-  //return p;
 }

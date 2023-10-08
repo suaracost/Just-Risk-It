@@ -11,7 +11,6 @@ class Menu
     static void mapamundi(); // métodos de la clase
     static void menu();
     static Partida inicio();
-    static Partida abrirNormal(std::string nombreArchivo);
 };
 
 #endif // __MENU__H__

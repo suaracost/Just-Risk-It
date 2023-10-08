@@ -13,8 +13,7 @@ class Territorio
     bool tomado;
 
   public: //Metodos
-    Territorio(std::string nombreTer); 
-    Territorio(std::string nombreTer, std::string duenioTer, int numTropasTer, bool tomadoTer);
+    Territorio(std::string nombreTer);
 };
 
 #endif

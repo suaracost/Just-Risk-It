@@ -380,6 +380,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
 Partida::Partida() 
 {
+  
 }
 
 void Partida::mostrarTerritoriosDisponibles()
