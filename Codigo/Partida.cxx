@@ -545,13 +545,13 @@ void Partida::turno()
 
   while(sigue2 == false)
   {
-    std::cout<<"Desea fortificar? (si o no) ";
+    std::cout<<"\nDesea fortificar? (si o no) ";
     std::cin>>deci;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     if(deci.compare("si") == 0)
     {
-      atacar();
+      fortificar();
       sigue2 = true;
     }
     else if (deci.compare("no") == 0)
@@ -561,8 +561,6 @@ void Partida::turno()
     else
       std::cout<<"\nRespuesta no reconocida, intente nuevamente\n\n";
   }
-
-  fortificar();
 
   std::string turn = turnos.front();
   turnos.pop();
