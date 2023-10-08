@@ -380,7 +380,11 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
 Partida::Partida()
 {
-  //constructor vacio
+  int idPartida = 0;
+  Continente* contiP[6];
+  std::list<Jugador> jugadoresP;
+  std::list<Carta> cartasP;
+  std::queue<std::string> turnos;
 }
 
 void Partida::mostrarTerritoriosDisponibles()
