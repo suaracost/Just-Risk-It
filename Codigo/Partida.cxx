@@ -1252,7 +1252,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
           }
         }
         //aqui pasa el segmentation error
-        else if (seccionActual == "Jugadores")
+        /*else if (seccionActual == "Jugadores")
         {
           std::string nombreJugador = linea.substr(0, linea.find(","));
           linea = linea.substr(linea.find(",") + 1);
@@ -1271,7 +1271,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
         {
           std::getline(archivo, linea);
           turnos.push(linea);
-        }
+        }*/
       }
     }
 
