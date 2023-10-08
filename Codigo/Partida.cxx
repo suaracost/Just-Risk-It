@@ -1197,7 +1197,8 @@ bool Partida::abrirNormal(std::string nombreArchivo)
       if (linea.find("Numero de jugadores:") != std::string::npos) 
       {
         // Extraer el número de jugadores desde la línea
-        numJugadores = std::stoi(linea.substr(linea.find(":") + 1));
+        std::string nume = linea.substr(linea.find(":") + 1);
+        numJugadores = std::stoi(nume);
       }
       else if (linea == "- Territorios") 
       {
