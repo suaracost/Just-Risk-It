@@ -407,6 +407,6 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
 
     std::cout<<"aqui muere\n";
 
-    archivo.close();
+    //archivo.close();
   }
 }
