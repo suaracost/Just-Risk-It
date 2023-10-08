@@ -62,37 +62,37 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
     if (i == 0)
     {
       color = "azul";
-      std::cout<<blue<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
+      std::cout<<"\n"<<blue<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
     }
 
     else if (i == 1)
     {
       color = "rojo";
-      std::cout<<red<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
+      std::cout<<"\n"<<red<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
     }
 
     else if (i == 2)
     {
       color = "verde";
-      std::cout<<green<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
+      std::cout<<"\n"<<green<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
     }
 
     else if (i == 3)
     {
       color = "amarillo";
-      std::cout<<yellow<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
+      std::cout<<"\n"<<yellow<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
     }
 
     else if (i == 4)
     {
       color = "magenta";
-      std::cout<<magenta<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
+      std::cout<<"\n"<<magenta<<"Jugador "<<i<<" : "<<nom<<reset<<"\n";
     }
 
     else if (i == 5)
     {
       color = "cyan";
-      std::cout<<cyan<<nom<<"Jugador "<<i<<" : "<<reset<<"\n";
+      std::cout<<"\n"<<cyan<<nom<<"Jugador "<<i<<" : "<<reset<<"\n";
     }
     
     Jugador j = Jugador(nom, color, numTrop);
@@ -127,7 +127,7 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
           if(aux2.compare("azul") == 0)
           {
-            std::cout<<"\n"<<blue;
+            std::cout<<blue;
           }
           else if(aux2.compare("rojo") == 0)
           {
@@ -135,19 +135,19 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
           }
           else if(aux2.compare("verde") == 0)
           {
-            std::cout<<"\n"<<green;
+            std::cout<<green;
           }
           else if(aux2.compare("amarillo") == 0)
           {
-            std::cout<<"\n"<<yellow;
+            std::cout<<yellow;
           }
           else if(aux2.compare("magenta") == 0)
           {
-            std::cout<<"\n"<<magenta;
+            std::cout<<magenta;
           }
           else if(aux2.compare("cyan") == 0)
           {
-            std::cout<<"\n"<<cyan;
+            std::cout<<cyan;
           }
 
           std::cout<<"\nEs el turno de "<<miIt->nombreJugador<<" para elegir territorio\n";
