@@ -203,6 +203,8 @@ void Menu::menu()
       if(std::regex_match(abN, pattern4))
       {
         abrirNormal(abN);
+
+        std::cout<<"o muere aqui?\n";
         
         bool abierto; // = p.abrirNormal(abN);
 
