@@ -203,29 +203,11 @@ void Menu::menu()
       if(std::regex_match(abN, pattern4))
       {
         abrirNormal(abN);
-        
-        bool abierto; // = p.abrirNormal(abN);
-
-        if(abierto == true)
-        {
-          std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
-          iniciado = true;
-        }
-        else if(abierto == false)
-          std::cout<<"\nNo se ha podido abrir el archivo, intente nuevamente\n\n";
       }
       //revisa si es un archivo .bin
       else if(std::regex_match(abN, pattern4))
       {
-        bool abierto; // = p.abrirComprimido(abN);
-
-        if(abierto == true)
-        {
-          std::cout<<"\nSe ha abierto el archivo "<<abN<<"\n\n";
-          iniciado = true;
-        }
-        else if(abierto == false)
-          std::cout<<"\nNo se ha podido abrir el archivo, intente nuevamente\n\n";
+        //abrirComprimido(abN)
       }
       else  
         std::cout<<"El archivo no tiene la extensión correcta, intente nuevamente\n\n";
@@ -410,6 +392,10 @@ void Menu::abrirNormal(std::string nombreArchivo)
 
     std::cout<<"\n------------ Fin de archivo ------------\n";
     archivo.close();
+  }
+  else
+  {
+    std::cout<<"No se pudo abrir el archivo\n";
   }
 
   Partida p = Partida(contiP, jugadoresP, turnos);
