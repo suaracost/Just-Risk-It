@@ -13,6 +13,7 @@ class Continente
 
   public: //Metodos
     Continente(std::string nombreCon);
+    Continente(std::string nombreCon, int aux);
 };
 
 #endif

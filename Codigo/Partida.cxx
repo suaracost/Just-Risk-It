@@ -380,18 +380,6 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
 
 Partida::Partida() 
 {
-  std::list<Jugador>::iterator miIt;
-  for(miIt=jugadoresP.begin(); miIt!=jugadoresP.end(); miIt++)
-  {
-    jugadoresP.erase(miIt);
-  }
-  jugadoresP.clear();
-
-  while(!turnos.empty())
-  {
-    turnos.pop();
-  } 
-
 }
 
 void Partida::mostrarTerritoriosDisponibles()
@@ -1188,100 +1176,4 @@ bool Partida::guardarNormal(std::string nombreArchivo)
   }
 
   return guardado;
-}
-
-bool Partida::abrirNormal(std::string nombreArchivo)
-{
-  bool abierto = false;
-  std::string linea;
-  std::ifstream archivo(nombreArchivo);
-
-  int numJugadores = 0, numPaises;
-  std::string seccionActual;
-
-  if (archivo.is_open())
-  {
-    while (std::getline(archivo, linea))
-    {
-      if (linea.find("Numero de jugadores:") != std::string::npos)
-      {
-        std::string nume = linea.substr(linea.find(":") + 2);
-        numJugadores = std::stoi(nume);
-      }
-      else if (linea == "- Territorios")
-      {
-        seccionActual = "Territorios";
-        numPaises = 0;
-      }
-      else if (linea == "- Jugadores")
-      {
-        seccionActual = "Jugadores";
-      }
-      else if (linea == "- Turnos")
-      {
-        seccionActual = "Turnos";
-      }
-      else
-      {
-        if (seccionActual == "Territorios")
-        {
-          if (linea.find(")") != std::string::npos)
-          {
-            std::string nombreContinente = linea.substr(linea.find(")") + 2);
-            contiP[numPaises] = new Continente(nombreContinente);
-            numPaises++;
-          }
-          else
-          {
-            std::string nombreTerritorio = linea.substr(0, linea.find(","));
-            linea = linea.substr(linea.find(",") + 1);
-
-            std::string duenio = linea.substr(0, linea.find(","));
-            linea = linea.substr(linea.find(",") + 1);
-            
-            std::string numT = (linea.substr(0, linea.find(",")));
-            linea = linea.substr(linea.find(",") + 1);
-            int numTropas = std::stoi(numT);
-
-            std::string toma = (linea.substr(0, linea.find(",")));
-            int tomado = std::stoi(toma);
-            
-            Territorio nuevoTerritorio = Territorio(nombreTerritorio, duenio, numTropas, tomado);
-
-            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
-          }
-        }
-        //aqui pasa el segmentation error
-        /*else if (seccionActual == "Jugadores")
-        {
-          std::string nombreJugador = linea.substr(0, linea.find(","));
-          linea = linea.substr(linea.find(",") + 1);
-
-          std::string colorJugador = linea.substr(0, linea.find(","));
-          linea = linea.substr(linea.find(",") + 1);
-
-          std::string cantiT = (linea.substr(0, linea.find(",")));
-          int cantiTropas = std::stoi(cantiT);
-
-          Jugador nuevoJugador(nombreJugador, colorJugador, cantiTropas);
-
-          jugadoresP.push_back(nuevoJugador);
-        }
-        else if (seccionActual == "Turnos")
-        {
-          std::getline(archivo, linea);
-          turnos.push(linea);
-        }*/
-      }
-    }
-
-    abierto = true;
-    archivo.close();
-  }
-  else
-  {
-    abierto = false;
-  }
-
-  return abierto;
 }
