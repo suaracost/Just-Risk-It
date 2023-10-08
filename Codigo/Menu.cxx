@@ -362,7 +362,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
           }
           else
           {
-            /*std::string nombreTerritorio = linea.substr(0, linea.find(","));
+            std::string nombreTerritorio = linea.substr(0, linea.find(","));
             linea = linea.substr(linea.find(",") + 1);
 
             std::string duenio = linea.substr(0, linea.find(","));
@@ -380,12 +380,12 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
             nuevoTerritorio.numTropas = numTropas;
             nuevoTerritorio.tomado = tomado;
 
-            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);*/
+            contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
           }
         }
         else if (seccionActual == "Jugadores")
         {
-          /*std::string nombreJugador = linea.substr(0, linea.find(","));
+          std::string nombreJugador = linea.substr(0, linea.find(","));
           linea = linea.substr(linea.find(",") + 1);
 
           std::string colorJugador = linea.substr(0, linea.find(","));
@@ -396,12 +396,11 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
 
           Jugador nuevoJugador(nombreJugador, colorJugador, cantiTropas);
 
-          jugadoresP.push_back(nuevoJugador);*/
+          jugadoresP.push_back(nuevoJugador);
         }
         else if (seccionActual == "Turnos")
         {
-          /*std::getline(archivo, linea);
-          turnos.push(linea);*/
+          turnos.push(linea);
         }
       }
     }
