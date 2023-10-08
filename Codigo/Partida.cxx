@@ -1190,7 +1190,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
 
   if (archivo.is_open())
   {
-    while (std::getline(archivo, linea))
+    /*while (std::getline(archivo, linea))
     {
       if (linea.find("Numero de jugadores:") != std::string::npos)
       {
@@ -1261,7 +1261,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
           turnos.push(linea);
         }
       }
-    }
+    }*/
 
     abierto = true;
     archivo.close();
