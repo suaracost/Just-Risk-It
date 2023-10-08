@@ -1190,7 +1190,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
 
   if (archivo.is_open())
   {
-    /*while (std::getline(archivo, linea))
+    while (std::getline(archivo, linea))
     {
       if (linea.find("Numero de jugadores:") != std::string::npos)
       {
@@ -1240,7 +1240,8 @@ bool Partida::abrirNormal(std::string nombreArchivo)
             contiP[numPaises]->territoriosC.push_back(nuevoTerritorio);
           }
         }
-        else if (seccionActual == "Jugadores")
+        /*aqui pasa el segmentation error
+        /else if (seccionActual == "Jugadores")
         {
           std::string nombreJugador = linea.substr(0, linea.find(","));
           linea = linea.substr(linea.find(",") + 1);
@@ -1259,9 +1260,9 @@ bool Partida::abrirNormal(std::string nombreArchivo)
         {
           std::getline(archivo, linea);
           turnos.push(linea);
-        }
+        }*/
       }
-    }*/
+    }
 
     abierto = true;
     archivo.close();
