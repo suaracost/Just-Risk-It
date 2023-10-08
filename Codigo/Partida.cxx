@@ -1261,7 +1261,7 @@ bool Partida::abrirNormal(std::string nombreArchivo)
           }
         }
       }
-      else if("- Turnos")
+      else if(linea == "- Turnos")
       {
         //Extraer los turnos
         while(!archivo.eof())
