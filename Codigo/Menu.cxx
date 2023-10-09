@@ -465,7 +465,7 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
   std::list<Caracter>::iterator miIt;
 
   char caracteres[tamano];
-  int frecuencias[tamano];
+  long frecuencias[tamano];
 
   for(miIt = listaCaracteres.begin(); miIt != listaCaracteres.end(); miIt++)
   {
@@ -474,8 +474,9 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     aux++;
   }
 
-  for(int i=0; i<tamano; i++)
-  {
-    std::cout<<caracteres[i]<<" "<<frecuencias[i]<<std::endl;
-  }
+  HuffmanArbol arbol;
+  
+  arbol.generarArbol(caracteres, frecuencias, tamano);
+
+  std::string textoCifrado = arbol.cifrar(textoCifrar);
 }
