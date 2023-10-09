@@ -67,15 +67,14 @@ void Menu::menu()
   bool iniciado = false;
   std::regex pattern("^turno .*$");
   std::regex pattern2("^guardar .*.txt$");
-  std::regex pattern3("^inicializar_archivo .*$");
-  std::regex pattern4("^.*.txt$");
-  std::regex pattern5("^.*.bin$");
-  std::regex pattern6("^guardar_comprimido .*.bin$");
+  std::regex pattern3("^inicializar_texto .*$");
+  std::regex pattern4("^inicializar_binario .*$");
+  std::regex pattern5("^guardar_comprimido .*.bin$");
   Partida p;
   
   // Menu de todos los comandos
 
-  std::string comando, tu, tuJ, gu, guN, ab, abN, gc, gcN;
+  std::string comando, tu, tuJ, gu, guN, ab, abN, gc, gcN, abc, abcN;
   std::cout<<"\n";
   
   while(comando.compare("salir") != 0) // while para ingresar comandos
@@ -101,12 +100,21 @@ void Menu::menu()
       }
     }
 
-    if(comando.size() > 19)
+    if(comando.size() > 16)
     {
-      ab = comando.substr(0, 19);
-      if (ab.compare("inicializar_archivo") == 0)
+      ab = comando.substr(0, 16);
+      if (ab.compare("inicializar_texto") == 0)
       {
-        abN = comando.substr(20);
+        abN = comando.substr(17);
+      }
+    }
+
+    if(comando.size() > 16)
+    {
+      abc = comando.substr(0, 16);
+      if (abc.compare("inicializar_binario") == 0)
+      {
+        abcN = comando.substr(17);
       }
     }
 
@@ -197,7 +205,7 @@ void Menu::menu()
 
     // condicionales de guardar_comprimido 
       
-    else if (std::regex_match(comando, pattern6))
+    else if (std::regex_match(comando, pattern5))
     {
       bool guardado = guardarComprimido(p, gcN);
 
@@ -213,24 +221,20 @@ void Menu::menu()
       std::cout<<"\nLa forma correcta de utilizar este comando es: guardar_comprimido <nombre_archivo>\n"<<std::endl;
     }
 
-    // condicionales de inicializar_archivo
+    // condicionales de inicializar_archivo texto y binario
 
     else if (std::regex_match(comando, pattern3))
     {
       //revisa si es un archivo .txt
-      if(std::regex_match(abN, pattern4))
-      {
-        p = abrirNormal(abN);
-        iniciado = true;
-      }
+      p = abrirNormal(abN);
+      iniciado = true;
+    }
+
+    else if (std::regex_match(comando, pattern4))
+    {
       //revisa si es un archivo .bin
-      else if(std::regex_match(abN, pattern5))
-      {
-        p = abrirComprimido(abN);
-        iniciado = true;
-      }
-      else  
-        std::cout<<"\nEl archivo no tiene la extensión correcta, intente nuevamente\n\n";
+      p = abrirComprimido(abcN);
+      iniciado = true;
     }
 
     else if (comando.compare("inicializar_archivo ?") == 0)
