@@ -8,7 +8,9 @@
 - Menú(): Despliega el menú con todas las funciones de Risk
 - Inicio(): Inicia el juego donde cada jugador se crea y inicia sus territorios
     - Partida p = Partida(id)
-  
+- abrirNormal(string nombreArchivo): Abre el archivo de .txt donde se guardo toda la informacion de la partida
+- guardarComprimido(Partida p,string nombreArchivo) : Guarda toda la partida en en un .bin
+- abrirComprimido(string nombreArchivo): Abre el .bin donde se guardo toda la partida
 ## TAD Partida 🎯
 ### Conjunto mínimo de datos
 - Idpartida: Entero, Identificador de la partida 
