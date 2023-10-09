@@ -70,11 +70,12 @@ void Menu::menu()
   std::regex pattern3("^inicializar_archivo .*$");
   std::regex pattern4("^.*.txt$");
   std::regex pattern5("^.*.bin$");
+  std::regex pattern6("^guardar_comprimido .*.bin$");
   Partida p;
   
   // Menu de todos los comandos
 
-  std::string comando, tu, tuJ, gu, guN, ab, abN;
+  std::string comando, tu, tuJ, gu, guN, ab, abN, gc, gcN;
   std::cout<<"\n";
   
   while(comando.compare("salir") != 0) // while para ingresar comandos
@@ -106,6 +107,15 @@ void Menu::menu()
       if (ab.compare("inicializar_archivo") == 0)
       {
         abN = comando.substr(20);
+      }
+    }
+
+    if(comando.size() > 18)
+    {
+      gc = comando.substr(0, 18);
+      if (gc.compare("guardar_comprimido") == 0)
+      {
+        gcN = comando.substr(19);
       }
     }
   
@@ -187,9 +197,9 @@ void Menu::menu()
 
     // condicionales de guardar_comprimido 
       
-    else if (comando.compare("guardar_comprimido") == 0)
+    else if (std::regex_match(comando, pattern6))
     {
-      std::cout<<"\nPosibles salidas: Juego no inicializado, Comando correcto y Error al Guardar\n"<<std::endl;
+      guardarComprimido(p, gcN);
     }
 
     else if (comando.compare("guardar_comprimido ?") == 0)
