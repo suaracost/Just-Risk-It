@@ -107,10 +107,9 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   int aux = 0;
 
   std::system("clear");
-  
-  //while(aux < 42) 
-  // 
-  while(aux < 6)
+   
+  //while(aux < 6)
+  while(aux < 42)
   {
     bool puede = false, enc = false;
     std::list<Jugador>::iterator miIt;
