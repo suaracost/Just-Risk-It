@@ -409,10 +409,10 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
 
 Partida Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 {
-  bool a = p.guardarNormal("bin.txt");
+  //bool a = p.guardarNormal("bin.txt");
 
   std::string linea;
-  std::ifstream archivo("bin.txt");
+  std::ifstream archivo("prueba.txt");
 
   std::list<Caracter> listaCaracteres;
   std::string textoCifrar = "";
