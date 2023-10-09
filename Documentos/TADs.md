@@ -107,8 +107,8 @@
 -  fijarHijoDer(HuffmanNodo* der)
 -  fijarHijoIzq(HuffmanNodo* izq)
 -  obtenerFreq()
--  char obtenerDato()
--   bool esHoja()
+-  obtenerDato()
+-  esHoja()
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
