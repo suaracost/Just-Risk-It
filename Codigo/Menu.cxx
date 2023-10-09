@@ -426,7 +426,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   }
   else
   {
-    std::cout<<"\nNo se pudo abrir el archivo\n";
+    std::cout<<"\nNo se pudo abrir el archivo\n\n";
   }
 
   Partida p = Partida(contiP, jugadoresP, turnos);
@@ -532,6 +532,7 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
 {
   std::ifstream archivo(nombreArchivo, std::ios::binary);
   std::string textoDescifrado;
+  bool sigue = false;
 
   if (archivo.is_open())
   {
@@ -572,30 +573,40 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
     //std::cout << "Texto descifrado: " << textoDescifrado << std::endl;
 
     archivo.close();
+
+    sigue = true;
   }
   else
   {
-    std::cerr << "Error al abrir el archivo para lectura." << std::endl;
+    std::cout<<"\nError al abrir el archivo para lectura\n\n";
+    sigue = false;
   }
 
-  std::ofstream archivo2("bin2.txt");
+  Partida p;
 
-  for(int i=0; i<textoDescifrado.size(); i++)
+  if(sigue == true)
   {
-    if(textoDescifrado[i] == '_')
+
+    std::ofstream archivo2("bin2.txt");
+
+    for(int i=0; i<textoDescifrado.size(); i++)
     {
-      textoDescifrado[i] = ' ';
+      if(textoDescifrado[i] == '_')
+      {
+        textoDescifrado[i] = ' ';
+      }
     }
+
+    if(archivo2.is_open())
+    {
+      archivo2 << textoDescifrado;
+    }
+
+    archivo2.close();
+
+    p = abrirNormal("bin2.txt");
+  
   }
-
-  if(archivo2.is_open())
-  {
-    archivo2 << textoDescifrado;
-  }
-
-  archivo2.close();
-
-  Partida p = abrirNormal("bin2.txt");
 
   return p;
 }
