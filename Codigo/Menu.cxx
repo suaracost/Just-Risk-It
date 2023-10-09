@@ -517,7 +517,7 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
   return creado;
 }
 
-static void abrirComprimido(std::string nombreArchivo)
+void Menu::abrirComprimido(std::string nombreArchivo)
 {
   std::ifstream archivo(nombreArchivo, std::ios::binary);
 
