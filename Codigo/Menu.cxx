@@ -451,6 +451,9 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     }
   }
 
+  archivo.close();
+  remove("bin.txt");
+
   for(int i=0; i<textoCifrar.size(); i++)
   {
     bool enc = false;
@@ -500,7 +503,7 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 
   bool creado = false;
 
-  if (archivo.is_open())
+  if (archivo2.is_open())
   {
     archivo2.write(reinterpret_cast<char*>(&tamano), sizeof(tamano));
 
@@ -586,7 +589,6 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
 
   if(sigue == true)
   {
-
     std::ofstream archivo2("bin2.txt");
 
     for(int i=0; i<textoDescifrado.size(); i++)
@@ -605,7 +607,8 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
     archivo2.close();
 
     p = abrirNormal("bin2.txt");
-  
+
+    remove("bin2.txt");
   }
 
   return p;
