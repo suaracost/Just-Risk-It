@@ -226,7 +226,7 @@ void Menu::menu()
       //revisa si es un archivo .bin
       else if(std::regex_match(abN, pattern5))
       {
-        abrirComprimido(abN);
+        p = abrirComprimido(abN);
         iniciado = true;
       }
       else  
@@ -520,9 +520,10 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
   return creado;
 }
 
-void Menu::abrirComprimido(std::string nombreArchivo)
+Partida Menu::abrirComprimido(std::string nombreArchivo)
 {
   std::ifstream archivo(nombreArchivo, std::ios::binary);
+  std::string textoDescifrado;
 
   if (archivo.is_open())
   {
@@ -558,16 +559,9 @@ void Menu::abrirComprimido(std::string nombreArchivo)
 
     longiSec = aux;
 
-    std::string textoDescifrado = arbol.desCifrar(textoCifrado, longiSec);
+    textoDescifrado = arbol.desCifrar(textoCifrado, longiSec);
 
     //std::cout << "Texto descifrado: " << textoDescifrado << std::endl;
-
-    std::ofstream archivo2("bin2.txt");
-
-    if(archivo2.is_open())
-    {
-      archivo2 << textoDescifrado;
-    }
 
     archivo.close();
   }
@@ -575,4 +569,23 @@ void Menu::abrirComprimido(std::string nombreArchivo)
   {
     std::cerr << "Error al abrir el archivo para lectura." << std::endl;
   }
+
+  std::ofstream archivo2("bin2.txt");
+
+  for(int i=0; i<textoDescifrado.size(); i++)
+  {
+    if(textoDescifrado[i] == '_')
+    {
+      textoDescifrado[i] = ' ';
+    }
+  }
+
+  if(archivo2.is_open())
+  {
+    archivo2 << textoDescifrado;
+  }
+
+  Partida p = abrirNormal("bin2.txt");
+
+  return p;
 }
