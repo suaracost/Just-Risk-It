@@ -67,6 +67,9 @@
 - duenio: String, Define el dueño de esa carta 
 - tomado: Booleano, Define si esa carta tiene o no dueño
 ### Comportamiento del objeto
+
+## TAD Arbol
+
 - Cartas(string nombre,string tipo,string descri): para crear una carta
     - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
 
