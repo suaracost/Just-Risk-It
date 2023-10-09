@@ -31,7 +31,7 @@
 -  atacar() : Dentro de la función turno, decide si quiere atacar a un territorio enemigo para conquistarlo o no.
 -  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
 - guardarNormal(string nombreArchivo)
-  
+  - Post: Return guardado
 ## TAD Continente 🗺️
 ### Conjunto mínimo de datos
 - nombreContinente : String , Nombre del continente
