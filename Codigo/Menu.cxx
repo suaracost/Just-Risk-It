@@ -224,7 +224,7 @@ void Menu::menu()
         iniciado = true;
       }
       //revisa si es un archivo .bin
-      else if(std::regex_match(abN, pattern4))
+      else if(std::regex_match(abN, pattern5))
       {
         abrirComprimido(abN);
       }
