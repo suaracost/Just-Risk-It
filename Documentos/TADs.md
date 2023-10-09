@@ -21,6 +21,8 @@
    - Post: List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartas = new List< Carta >(52) , Continentes[6]
 -  Partida(Int idp) : Operación para crear una partida sin jugadores y jugadoresTurnos 
    - Post: List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartas = new List< Carta >(52) , Continentes[6] , Idpartida = idp
+- Partida(Contiente* Contip[] , List <Jugador> jugadoresP,  Queue<String> turnos)
+  - Post: List<Jugador> jugadores =  , List<Stack> jugadoresTurnos ,List<Carta> cartas =  , Continentes[6] , Idpartida = idp
 -  mostrarTerritoriosDisponibles(): Muestra todos los territorios disponibles en la partida
 -  mostrarTerritoriosPropios(string jug): Muestra todos los territorios del jugador jug
 -  mostrarTerritoriosEnemigos(string jug): Muestra todos los territorios enemigos del jugador jug
@@ -28,6 +30,7 @@
 -  nuevasTropas() : Dentro de la función turno, añade nuevas tropas según el número de territorios que tengas, dentro de un territorio en específico
 -  atacar() : Dentro de la función turno, decide si quiere atacar a un territorio enemigo para conquistarlo o no.
 -  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
+- guardarNormal(string nombreArchivo)
   
 ## TAD Continente 🗺️
 ### Conjunto mínimo de datos
