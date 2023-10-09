@@ -76,9 +76,9 @@
 - codigos ,Vector de tipo caracter y string: Nodos del arbol de Huffman.
 ### Comportamiento del objeto
 - HuffmanArbol() Constructor del arbol de Huffman
-- generarArbol(char dato[], long freq[],int size);
+- generarArbol(char dato[], long freq[],int size)
 - comparar
--  guardarCodigos(HuffmanNodo *inicio, std::string str)
+- guardarCodigos(HuffmanNodo *inicio, string str)
 - imprimirCodigos()
 - obtenerCodigo(char caracter)
 - cifrar(std::string secunecia)
@@ -92,12 +92,23 @@
 - frec, Tipo entero ,  Guarda la frecuencia del dato, sirve para la construcion del arbol
 ### Comportamiento del objeto
 - Caracter(char d): Constructor de Caracter
+
 ## TAD NodoHuffman
 ### Conjunto mínimo de datos
 - dato
 - freq
 - Der, Tipo puntero de HuffmanNodo, Hijo derecho del nodo para el arbol de Huffman
 - Izq,  Tipo puntero de HuffmanNodo, Hijo Izquierdo del nodo para el arbol de Huffman
+### Comportamiento del objeto
+-  HuffmanNodo()
+-  HuffmanNodo(char dato, unsigned int freq)
+-  obtenerHijoIzq()
+-  obtenerHijoDer()
+-  fijarHijoDer(HuffmanNodo* der)
+-  fijarHijoIzq(HuffmanNodo* izq)
+-  obtenerFreq()
+-  char obtenerDato()
+-   bool esHoja()
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
