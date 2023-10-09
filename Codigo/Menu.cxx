@@ -199,7 +199,13 @@ void Menu::menu()
       
     else if (std::regex_match(comando, pattern6))
     {
-      guardarComprimido(p, gcN);
+      bool guardado = guardarComprimido(p, gcN);
+
+      if (guardado == true)
+        std::cout<<"\nSe ha guardado la partida en "<<gcN<<"\n\n";
+
+      else if (guardado == false)
+        std::cout<<"\nNo se ha podido guardar la partida, intente nuevamente\n\n";
     }
 
     else if (comando.compare("guardar_comprimido ?") == 0)
@@ -417,10 +423,9 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   return p;
 }
 
-void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
+bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 {
   //bool a = p.guardarNormal("bin.txt");
-
   std::string linea;
   std::ifstream archivo("prueba.txt");
 
@@ -482,6 +487,8 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 
   std::ofstream archivo2(nombreArchivo, std::ios::binary);
 
+  bool creado = false;
+
   if (archivo.is_open())
   {
     archivo2.write(reinterpret_cast<char*>(&tamano), sizeof(tamano));
@@ -497,10 +504,65 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     archivo2.write(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
     archivo2.write(textoCifrado.c_str(), longitudTextoCifrado);
 
+    creado = true;
+
     archivo2.close();
   }
   else
   {
     std::cerr << "Error al abrir el archivo para escritura." << std::endl;
+    creado = false;
+  }
+
+  return creado;
+}
+
+static void abrirComprimido(std::string nombreArchivo)
+{
+  std::ifstream archivo(nombreArchivo, std::ios::binary);
+
+  if (archivo.is_open())
+  {
+    int tamano = 0;
+    archivo.read(reinterpret_cast<char*>(&tamano), sizeof(tamano));
+
+    char caracteres[tamano];
+    long frecuencias[tamano];
+
+    // Leer el array 'caracteres'
+    archivo.read(reinterpret_cast<char*>(caracteres), sizeof(caracteres));
+
+    // Leer el array 'frecuencias'
+    archivo.read(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
+
+    // Leer el texto cifrado (con su longitud)
+    int longitudTextoCifrado = 0;
+    archivo.read(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
+
+    char textoCifrado[longitudTextoCifrado];
+    archivo.read(textoCifrado, longitudTextoCifrado);
+
+    HuffmanArbol arbol;
+    arbol.generarArbol(caracteres, frecuencias, tamano);
+
+    long longiSec;
+    int aux=0;
+
+    for(int i=0; i<tamano; i++)
+    {
+      aux = aux + frecuencias[i];
+    }
+
+    longiSec = aux;
+
+    std::string textoDescifrado = arbol.desCifrar(textoCifrado, longiSec);
+
+    std::cout << "Texto descifrado: " << textoDescifrado << std::endl;
+
+    archivo.close();
+  }
+  else
+  {
+    std::cerr << "Error al abrir el archivo para lectura." << std::endl;
   }
 }
