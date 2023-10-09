@@ -417,7 +417,7 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   return p;
 }
 
-Partida Menu::guardarComprimido(Partida p, std::string nombreArchivo)
+void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 {
   //bool a = p.guardarNormal("bin.txt");
 
@@ -431,7 +431,7 @@ Partida Menu::guardarComprimido(Partida p, std::string nombreArchivo)
   {
     while (std::getline(archivo, linea))
     {
-      textoCifrar = textoCifrar + linea;
+      textoCifrar = textoCifrar + linea + "\n";
     }
   }
 
