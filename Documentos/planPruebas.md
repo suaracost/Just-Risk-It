@@ -102,13 +102,13 @@ Resultado Obtenido: ✅, ✅
 ### - Ingresar comando "guardar_comprimido <nombre_archivo>" 💾
 Entrada: guardar_comprimido <nombre_archivo>
 
-Resultado Esperado: 
+Resultado Esperado: no se ha podido guardar el archivo o si fue guardado exitosamente.
 
-Resultado Obtenido: 
+Resultado Obtenido: ✅, ✅
 
 ### - Ingresar comando "inicializar_archivo <nombre_archivo>" 🚦
 Entrada: inicializar_archivo <nombre_archivo>
 
-Resultado Esperado: 
+Resultado Esperado: No pudo leer el archivo, imprime el archivo que se ha leido y se puede jugar normalmente.
 
-Resultado Obtenido: 
+Resultado Obtenido: ✅, ✅
