@@ -226,7 +226,7 @@ void Menu::menu()
       //revisa si es un archivo .bin
       else if(std::regex_match(abN, pattern4))
       {
-        //abrirComprimido(abN)
+        abrirComprimido(abN);
       }
       else  
         std::cout<<"\nEl archivo no tiene la extensión correcta, intente nuevamente\n\n";
