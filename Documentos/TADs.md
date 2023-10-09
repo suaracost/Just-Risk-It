@@ -23,7 +23,7 @@
    - Post: List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartas = new List< Carta >(52) , Continentes[6]
 -  Partida(Int idp) : Operación para crear una partida sin jugadores y jugadoresTurnos 
    - Post: List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartas = new List< Carta >(52) , Continentes[6] , Idpartida = idp
-- Partida(Contiente* Contipa[] , List <Jugador> jugadoresP ,  Queue<String> turnos): crea la partida con los datos leidos en el .txt
+- Partida(Contiente* Contipa[], List <Jugador> jugadoresP, Queue<String> turnos): Crea la partida con los datos leídos en el .txt.
   - Post: List<Jugador> jugadores =  jugadoresPa  , List<Stack> Turnos = turnosPa , Continentes[6] = ContiPa[6] 
 -  mostrarTerritoriosDisponibles(): Muestra todos los territorios disponibles en la partida
 -  mostrarTerritoriosPropios(string jug): Muestra todos los territorios del jugador jug
