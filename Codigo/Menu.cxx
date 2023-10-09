@@ -585,6 +585,8 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
     archivo2 << textoDescifrado;
   }
 
+  archivo2.close();
+
   Partida p = abrirNormal("bin2.txt");
 
   return p;
