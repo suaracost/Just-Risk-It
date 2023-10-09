@@ -227,6 +227,7 @@ void Menu::menu()
       else if(std::regex_match(abN, pattern5))
       {
         abrirComprimido(abN);
+        iniciado = true;
       }
       else  
         std::cout<<"\nEl archivo no tiene la extensión correcta, intente nuevamente\n\n";
@@ -426,7 +427,9 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
 bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 {
   //bool a = p.guardarNormal("bin.txt");
+  //std::ifstream archivo("bin.txt");
   std::string linea;
+
   std::ifstream archivo("prueba.txt");
 
   std::list<Caracter> listaCaracteres;
@@ -557,7 +560,14 @@ void Menu::abrirComprimido(std::string nombreArchivo)
 
     std::string textoDescifrado = arbol.desCifrar(textoCifrado, longiSec);
 
-    std::cout << "Texto descifrado: " << textoDescifrado << std::endl;
+    //std::cout << "Texto descifrado: " << textoDescifrado << std::endl;
+
+    std::ofstream archivo2("bin2.txt");
+
+    if(archivo2.is_open())
+    {
+      archivo2 << textoDescifrado;
+    }
 
     archivo.close();
   }
