@@ -8,7 +8,7 @@ public:
     int frec;
 
 public:
-    Caracter();
+    Caracter(char d);
 };
 
 #include "Caracter.cxx"

@@ -2,6 +2,8 @@
 
 #include <iostream>
 
-Caracter::Caracter()
+Caracter::Caracter(char d)
 {
+    dato = d;
+    frec = 1;
 }

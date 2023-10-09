@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <fstream>
+#include "ArbolHuffman.h"
+#include "Caracter.h"
 
 // cosas que se necesitan para cambiar el color del texto
 #define reset "\033[0m"
@@ -403,4 +405,25 @@ Partida Menu::abrirNormal(std::string nombreArchivo)
   Partida p = Partida(contiP, jugadoresP, turnos);
 
   return p;
+}
+
+Partida Menu::guardarComprimido(Partida p, std::string nombreArchivo)
+{
+  bool a = p.guardarNormal("bin.txt");
+
+  std::string linea;
+  std::ifstream archivo("bin.txt");
+
+  std::list<Caracter> listaCaracteres;
+  std::string textoCifrar = "";
+
+  if (archivo.is_open())
+  {
+    while (std::getline(archivo, linea))
+    {
+      textoCifrar = textoCifrar + linea;
+    }
+  }
+
+  std::cout<<textoCifrar<<std::endl;
 }

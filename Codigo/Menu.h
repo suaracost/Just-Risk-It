@@ -12,6 +12,8 @@ class Menu
     static void menu();
     static Partida inicio();
     static Partida abrirNormal(std::string nombreArchivo);
+    static Partida guardarComprimido(Partida p, std::string nombreArchivo);
+    static Partida abrirComprimido(std::string nombreArchivo);
 };
 
 #endif // __MENU__H__
