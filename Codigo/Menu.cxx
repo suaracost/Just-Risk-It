@@ -483,14 +483,14 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
   //aqui pruebo
 
   long longiSec;
-  int aux = 0;
+  int aux2 = 0;
 
   for(int i=0; i<tamano; i++)
   {
-    aux = aux + frecuencias[i];
+    aux2 = aux2 + frecuencias[i];
   }
 
-  longiSec = aux;
+  longiSec = aux2;
 
   std::cout<<textoCifrado<<std::endl;
 
