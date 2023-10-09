@@ -114,4 +114,4 @@ imprimirCodigos(): Imprime los códigos Huffman.
 ![Banner](../Images/foto_dibujo.jpg)
 
 # Modelo Relacional
-![Banner](https://github.com/suaracost/Just-Risk-It/blob/89fb2298095327f4caaff251601b14565ada021d/Documentos/Modelo_de_relacion.pdf)
+![Banner](Documentos/Modelo_de_relacion.pdf)
