@@ -84,7 +84,20 @@
 - cifrar(std::string secunecia)
 - desCifrar(std::string cif, long longiSec)
 - deCodificar(HuffmanNodo *nodo, char dir, int &cont, std::string &des)
--  getRaiz() : Obtener el nodo raiz del arbol 
+-  getRaiz() : Obtener el nodo raiz del arbol
+
+## TAD Caracter
+### Conjunto mínimo de datos
+- dato, Tipo caracter, dato utilizadp para el arbol de huffman
+- frec, Tipo entero ,  Guarda la frecuencia del dato, sirve para la construcion del arbol
+### Comportamiento del objeto
+- Caracter(char d): Constructor de Caracter
+## TAD NodoHuffman
+### Conjunto mínimo de datos
+- dato
+- freq
+- Der, Tipo puntero de HuffmanNodo, Hijo derecho del nodo para el arbol de Huffman
+- Izq,  Tipo puntero de HuffmanNodo, Hijo Izquierdo del nodo para el arbol de Huffman
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
