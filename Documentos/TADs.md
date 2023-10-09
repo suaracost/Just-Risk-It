@@ -77,9 +77,9 @@
 ### Comportamiento del objeto
 - HuffmanArbol() Constructor del arbol de Huffman
 - generarArbol(char dato[], long freq[],int size) : se utiliza para construir el arbol de Huffman a partir de datos de frecuencia
-- comparar
-- guardarCodigos(HuffmanNodo *inicio, string str):
-- imprimirCodigos(): Imprime los codigos huffman:
+- comparar: Este es el operador de comparacion utilizado para la cola de prioridad
+- guardarCodigos(HuffmanNodo *inicio, string str): genera y almacena los codigos de huffman en el vector codigos
+- imprimirCodigos(): Imprime los codigos huffman: imprime los codigos del arbol
 - obtenerCodigo(char caracter): Devuelve el codigo huffman para un caracter dado
 - cifrar(std::string secunecia) : cirfra una cadena de texto utilizando los codigos Huffman
 - desCifrar(std::string cif, long longiSec): decifra una cadena de texto utilizando los codigos de Huffman
