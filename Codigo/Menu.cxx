@@ -479,4 +479,22 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
   arbol.generarArbol(caracteres, frecuencias, tamano);
 
   std::string textoCifrado = arbol.cifrar(textoCifrar);
+
+  //aqui pruebo
+
+  long longiSec;
+  int aux = 0;
+
+  for(int i=0; i<tamano; i++)
+  {
+    aux = aux + frecuencias[i];
+  }
+
+  longiSec = aux;
+
+  std::cout<<textoCifrado<<std::endl;
+
+  std::string textoDescifrado = arbol.desCifrar(textoCifrado, longiSec);
+
+  std::cout<<textoDescifrado<<std::endl;
 }
