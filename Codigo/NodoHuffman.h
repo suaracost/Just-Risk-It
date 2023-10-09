@@ -1,3 +1,5 @@
+//implementacion del árbol sacada de: https://github.com/monotera/Estructuras/tree/master/Proyecto
+
 #ifndef NODOHUFFMAN_H_
 #define NODOHUFFMAN_H_
 
