@@ -84,16 +84,28 @@
    guardar_comprimido ?
    ```
 
-11. Inicializar a partir de un archivo 🗃️
+11. Inicializar a partir de un archivo de texto 📨
    
       ```
-      inicializar_archivo <nombre_archivo>
+      inicializar_texto <nombre_archivo>
       ```
       
       Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juego desde un archivo de juego normal, el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso` se refiere a que el juego ya ha sido inicializado, `Archivo vacio o incompleto` se refiere a que el nombre del archivo no contiene información válida o no existe, por lo tanto, no sé ha podido inicializar. Si se necesita ayuda en este comando se puede ejecutar el comando:
    
       ```
-      inicializar_archivo ?
+      inicializar_texto ?
+      ```
+
+12. Inicializar a partir de un archivo binario🗃️
+   
+      ```
+      inicializar_binario <nombre_archivo>
+      ```
+      
+      Este comando inicializa el juego con los datos contenidos en el archivo `<nombre_archivo>` este debe inicializar el juego desde un archivo de juego normal, el cual fue generado por el comando guardar o guardar comprimido. Las posibles salidas de este son: `Juego en curso` se refiere a que el juego ya ha sido inicializado, `Archivo vacio o incompleto` se refiere a que el nombre del archivo no contiene información válida o no existe, por lo tanto, no sé ha podido inicializar. Si se necesita ayuda en este comando se puede ejecutar el comando:
+   
+      ```
+      inicializar_binario ?
       ```
 
 13. Calcular costo conquista 🤔
