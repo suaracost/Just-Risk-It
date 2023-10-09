@@ -435,8 +435,6 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     }
   }
 
-  //std::cout<<textoCifrar<<std::endl;
-
   for(int i=0; i<textoCifrar.size(); i++)
   {
     bool enc = false;
@@ -461,8 +459,23 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
       Caracter nuevoCaracter = Caracter(textoCifrar[i]);
       listaCaracteres.push_back(nuevoCaracter);
     }
-
-    std::cout<<textoCifrar[i];
   }
 
+  int tamano = listaCaracteres.size(), aux = 0;
+  std::list<Caracter>::iterator miIt;
+
+  char caracteres[tamano];
+  int frecuencias[tamano];
+
+  for(miIt = listaCaracteres.begin(); miIt != listaCaracteres.end(); miIt++)
+  {
+    caracteres[aux] = miIt->dato;
+    frecuencias[aux] = miIt->frec;
+    aux++;
+  }
+
+  for(int i=0; i<tamano; i++)
+  {
+    std::cout<<caracteres[i]<<" "<<frecuencias[i]<<std::endl;
+  }
 }
