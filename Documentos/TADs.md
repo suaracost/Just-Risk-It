@@ -70,7 +70,7 @@
 - tomado: Booleano, Define si esa carta tiene o no dueño
 ### Comportamiento del objeto
 
-## TAD ArbolHuffman
+## TAD ArbolHuffman 🏝️
 ### Conjunto mínimo de datos
 - raiz: Puntero de tipo HuffmanNodo. Nodo raíz del árbol de Huffman.
 - codigos: Vector de pares tipo caracter y string. Nodos del árbol de Huffman.
@@ -86,7 +86,7 @@ imprimirCodigos(): Imprime los códigos Huffman.
 - deCodificar(HuffmanNodo *nodo, char dir, int &cont, std::string &des): Recibe una cadena de caracteres binarios y decodifica la secuencia mientras crea el árbol.
 - getRaiz(): Obtiene el nodo raíz del árbol.
 
-## TAD NodoHuffman
+## TAD NodoHuffman ⛄
 ### Conjunto mínimo de datos
 - dato: Tipo caracter. Dato utilizado para el árbol de Huffman.
 - freq: Tipo entero. Guarda la frecuencia del dato, sirve para la construcción del árbol.
@@ -103,7 +103,7 @@ imprimirCodigos(): Imprime los códigos Huffman.
 - obtenerDato(): Obtiene el carácter almacenado en el nodo.
 - esHoja(): Verifica si el nodo es hoja, es decir, si no tiene hijos.
 
-## TAD Caracter
+## TAD Caracter 🔠
 ### Conjunto mínimo de datos
 - dato: Tipo caracter. Dato utilizado para el árbol de Huffman.
 - frec: Tipo entero. Guarda la frecuencia del dato, sirve para la construcción del árbol.
