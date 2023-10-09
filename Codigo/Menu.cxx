@@ -230,6 +230,11 @@ void Menu::menu()
       iniciado = true;
     }
 
+    else if (comando.compare("inicializar_texto ?") == 0)
+    {
+      std::cout<<"\nLa forma correcta de utilizar este comando es: inicializar_texto <nombre_archivo>\n"<<std::endl;
+    }
+
     else if (std::regex_match(comando, pattern4))
     {
       //revisa si es un archivo .bin
@@ -237,9 +242,9 @@ void Menu::menu()
       iniciado = true;
     }
 
-    else if (comando.compare("inicializar_archivo ?") == 0)
+    else if (comando.compare("inicializar_binario ?") == 0)
     {
-      std::cout<<"\nLa forma correcta de utilizar este comando es: inicializar_archivo <nombre_archivo>\n"<<std::endl;
+      std::cout<<"\nLa forma correcta de utilizar este comando es: inicializar_binario <nombre_archivo>\n"<<std::endl;
     }
 
     // condicionales de costo_conquista 
@@ -276,7 +281,8 @@ void Menu::menu()
                <<"\n - salir: termina la ejecución del programa." 
                <<"\n - guardar: guarda toda la partida en un archivo de texto plano" 
                <<"\n - guardar_comprimido: guarda toda la partida en un archivo binario" 
-               <<"\n - inicializar_archivo: inicializa el juego con los datos contenidos en el archivo <nombre_archivo>" 
+               <<"\n - inicializar_texto: inicializa el juego con los datos contenidos en el archivo de texto <nombre_archivo>"
+               <<"\n - inicializar_binario: inicializa el juego con los datos contenidos en el archivo binario <nombre_archivo>"  
                <<"\n - costo_conquista: calcula el costo y la secuencia de territoriors conquistados para lograr\n   controlar un territorio elegido." 
                <<"\n - conquista_mas_barata: calcula de todos los territorios posibles aquel que pueda sacrificar\n   el menor número de unidades perdidas"
                <<"\n - limpiar: limpia la interfaz y todos los comandos que se han hecho antes\n"<<std::endl;
