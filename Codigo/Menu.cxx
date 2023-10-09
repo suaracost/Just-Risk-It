@@ -100,21 +100,21 @@ void Menu::menu()
       }
     }
 
-    if(comando.size() > 16)
+    if(comando.size() > 17)
     {
-      ab = comando.substr(0, 16);
+      ab = comando.substr(0, 17);
       if (ab.compare("inicializar_texto") == 0)
       {
-        abN = comando.substr(17);
+        abN = comando.substr(18);
       }
     }
 
-    if(comando.size() > 16)
+    if(comando.size() > 19)
     {
-      abc = comando.substr(0, 16);
+      abc = comando.substr(0, 19);
       if (abc.compare("inicializar_binario") == 0)
       {
-        abcN = comando.substr(17);
+        abcN = comando.substr(20);
       }
     }
 
