@@ -480,24 +480,24 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 
   std::string textoCifrado = arbol.cifrar(textoCifrar);
 
-  std::ofstream archivo(nombreArchivo, std::ios::binary);
+  std::ofstream archivo2(nombreArchivo, std::ios::binary);
 
   if (archivo.is_open())
   {
-    archivo.write(reinterpret_cast<char*>(&tamano), sizeof(tamano));
+    archivo2.write(reinterpret_cast<char*>(&tamano), sizeof(tamano));
 
     // Escribir el array 'caracteres'
-    archivo.write(reinterpret_cast<char*>(caracteres), sizeof(caracteres));
+    archivo2.write(reinterpret_cast<char*>(caracteres), sizeof(caracteres));
 
     // Escribir el array 'frecuencias'
-    archivo.write(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
+    archivo2.write(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
 
     // Escribir el texto cifrado (con su longitud)
     int longitudTextoCifrado = textoCifrado.size();
-    archivo.write(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
-    archivo.write(textoCifrado.c_str(), longitudTextoCifrado);
+    archivo2.write(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
+    archivo2.write(textoCifrado.c_str(), longitudTextoCifrado);
 
-    archivo.close();
+    archivo2.close();
   }
   else
   {
