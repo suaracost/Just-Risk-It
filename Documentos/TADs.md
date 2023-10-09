@@ -72,43 +72,43 @@
 
 ## TAD ArbolHuffman
 ### Conjunto mínimo de datos
-- raiz: Puntero de tipo HuffmanNodo, nodo raiz del arbol de Huffmann
-- codigos ,Vector de pares tipo caracter y string: Nodos del arbol de Huffman.
+- raiz: Puntero de tipo HuffmanNodo. Nodo raíz del árbol de Huffman.
+- codigos: Vector de pares tipo caracter y string. Nodos del árbol de Huffman.
 ### Comportamiento del objeto
-- HuffmanArbol() Constructor del arbol de Huffman
-- generarArbol(char dato[], long freq[],int size) : se utiliza para construir el arbol de Huffman a partir de datos de frecuencia
-- comparar: Este es el operador de comparacion utilizado para la cola de prioridad
-- guardarCodigos(HuffmanNodo *inicio, string str): genera y almacena los codigos de huffman en el vector codigos
-- imprimirCodigos(): Imprime los codigos huffman: imprime los codigos del arbol
-- obtenerCodigo(char caracter): Devuelve el codigo huffman para un caracter dado
-- cifrar(std::string secunecia) : cirfra una cadena de texto utilizando los codigos Huffman
-- desCifrar(std::string cif, long longiSec): decifra una cadena de texto utilizando los codigos de Huffman
-- deCodificar(HuffmanNodo *nodo, char dir, int &cont, std::string &des): recive una cadena de caracteres binarios y decodifica la secuancia y va creando el arbol
--  getRaiz() : Obtener el nodo raiz del arbol
+- HuffmanArbol(): Constructor del árbol de Huffman.
+- generarArbol(char dato[], long freq[], int size): Se utiliza para construir el - árbol de Huffman a partir de datos de frecuencia.
+- comparar: Este es el operador de comparación utilizado para la cola de prioridad.
+- guardarCodigos(HuffmanNodo *inicio, string str): Genera y almacena los códigos de Huffman en el vector codigos.
+imprimirCodigos(): Imprime los códigos Huffman.
+- obtenerCodigo(char caracter): Devuelve el código Huffman para un carácter dado.
+- cifrar(std::string secuencia): Cifra una cadena de texto utilizando los códigos Huffman.
+- desCifrar(std::string cif, long longiSec): Descifra una cadena de texto utilizando los códigos de Huffman.
+- deCodificar(HuffmanNodo *nodo, char dir, int &cont, std::string &des): Recibe una cadena de caracteres binarios y decodifica la secuencia mientras crea el árbol.
+- getRaiz(): Obtiene el nodo raíz del árbol.
 
 ## TAD NodoHuffman
 ### Conjunto mínimo de datos
-- dato
-- freq
-- Der, Tipo puntero de HuffmanNodo, Hijo derecho del nodo para el arbol de Huffman
-- Izq,  Tipo puntero de HuffmanNodo, Hijo Izquierdo del nodo para el arbol de Huffman
+- dato: Tipo caracter. Dato utilizado para el árbol de Huffman.
+- freq: Tipo entero. Guarda la frecuencia del dato, sirve para la construcción del árbol.
+- Der: Tipo puntero de HuffmanNodo. Hijo derecho del nodo para el árbol de Huffman.
+- Izq: Tipo puntero de HuffmanNodo. Hijo Izquierdo del nodo para el árbol de Huffman.
 ### Comportamiento del objeto
--  HuffmanNodo() : Constructor vacio de nodosHuffman
--  HuffmanNodo(char dato, unsigned int freq): constructor de con dato y frecuencia para nodoHuffman
--  obtenerHijoIzq(): obtener los punteros al hijo izquierdo del nodo
--  obtenerHijoDer(): obtener los punteros al hijo derecho del nodo
--  fijarHijoDer(HuffmanNodo* der): Fija el puntero al hijo Izquierdo del nodo
--  fijarHijoIzq(HuffmanNodo* izq): Fija el puntero al hijo Izquierdo del nodo
--  obtenerFreq(): Obtener la frecuencia asociada al nodo
--  obtenerDato(): Obtener el caracter almacenado en el nodo
--  esHoja(): Verifica si el nodo es hoja osea si no tiene hijos
+- HuffmanNodo(): Constructor vacío de nodos Huffman.
+- HuffmanNodo(char dato, unsigned int freq): Constructor con dato y frecuencia para nodo Huffman.
+- obtenerHijoIzq(): Obtiene los punteros al hijo izquierdo del nodo.
+- obtenerHijoDer(): Obtiene los punteros al hijo derecho del nodo.
+- fijarHijoDer(HuffmanNodo* der): Fija el puntero al hijo derecho del nodo.
+- fijarHijoIzq(HuffmanNodo* izq): Fija el puntero al hijo izquierdo del nodo.
+- obtenerFreq(): Obtiene la frecuencia asociada al nodo.
+- obtenerDato(): Obtiene el carácter almacenado en el nodo.
+- esHoja(): Verifica si el nodo es hoja, es decir, si no tiene hijos.
 
 ## TAD Caracter
 ### Conjunto mínimo de datos
-- dato, Tipo caracter, dato utilizadp para el arbol de huffman
-- frec, Tipo entero ,  Guarda la frecuencia del dato, sirve para la construcion del arbol
+- dato: Tipo caracter. Dato utilizado para el árbol de Huffman.
+- frec: Tipo entero. Guarda la frecuencia del dato, sirve para la construcción del árbol.
 ### Comportamiento del objeto
-- Caracter(char d): Constructor de Caracter
+- Caracter(char d): Constructor de Caracter.
 
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
