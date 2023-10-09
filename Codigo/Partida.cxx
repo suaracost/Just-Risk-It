@@ -556,6 +556,7 @@ void Partida::turno()
     }
     else if (deci.compare("no") == 0)
     {
+      std::cout<<"\n";
       sigue2 = true;
     }
     else
