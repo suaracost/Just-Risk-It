@@ -70,11 +70,21 @@
 - tomado: Booleano, Define si esa carta tiene o no dueño
 ### Comportamiento del objeto
 
-## TAD Arbol
-
-- Cartas(string nombre,string tipo,string descri): para crear una carta
-    - Post: nombreCarta = nombre, tipoCarta = tipo , descripcion = descri
-
+## TAD ArbolHuffman
+### Conjunto mínimo de datos
+- raiz: Puntero de tipo HuffmanNodo, nodo raiz del arbol de Huffmann
+- codigos ,Vector de tipo caracter y string: Nodos del arbol de Huffman.
+### Comportamiento del objeto
+- HuffmanArbol() Constructor del arbol de Huffman
+- generarArbol(char dato[], long freq[],int size);
+- comparar
+-  guardarCodigos(HuffmanNodo *inicio, std::string str)
+- imprimirCodigos()
+- obtenerCodigo(char caracter)
+- cifrar(std::string secunecia)
+- desCifrar(std::string cif, long longiSec)
+- deCodificar(HuffmanNodo *nodo, char dir, int &cont, std::string &des)
+-  getRaiz() : Obtener el nodo raiz del arbol 
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
