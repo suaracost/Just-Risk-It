@@ -435,5 +435,34 @@ void Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     }
   }
 
-  std::cout<<textoCifrar<<std::endl;
+  //std::cout<<textoCifrar<<std::endl;
+
+  for(int i=0; i<textoCifrar.size(); i++)
+  {
+    bool enc = false;
+    std::list<Caracter>::iterator miIt;
+
+    if(textoCifrar[i] == ' ')
+    {
+      textoCifrar[i] = '_';
+    }
+    
+    for (miIt = listaCaracteres.begin(); miIt != listaCaracteres.end(); miIt++)
+    {
+      if(textoCifrar[i] == miIt->dato)
+      {
+        miIt->frec++;
+        enc = true;
+      }
+    }
+
+    if(enc == false)
+    {
+      Caracter nuevoCaracter = Caracter(textoCifrar[i]);
+      listaCaracteres.push_back(nuevoCaracter);
+    }
+
+    std::cout<<textoCifrar[i];
+  }
+
 }
