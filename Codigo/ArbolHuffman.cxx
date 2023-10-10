@@ -90,7 +90,6 @@ std::string HuffmanArbol::cifrar(std::string sec)
     for (int i = 0; i < sec.size(); ++i)
     {
         cifrado += this->obtenerCodigo(sec[i]);
-        std::cout << this->obtenerCodigo(sec[i]) << std::endl;
     }
     int tama = cifrado.size() % 8;
     if(tama != 0){
