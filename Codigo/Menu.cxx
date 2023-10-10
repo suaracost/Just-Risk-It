@@ -498,12 +498,6 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
   arbol.generarArbol(caracteres, frecuencias, tamano);
 
   std::string textoCifrado = arbol.cifrar(textoCifrar);
-  char texto[textoCifrado.size()];
-
-  for(int i=0; i<textoCifrado.size(); i++)
-  {
-    texto[i] = textoCifrado[i];
-  }
 
   std::ofstream archivo2(nombreArchivo, std::ios::binary);
 
@@ -520,7 +514,9 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     archivo2.write(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
 
     // Escribir el texto cifrado (con su longitud)
-    archivo2.write(reinterpret_cast<char*>(texto), sizeof(texto));
+    int longitudTextoCifrado = textoCifrado.size();
+    archivo2.write(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
+    archivo2.write(textoCifrado.c_str(), longitudTextoCifrado);
 
     creado = true;
 
