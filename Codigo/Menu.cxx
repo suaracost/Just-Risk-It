@@ -588,7 +588,6 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
     }
 
     textoDescifrado = arbol.desCifrar(desC, longiSec);
-    std::cout<<textoDescifrado<<std::endl;
 
     //std::cout << "Texto descifrado: " << textoDescifrado << std::endl;
 
