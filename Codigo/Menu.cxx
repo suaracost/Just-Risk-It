@@ -499,6 +499,14 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 
   std::string textoCifrado = arbol.cifrar(textoCifrar);
 
+  int tamManda = textoCifrado.size();
+  int manda[tamManda];
+
+  for(int i=0; i<tamManda; i++)
+  {
+    manda[i] = textoCifrado[i] - '0';
+  }
+
   std::ofstream archivo2(nombreArchivo, std::ios::binary);
 
   bool creado = false;
@@ -513,10 +521,11 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     // Escribir el array 'frecuencias'
     archivo2.write(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
 
-    // Escribir el texto cifrado (con su longitud)
-    int longitudTextoCifrado = textoCifrado.size();
-    archivo2.write(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
-    archivo2.write(textoCifrado.c_str(), longitudTextoCifrado);
+    //escribir el tamano del arreglo
+    archivo2.write(reinterpret_cast<char*>(&tamManda), sizeof(tamManda));
+    
+    // Escribir el array 'manda'
+    archivo2.write(reinterpret_cast<char*>(manda), sizeof(manda));
 
     creado = true;
 
@@ -534,16 +543,18 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
 Partida Menu::abrirComprimido(std::string nombreArchivo)
 {
   std::ifstream archivo(nombreArchivo, std::ios::binary);
+  std::string desC = "";
   std::string textoDescifrado;
   bool sigue = false;
 
   if (archivo.is_open())
   {
-    int tamano = 0;
+    int tamano = 0, manda = 0;
     archivo.read(reinterpret_cast<char*>(&tamano), sizeof(tamano));
 
     char caracteres[tamano];
     long frecuencias[tamano];
+    int textoCifrado[manda];
 
     // Leer el array 'caracteres'
     archivo.read(reinterpret_cast<char*>(caracteres), sizeof(caracteres));
@@ -551,13 +562,12 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
     // Leer el array 'frecuencias'
     archivo.read(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
 
-    // Leer el texto cifrado (con su longitud)
-    int longitudTextoCifrado = 0;
-    archivo.read(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
+    // Leer el tamano de 'manda'
+    archivo.read(reinterpret_cast<char*>(&manda), sizeof(manda));
 
-    char textoCifrado[longitudTextoCifrado];
-    archivo.read(textoCifrado, longitudTextoCifrado);
-
+    // Leer el array 'manda'
+    archivo.read(reinterpret_cast<char*>(textoCifrado), sizeof(textoCifrado));
+    
     HuffmanArbol arbol;
     arbol.generarArbol(caracteres, frecuencias, tamano);
 
@@ -571,7 +581,12 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
 
     longiSec = aux;
 
-    textoDescifrado = arbol.desCifrar(textoCifrado, longiSec);
+    for(int i=0; i<manda; i++)
+    {
+      desC = desC + std::to_string(textoCifrado[i]);
+    }
+
+    textoDescifrado = arbol.desCifrar(desC, longiSec);
 
     //std::cout << "Texto descifrado: " << textoDescifrado << std::endl;
 
