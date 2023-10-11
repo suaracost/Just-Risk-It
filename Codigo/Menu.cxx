@@ -554,7 +554,6 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
 
     char caracteres[tamano];
     long frecuencias[tamano];
-    int textoCifrado[manda];
 
     // Leer el array 'caracteres'
     archivo.read(reinterpret_cast<char*>(caracteres), sizeof(caracteres));
@@ -564,6 +563,8 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
 
     // Leer el tamano de 'manda'
     archivo.read(reinterpret_cast<char*>(&manda), sizeof(manda));
+  
+    int textoCifrado[manda];
 
     // Leer el array 'manda'
     archivo.read(reinterpret_cast<char*>(textoCifrado), sizeof(textoCifrado));
