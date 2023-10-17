@@ -19,8 +19,11 @@ Resultado Esperado: la partida no ha iniciado, no se encuentra el jugador, no es
 Resultado Obtenido: ✅, ✅, ✅, ✅
 
 ![Banner](../Images/1_2_1.png)
+
 ![Banner](../Images/1_2_2.png)
+
 ![Banner](../Images/1_2_3.png)
+
 ![Banner](../Images/1_2_4.png)
 
 ### 3. Ingresar comando "ayuda" 🆘
