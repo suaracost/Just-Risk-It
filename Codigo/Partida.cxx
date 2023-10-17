@@ -102,6 +102,10 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
     turnos.push(nom); // se va creando la cola
   }
 
+  std::string cont0;
+  std::cout<<"\nPresione enter para continuar ";
+  std::getline(std::cin, cont0);
+
   //elegir territorios
 
   int aux = 0;

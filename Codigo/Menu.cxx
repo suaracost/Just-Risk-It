@@ -66,10 +66,10 @@ void Menu::menu()
   mapamundi();
   bool iniciado = false;
   std::regex pattern("^turno .*$");
-  std::regex pattern2("^guardar .*.txt$");
+  std::regex pattern2("^guardar .*$");
   std::regex pattern3("^inicializar_texto .*$");
   std::regex pattern4("^inicializar_binario .*$");
-  std::regex pattern5("^guardar_comprimido .*.bin$");
+  std::regex pattern5("^guardar_comprimido .*$");
   Partida p;
   
   // Menu de todos los comandos
