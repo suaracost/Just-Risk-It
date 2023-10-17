@@ -62,21 +62,21 @@ Resultado Obtenido: ✅
 
 ## Funcion turno 🎏
 
-### 5. Ingresar nuevas tropas 🐧
+### 1. Ingresar nuevas tropas 🐧
 Entrada: nombre del territorio 
 
 Resultado Esperado: muestra el nombre del territorio y la nueva cantidad de tropas.
 
 Resultado Obtenido: ✅
 
-### 6. Atacar 🤺
+### 2. Atacar 🤺
 Entrada: nombre del territorio de origen y nombre del territorio de destino
 
 Resultado Esperado: se lanzan los dados y muestra si se logró o no el ataque, dando posibilidad a seguir o para el ataque.
 
 Resultado Obtenido: ✅
 
-### 7. Fortificar 🛡️
+### 3. Fortificar 🛡️
 Entrada: nombre del territorio de origen, nombre del territorio de destino y cantidad de tropas a enviar
 
 Resultado Esperado: se muestra el territorio de origen y la cantidad de tropas restantes y el territorio de destino con la nueva cantidad de tropas.
