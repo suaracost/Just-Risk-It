@@ -513,10 +513,24 @@ bool Menu::guardarComprimido(Partida p, std::string nombreArchivo)
     // Escribir el array 'frecuencias'
     archivo2.write(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
 
-    // Escribir el texto cifrado (con su longitud)
-    int longitudTextoCifrado = textoCifrado.size();
-    archivo2.write(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
-    archivo2.write(textoCifrado.c_str(), longitudTextoCifrado);
+    //corección 
+    for (int i = 0; i < textoCifrado.length(); i += 8) 
+    {
+      std::string byteStr = textoCifrado.substr(i, 8); // Obtiene 8 bits
+      char byte = 0;
+
+      // Convierte la cadena de 8 bits a un byte (char)
+      for (int j = 0; j < 8; j++) 
+      {
+        if (byteStr[j] == '1')
+        {
+            byte |= (1 << (7 - j));
+        }
+      }
+      // Escribe el byte en el archivo comprimido
+      archivo2.write(&byte, sizeof(char));
+    }
+    //fin correcion
 
     creado = true;
 
@@ -551,12 +565,25 @@ Partida Menu::abrirComprimido(std::string nombreArchivo)
     // Leer el array 'frecuencias'
     archivo.read(reinterpret_cast<char*>(frecuencias), sizeof(frecuencias));
 
-    // Leer el texto cifrado (con su longitud)
-    int longitudTextoCifrado = 0;
-    archivo.read(reinterpret_cast<char*>(&longitudTextoCifrado), sizeof(longitudTextoCifrado));
-
-    char textoCifrado[longitudTextoCifrado];
-    archivo.read(textoCifrado, longitudTextoCifrado);
+    //correcion
+    std::string textoCifrado = "";
+    
+    char byte;
+    while (archivo.read(&byte, sizeof(char))) 
+    {
+      for (int j = 7; j >= 0; j--) 
+      {
+        if ((byte >> j) & 1) 
+        {
+          textoCifrado += "1";
+        } 
+        else 
+        {
+          textoCifrado += "0";
+        }
+      }
+    }
+    //fin correcion
 
     HuffmanArbol arbol;
     arbol.generarArbol(caracteres, frecuencias, tamano);
