@@ -65,6 +65,7 @@ void Menu::menu()
 {
   mapamundi();
   bool iniciado = false;
+  bool terminado = false;
   std::regex pattern("^turno .*$");
   std::regex pattern2("^guardar .*$");
   std::regex pattern3("^inicializar_texto .*$");
@@ -133,8 +134,15 @@ void Menu::menu()
 
     else if (comando.compare("inicializar") == 0) 
     {
-      p = inicio();
-      iniciado = true;
+      if(terminado == false)
+      {
+        p = inicio();
+        iniciado = true;
+      }
+      else
+      {
+        std::cout<<"\nEl juego ya ha terminado\n\n";
+      }
     }
 
     else if (comando.compare("inicializar ?") == 0)
@@ -163,6 +171,10 @@ void Menu::menu()
       if(iniciado == false)
       {
         std::cout<<"\nEl juego no ha sido inicializado\n\n";
+      }
+      else if(terminado == true)
+      {
+        std::cout<<"\nEl juego ya ha terminado\n\n";
       }
       else 
       {
@@ -225,9 +237,15 @@ void Menu::menu()
 
     else if (std::regex_match(comando, pattern3))
     {
-      //revisa si es un archivo .txt
-      p = abrirNormal(abN);
-      iniciado = true;
+      if(terminado == false)
+      {
+        p = abrirNormal(abN);
+        iniciado = true;
+      }
+      else
+      {
+        std::cout<<"\nEl juego ya ha terminado\n\n";
+      }
     }
 
     else if (comando.compare("inicializar_texto ?") == 0)
@@ -237,9 +255,15 @@ void Menu::menu()
 
     else if (std::regex_match(comando, pattern4))
     {
-      //revisa si es un archivo .bin
-      p = abrirComprimido(abcN);
-      iniciado = true;
+      if(terminado == false)
+      {
+        p = abrirComprimido(abcN);
+        iniciado = true;
+      }
+      else 
+      {
+        std::cout<<"\nEl juego ya ha terminado\n\n";
+      }
     }
 
     else if (comando.compare("inicializar_binario ?") == 0)
@@ -307,6 +331,15 @@ void Menu::menu()
 
     else
       std::cout<<red<<"\nEl comando "<<reset<<comando<<red<<" no pudo ser reconocido, intente nuevamente\n"<<reset<<std::endl;
+
+    // verificar que hay un ganador
+
+    if(p.turnos.size() == 1)
+    {
+      if(comando.compare("salir") != 0)
+        std::cout<<"El ganador es "<<p.turnos.front()<<"\nUtilice el comando \"salir\" para terminar el programa\n\n";
+      terminado = true;
+    }
   }
 };
 
