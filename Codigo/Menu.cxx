@@ -71,11 +71,12 @@ void Menu::menu()
   std::regex pattern3("^inicializar_texto .*$");
   std::regex pattern4("^inicializar_binario .*$");
   std::regex pattern5("^guardar_comprimido .*$");
+  std::regex pattern6("^costo_conquista .*$");
   Partida p;
   
   // Menu de todos los comandos
 
-  std::string comando, tu, tuJ, gu, guN, ab, abN, gc, gcN, abc, abcN;
+  std::string comando, tu, tuJ, gu, guN, ab, abN, gc, gcN, abc, abcN, cc, cN;
   std::cout<<"\n";
   
   while(comando.compare("salir") != 0) // while para ingresar comandos
@@ -125,6 +126,15 @@ void Menu::menu()
       if (gc.compare("guardar_comprimido") == 0)
       {
         gcN = comando.substr(19);
+      }
+    }
+
+    if(comando.size() > 15)
+    {
+      cc = comando.substr(0, 15);
+      if (cc.compare("costo_conquista") == 0)
+      {
+        cN = comando.substr(16);
       }
     }
   
@@ -273,9 +283,16 @@ void Menu::menu()
 
     // condicionales de costo_conquista 
 
-    else if (comando.compare("costo_conquista") == 0)
+    else if (std::regex_match(comando, pattern6))
     {
-      std::cout<<"\nPosibles salidas: Juego no inicializado, Juego terminado y Comando correcto\n"<<std::endl;
+      if(iniciado == false)
+      {
+        std::cout<<"\nEl juego no ha sido inicializado\n\n";
+      }
+      else
+      {
+        //aqui usamos cN para saber el nombre del territorio que se necesita
+      }
     }
 
     else if (comando.compare("costo_conquista ?") == 0)
@@ -287,7 +304,14 @@ void Menu::menu()
 
     else if (comando.compare("conquista_mas_barata") == 0)
     {
-      std::cout<<"\nPosibles salidas: Juego no inicializado, Juego terminado y Comando correcto\n"<<std::endl;
+      if(iniciado == false)
+      {
+        std::cout<<"\nEl juego no ha sido inicializado\n\n";
+      }
+      else
+      {
+
+      }
     }
 
     else if (comando.compare("conquista_mas_barata ?") == 0)
