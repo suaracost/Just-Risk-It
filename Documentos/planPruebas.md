@@ -148,3 +148,24 @@ Resultado Esperado: No pudo leer el archivo, imprime el archivo que se ha leido 
 Resultado Obtenido: ✅, ✅
 
 ![Banner](../Images/4_4.png)
+
+## Recorridos (grafos) 🗺️
+
+### 1. Ingresar comando "costo_conquista <territorio>" 🪖
+Entrada: costo_conquista <territorio>
+
+Resultado Esperado: la partida no ha iniciado, 
+
+Resultado Obtenido: ✅,
+
+![Banner]()
+
+### 2. Ingresar comando "conquista_mas_barata" 💸
+Entrada: conquista_mas_barata
+
+Resultado Esperado: la partida no ha iniciado, 
+
+Resultado Obtenido: ✅,
+
+![Banner]()
+
