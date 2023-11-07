@@ -291,7 +291,10 @@ void Menu::menu()
       }
       else
       {
-        //aqui usamos cN para saber el nombre del territorio que se necesita
+        //aqui usamos cN para saber el nombre del territorio que se necesita, 
+        //tener en cuenta turno
+        //puede que el territorio no exista o no sea de ese jugador
+        //flujo correcto -> dijkstra
       }
     }
 
@@ -310,7 +313,8 @@ void Menu::menu()
       }
       else
       {
-
+        //tener en cuenta turno
+        //flujo correcto -> dijkstra
       }
     }
 
