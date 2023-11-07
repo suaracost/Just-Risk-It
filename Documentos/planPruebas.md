@@ -154,9 +154,13 @@ Resultado Obtenido: ✅, ✅
 ### 1. Ingresar comando "costo_conquista \<territorio\>" 🪖
 Entrada: costo_conquista \<territorio\>
 
-Resultado Esperado: la partida no ha iniciado, 
+Resultado Esperado: la partida no ha iniciado, error con el territorio a conquistar, o devuelve el costo y el camino que se debe seguir para conquistar el territorio dado
 
-Resultado Obtenido: ✅,
+Resultado Obtenido: ✅, ❓, ❓
+
+![Banner](../Images/5_1_1.png)
+
+![Banner]()
 
 ![Banner]()
 
@@ -165,7 +169,11 @@ Entrada: conquista_mas_barata
 
 Resultado Esperado: la partida no ha iniciado, 
 
-Resultado Obtenido: ✅,
+Resultado Obtenido: ✅, ❓, ❓
+
+![Banner](../Images/5_2_1.png)
+
+![Banner]()
 
 ![Banner]()
 
