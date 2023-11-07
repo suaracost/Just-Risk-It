@@ -114,4 +114,4 @@ imprimirCodigos(): Imprime los códigos Huffman.
 ![Banner](../Images/foto_dibujo.jpg)
 
 # Modelo Relacional
-![Banner](../Images/Foto_Modelo_de_relacion.jpg)
+![Banner](../Images/Foto_Modelo_de_relacion.png)
