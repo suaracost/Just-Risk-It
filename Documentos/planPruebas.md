@@ -151,8 +151,8 @@ Resultado Obtenido: ✅, ✅
 
 ## Recorridos (grafos) 🗺️
 
-### 1. Ingresar comando "costo_conquista <territorio>" 🪖
-Entrada: costo_conquista <territorio>
+### 1. Ingresar comando "costo_conquista \<territorio\>" 🪖
+Entrada: costo_conquista \<territorio\>
 
 Resultado Esperado: la partida no ha iniciado, 
 
