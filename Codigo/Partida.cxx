@@ -24,6 +24,8 @@ Partida::Partida(int idP) : jugadoresP(), cartasP(), turnos()
   contiP[4] = new Continente("Asia");
   contiP[5] = new Continente("Australia");
 
+  crearGrafo();
+
   int num, numTrop;
   
   do
@@ -388,6 +390,8 @@ Partida::Partida()
 
 Partida::Partida(Continente* contiPa[], std::list<Jugador> jugadoresPa, std::queue<std::string> turnosPa)
 {
+  crearGrafo();
+
   for(int i=0; i<6; i++)
   {
     contiP[i] = contiPa[i];
@@ -519,6 +523,7 @@ void Partida::mostrarTerritoriosEnemigos(std::string jug)
 void Partida::turno()
 {
   nuevasTropas();
+  actualizarGrafo();
   
   std::string deci;
   bool sigue = false, sigue2 = false;
@@ -682,7 +687,7 @@ void Partida::nuevasTropas()
         }
       }
       if(puede == false)
-        std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n\n";
+        std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n";
     }
   }
   else
@@ -698,7 +703,7 @@ void Partida::atacar()
 
   std::string jug = turnos.front();
 
-  bool puede = false, puede2 = false, cancelar = false;
+  bool puede = false, puede2 = false, cancelar = false, puede3 = true;
   std::string sele, sele2;
 
   std::string col;
@@ -727,7 +732,6 @@ void Partida::atacar()
         if(sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0 && miIt3->numTropas > 1)
         {
           std::cout<<"\nEl jugador "<<miIt3->duenio<<" va a atacar desde "<<sele<<"\n";
-
           puede = true;
         }
         else if (sele.compare(miIt3->nombreTerritorio) == 0 && jug.compare(miIt3->duenio) == 0 && miIt3->numTropas < 2)
@@ -764,9 +768,19 @@ void Partida::atacar()
         {
           if(sele2.compare(miIt4->nombreTerritorio) == 0 && jug.compare(miIt4->duenio) != 0)
           {
-            std::cout<<"\nEl jugador "<<jug<<" va a atacar "<<sele2<<"\n";
+            int indAtq = grafo.indiceVertice(sele);
+            int indAtq2 = grafo.indiceVertice(sele2);
 
-            puede2 = true;
+            if(grafo.matriz_adyacencia[indAtq][indAtq2] != 0)
+            {
+              std::cout<<"\nEl jugador "<<jug<<" va a atacar "<<sele2<<"\n";
+              puede2 = true;
+            }
+            else
+            {
+              std::cout<<"\nEl territorio "<<sele2<<" no es vecino de "<<sele<<"\n";
+              puede3 = false;
+            }
           }
           else
           {
@@ -774,7 +788,7 @@ void Partida::atacar()
           }
         }
       }
-      if(puede2 == false)
+      if(puede2 == false && puede3 == true)
         std::cout<<"\nEl territorio "<<sele2<<" no existe o es tuyo\n";
     }
 
@@ -1210,4 +1224,287 @@ bool Partida::guardarNormal(std::string nombreArchivo)
   }
 
   return guardado;
+}
+
+void Partida::crearGrafo()
+{
+  //Creamos los nodos
+  grafo.insertarVertice("Alaska");
+  grafo.insertarVertice("Alberta");
+  grafo.insertarVertice("America Central");
+  grafo.insertarVertice("Estados Unidos Orientales");
+  grafo.insertarVertice("Groenlandia");
+  grafo.insertarVertice("Territorio Noroccidental");
+  grafo.insertarVertice("Ontario");
+  grafo.insertarVertice("Quebec");
+  grafo.insertarVertice("Estados Unidos Occidentales");
+  grafo.insertarVertice("Argentina");
+  grafo.insertarVertice("Brasil");
+  grafo.insertarVertice("Peru");
+  grafo.insertarVertice("Venezuela");
+  grafo.insertarVertice("Gran Bretana");
+  grafo.insertarVertice("Islandia");
+  grafo.insertarVertice("Europa del Norte");
+  grafo.insertarVertice("Escandinavia");
+  grafo.insertarVertice("Europa del Sur");
+  grafo.insertarVertice("Ucrania");
+  grafo.insertarVertice("Europa Occidental");
+  grafo.insertarVertice("Congo");
+  grafo.insertarVertice("Africa Oriental");
+  grafo.insertarVertice("Egipto");
+  grafo.insertarVertice("Madagascar");
+  grafo.insertarVertice("Africa del Norte");
+  grafo.insertarVertice("Africa del Sur");
+  grafo.insertarVertice("Afganistan");
+  grafo.insertarVertice("China");
+  grafo.insertarVertice("India");
+  grafo.insertarVertice("Irkutsk");
+  grafo.insertarVertice("Japon");
+  grafo.insertarVertice("Kamchatka");
+  grafo.insertarVertice("Medio Oriente");
+  grafo.insertarVertice("Mongolia");
+  grafo.insertarVertice("Siam");
+  grafo.insertarVertice("Siberia");
+  grafo.insertarVertice("Ural");
+  grafo.insertarVertice("Yakutsk");
+  grafo.insertarVertice("Australia Oriental");
+  grafo.insertarVertice("Indonesia");
+  grafo.insertarVertice("Nueva Guinea");
+  grafo.insertarVertice("Australia Occidental");
+
+  //Conectamos los nodos
+  grafo.conectarVertices("Alaska", "Alberta", 1);
+  grafo.conectarVertices("Alaska", "Territorio Noroccidental", 1);
+  grafo.conectarVertices("Alaska", "Kamchatka", 1);
+
+  grafo.conectarVertices("Alberta", "Alaska", 1);
+  grafo.conectarVertices("Alberta", "Territorio Noroccidental", 1);
+  grafo.conectarVertices("Alberta", "Ontario", 1);
+  grafo.conectarVertices("Alberta", "Estados Unidos Occidentales", 1);
+
+  grafo.conectarVertices("America Central", "Estados Unidos Orientales", 1);
+  grafo.conectarVertices("America Central", "Estados Unidos Occidentales", 1);
+  grafo.conectarVertices("America Central", "Venezuela", 1);
+
+  grafo.conectarVertices("Estados Unidos Orientales", "America Central", 1);
+  grafo.conectarVertices("Estados Unidos Orientales", "Ontario", 1);
+  grafo.conectarVertices("Estados Unidos Orientales", "Quebec", 1);
+  grafo.conectarVertices("Estados Unidos Orientales", "Estados Unidos Occidentales", 1);
+
+  grafo.conectarVertices("Groenlandia", "Territorio Noroccidental", 1);
+  grafo.conectarVertices("Groenlandia", "Ontario", 1);
+  grafo.conectarVertices("Groenlandia", "Quebec", 1);
+  grafo.conectarVertices("Groenlandia", "Islandia", 1);
+
+  grafo.conectarVertices("Territorio Noroccidental", "Alaska", 1);
+  grafo.conectarVertices("Territorio Noroccidental", "Alberta", 1);
+  grafo.conectarVertices("Territorio Noroccidental", "Groenlandia", 1);
+  grafo.conectarVertices("Territorio Noroccidental", "Ontario", 1);
+
+  grafo.conectarVertices("Ontario", "Alberta", 1);
+  grafo.conectarVertices("Ontario", "Estados Unidos Orientales", 1);
+  grafo.conectarVertices("Ontario", "Groenlandia", 1);
+  grafo.conectarVertices("Ontario", "Territorio Noroccidental", 1);
+  grafo.conectarVertices("Ontario", "Quebec", 1);
+  grafo.conectarVertices("Ontario", "Estados Unidos Occidentales", 1);
+
+  grafo.conectarVertices("Quebec", "Estados Unidos Orientales", 1);
+  grafo.conectarVertices("Quebec", "Groenlandia", 1);
+  grafo.conectarVertices("Quebec", "Ontario", 1);
+
+  grafo.conectarVertices("Estados Unidos Occidentales", "Alberta", 1);
+  grafo.conectarVertices("Estados Unidos Occidentales", "America Central", 1);
+  grafo.conectarVertices("Estados Unidos Occidentales", "Estados Unidos Orientales", 1);
+  grafo.conectarVertices("Estados Unidos Occidentales", "Ontario", 1);
+
+  grafo.conectarVertices("Argentina", "Brasil", 1);
+  grafo.conectarVertices("Argentina", "Peru", 1);
+
+  grafo.conectarVertices("Brasil", "Argentina", 1);
+  grafo.conectarVertices("Brasil", "Peru", 1);
+  grafo.conectarVertices("Brasil", "Venezuela", 1);
+  grafo.conectarVertices("Brasil", "Africa del Norte", 1);
+
+  grafo.conectarVertices("Peru", "Argentina", 1);
+  grafo.conectarVertices("Peru", "Brasil", 1);
+  grafo.conectarVertices("Peru", "Venezuela", 1);
+
+  grafo.conectarVertices("Venezuela", "America Central", 1);
+  grafo.conectarVertices("Venezuela", "Brasil", 1);
+  grafo.conectarVertices("Venezuela", "Peru", 1);
+
+  grafo.conectarVertices("Gran Bretana", "Islandia", 1);
+  grafo.conectarVertices("Gran Bretana", "Europa del Norte", 1);
+  grafo.conectarVertices("Gran Bretana", "Escandinavia", 1);
+  grafo.conectarVertices("Gran Bretana", "Europa Occidental", 1);
+
+  grafo.conectarVertices("Islandia", "Groenlandia", 1);
+  grafo.conectarVertices("Islandia", "Gran Bretana", 1);
+  grafo.conectarVertices("Islandia", "Escandinavia", 1);
+
+  grafo.conectarVertices("Europa del Norte", "Gran Bretana", 1);
+  grafo.conectarVertices("Europa del Norte", "Escandinavia", 1);
+  grafo.conectarVertices("Europa del Norte", "Ucrania", 1);
+  grafo.conectarVertices("Europa del Norte", "Europa del Sur", 1);
+  grafo.conectarVertices("Europa del Norte", "Europa Occidental", 1);
+
+  grafo.conectarVertices("Escandinavia", "Gran Bretana", 1);
+  grafo.conectarVertices("Escandinavia", "Islandia", 1);
+  grafo.conectarVertices("Escandinavia", "Europa del Norte", 1);
+  grafo.conectarVertices("Escandinavia", "Ucrania", 1);
+
+  grafo.conectarVertices("Europa del Sur", "Europa del Norte", 1);
+  grafo.conectarVertices("Europa del Sur", "Ucrania", 1);
+  grafo.conectarVertices("Europa del Sur", "Europa Occidental", 1);
+  grafo.conectarVertices("Europa del Sur", "Egipto", 1);
+  grafo.conectarVertices("Europa del Sur", "Africa del Norte", 1);
+  grafo.conectarVertices("Europa del Sur", "Medio Oriente", 1);
+
+  grafo.conectarVertices("Ucrania", "Europa del Norte", 1);
+  grafo.conectarVertices("Ucrania", "Escandinavia", 1);
+  grafo.conectarVertices("Ucrania", "Europa del Sur", 1);
+  grafo.conectarVertices("Ucrania", "Afganistan", 1);
+  grafo.conectarVertices("Ucrania", "Medio Oriente", 1);
+  grafo.conectarVertices("Ucrania", "Ural", 1);
+
+  grafo.conectarVertices("Europa Occidental", "Gran Bretana", 1);
+  grafo.conectarVertices("Europa Occidental", "Europa del Norte", 1);
+  grafo.conectarVertices("Europa Occidental", "Europa del Sur", 1);
+  grafo.conectarVertices("Europa Occidental", "Africa del Norte", 1);
+
+  grafo.conectarVertices("Congo", "Africa del Norte", 1);
+  grafo.conectarVertices("Congo", "Africa Oriental", 1);
+  grafo.conectarVertices("Congo", "Africa del Sur", 1);
+
+  grafo.conectarVertices("Africa Oriental", "Congo", 1);
+  grafo.conectarVertices("Africa Oriental", "Egipto", 1);
+  grafo.conectarVertices("Africa Oriental", "Madagascar", 1);
+  grafo.conectarVertices("Africa Oriental", "Africa del Norte", 1);
+  grafo.conectarVertices("Africa Oriental", "Africa del Sur", 1);
+
+  grafo.conectarVertices("Egipto", "Europa del Sur", 1);
+  grafo.conectarVertices("Egipto", "Africa Oriental", 1);
+  grafo.conectarVertices("Egipto", "Africa del Norte", 1);
+  grafo.conectarVertices("Egipto", "Medio Oriente", 1);
+
+  grafo.conectarVertices("Madagascar", "Africa Oriental", 1);
+  grafo.conectarVertices("Madagascar", "Africa del Sur", 1);
+
+  grafo.conectarVertices("Africa del Norte", "Brasil", 1);
+  grafo.conectarVertices("Africa del Norte", "Europa del Sur", 1);
+  grafo.conectarVertices("Africa del Norte", "Egipto", 1);
+  grafo.conectarVertices("Africa del Norte", "Congo", 1);
+  grafo.conectarVertices("Africa del Norte", "Africa Oriental", 1);
+
+  grafo.conectarVertices("Africa del Sur", "Congo", 1);
+  grafo.conectarVertices("Africa del Sur", "Africa Oriental", 1);
+  grafo.conectarVertices("Africa del Sur", "Madagascar", 1);
+
+  grafo.conectarVertices("Afganistan", "Ucrania", 1);
+  grafo.conectarVertices("Afganistan", "China", 1);
+  grafo.conectarVertices("Afganistan", "India", 1);
+  grafo.conectarVertices("Afganistan", "Medio Oriente", 1);
+  grafo.conectarVertices("Afganistan", "Ural", 1);
+
+  grafo.conectarVertices("China", "Afganistan", 1);
+  grafo.conectarVertices("China", "India", 1);
+  grafo.conectarVertices("China", "Mongolia", 1);
+  grafo.conectarVertices("China", "Siam", 1);
+  grafo.conectarVertices("China", "Siberia", 1);
+  grafo.conectarVertices("China", "Ural", 1);
+
+  grafo.conectarVertices("India", "Afganistan", 1);
+  grafo.conectarVertices("India", "China", 1);
+  grafo.conectarVertices("India", "Medio Oriente", 1);
+  grafo.conectarVertices("India", "Siam", 1);
+
+  grafo.conectarVertices("Irkutsk", "Kamchatka", 1);
+  grafo.conectarVertices("Irkutsk", "Mongolia", 1);
+  grafo.conectarVertices("Irkutsk", "Siberia", 1);
+  grafo.conectarVertices("Irkutsk", "Yakutsk", 1);
+
+  grafo.conectarVertices("Japon", "Kamchatka", 1);
+  grafo.conectarVertices("Japon", "Mongolia", 1);
+
+  grafo.conectarVertices("Kamchatka", "Alaska", 1);
+  grafo.conectarVertices("Kamchatka", "Irkutsk", 1);
+  grafo.conectarVertices("Kamchatka", "Japon", 1);
+  grafo.conectarVertices("Kamchatka", "Mongolia", 1);
+  grafo.conectarVertices("Kamchatka", "Yakutsk", 1);
+
+  grafo.conectarVertices("Medio Oriente", "Egipto", 1);
+  grafo.conectarVertices("Medio Oriente", "Europa del Sur", 1);
+  grafo.conectarVertices("Medio Oriente", "India", 1);
+  grafo.conectarVertices("Medio Oriente", "Afganistan", 1);
+  grafo.conectarVertices("Medio Oriente", "Ucrania", 1);
+
+  grafo.conectarVertices("Mongolia", "China", 1);
+  grafo.conectarVertices("Mongolia", "Irkutsk", 1);
+  grafo.conectarVertices("Mongolia", "Japon", 1);
+  grafo.conectarVertices("Mongolia", "Kamchatka", 1);
+  grafo.conectarVertices("Mongolia", "Siberia", 1);
+
+  grafo.conectarVertices("Siam", "China", 1);
+  grafo.conectarVertices("Siam", "India", 1);
+  grafo.conectarVertices("Siam", "Indonesia", 1);
+
+  grafo.conectarVertices("Siberia", "Irkutsk", 1);
+  grafo.conectarVertices("Siberia", "Mongolia", 1);
+  grafo.conectarVertices("Siberia", "Ural", 1);
+  grafo.conectarVertices("Siberia", "Yakutsk", 1);
+
+  grafo.conectarVertices("Ural", "Afganistan", 1);
+  grafo.conectarVertices("Ural", "China", 1);
+  grafo.conectarVertices("Ural", "Europa del Norte", 1);
+  grafo.conectarVertices("Ural", "Siberia", 1);
+
+  grafo.conectarVertices("Yakutsk", "Irkutsk", 1);
+  grafo.conectarVertices("Yakutsk", "Kamchatka", 1);
+  grafo.conectarVertices("Yakutsk", "Siberia", 1);
+
+  grafo.conectarVertices("Australia Oriental", "Nueva Guinea", 1);
+  grafo.conectarVertices("Australia Oriental", "Australia Occidental", 1);
+
+  grafo.conectarVertices("Indonesia", "Siam", 1);
+  grafo.conectarVertices("Indonesia", "Nueva Guinea", 1);
+  grafo.conectarVertices("Indonesia", "Australia Occidental", 1);
+
+  grafo.conectarVertices("Nueva Guinea", "Australia Oriental", 1);
+  grafo.conectarVertices("Nueva Guinea", "Indonesia", 1);
+  grafo.conectarVertices("Nueva Guinea", "Australia Occidental", 1);
+
+  grafo.conectarVertices("Australia Occidental", "Australia Oriental", 1);
+  grafo.conectarVertices("Australia Occidental", "Indonesia", 1);
+  grafo.conectarVertices("Australia Occidental", "Nueva Guinea", 1);
+
+  //grafo.imprimirMatriz();
+}
+
+void Partida::actualizarGrafo()
+{
+  for(int i=0; i<grafo.matriz_adyacencia.size(); i++)
+  {
+    for(int j=0; j<grafo.matriz_adyacencia[i].size(); j++)
+    {
+      if(grafo.matriz_adyacencia[i][j] != 0)
+      {
+        int aux;
+
+        std::list<Territorio>::iterator miIt;
+        for(int x=0; x<6; x++)
+        {
+          for(miIt=contiP[x]->territoriosC.begin(); miIt!=contiP[x]->territoriosC.end(); miIt++)
+          {
+            if(grafo.vertices[j].compare(miIt->nombreTerritorio) == 0)
+            {
+              aux = miIt->numTropas;
+            }
+          }
+        }
+
+        grafo.matriz_adyacencia[i][j] = aux;
+      }
+    }
+  }
+  //grafo.imprimirMatriz();
 }

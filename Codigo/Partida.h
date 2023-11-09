@@ -4,6 +4,7 @@
 #include "Carta.h"
 #include "Continente.h"
 #include "Jugador.h"
+#include "Grafo.h"
 #include <string> // librerías que usaremos
 #include <list>
 #include <queue>
@@ -13,11 +14,11 @@ class Partida
 {
   public: //Atributos
     int idPartida;
-    //std::string modoJuego;
     Continente* contiP[6];
     std::list<Jugador> jugadoresP;
     std::list<Carta> cartasP;
     std::queue<std::string> turnos;
+    Grafo<std::string, int> grafo;
 
   public: //Metodos
     Partida(int idP);
@@ -31,6 +32,8 @@ class Partida
     void atacar();
     void fortificar();
     bool guardarNormal(std::string nombreArchivo);
+    void crearGrafo();
+    void actualizarGrafo();
 };
 
 #endif 
