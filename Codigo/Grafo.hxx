@@ -159,160 +159,78 @@ void Grafo<T, U>::imprimirMatriz()
     }
 }
 
-template<class T, class U>
-vector<T> Grafo<T, U>::componenteVertice(T vertice) {
-    stack<T> pila;
-    vector<T> visitados;
-    pila.push(vertice);
-    //Se recorre la pila
-    while (!pila.empty()) {
-        T verticeActual = pila.top();
-        pila.pop();
-        bool visitado = false;
-        //Se revisa que el vertice no haya sido visitado
-        for (int i = 0; i < visitados.size(); i++) {
-            if (verticeActual == visitados[i]) {
-                visitado = true;
-                break;
-            }
-        }
-        if (!visitado) {
-            //Se visita el vertice
-            visitados.push_back(verticeActual);
-            //Se agregan los vertices adyacentes a la pila
-            for (int i = this->vertices.size() - 1; i >= 0; i--) {
-                if (buscarArista(verticeActual, this->vertices[i])) {
-                    pila.push(this->vertices[i]);
-                }
-            }
-        }
-    }
-    return visitados;
-}
 
 template<class T, class U>
-void Grafo<T, U>::prim(T vertice) {
-    vector<T> visitados;
-    vector<T> componente = componenteVertice(vertice);
-    vector<T> noVisitados = componente;
-    vector<pair<T, T> > aristas;
-    //Se agrega el nodo inicial a visitados
-    visitados.push_back(vertice);
-    //Se elimina el nodo inicial de noVisitados
-    noVisitados.erase(noVisitados.begin() + indiceVertice(vertice));
-    T nuevo;
-    T actual;
-    //Mientras no se hayan visitado todos los nodos
-    while (visitados.size() != componente.size()) {
-        //Se inicializa el menor valor de conexion con el maximo valor de U
-        U menor = numeric_limits<U>::max();
-        //Se recorren los nodos visitados
-        for (int i = 0; i < visitados.size(); i++) {
-            //Se recorren los nodos no visitados
-            for (int j = 0; j < noVisitados.size(); j++) {
-                //Si existe una conexion entre los nodos
-                if (buscarArista(visitados[i], noVisitados[j])) {
-                    //Si el valor de la conexion es menor al menor valor de conexion
-                    if (valorConexion(visitados[i], noVisitados[j]) < menor) {
-                        //Se actualiza el menor valor de conexion
-                        menor = valorConexion(visitados[i], noVisitados[j]);
-                        //Se actualizan los nodos visitado y no visitado
-                        actual = visitados[i];
-                        nuevo = noVisitados[j];
-                    }
-                }
-            }
-        }
-        //Se agrega el nodo no visitado a visitados
-        visitados.push_back(nuevo);
-        //Se elimina el nodo no visitado de noVisitados
-        auto it = find(noVisitados.begin(), noVisitados.end(), nuevo);
-        noVisitados.erase(it);
-        aristas.push_back(make_pair(actual, nuevo));
-    }
-    //Se imprime la ruta del arbol de expansion minima
-    cout << "\n\nRuta del árbol de expansión mínima generada por Prim:\n\n";
-    for (int i = 0; i < aristas.size(); i++) {
-        cout << "(" << aristas[i].first << ", " << aristas[i].second << ") ";
-    }
-}
-
-template<class T, class U>
-void Grafo<T, U>::dijkstra(T vertice) {
+std::vector< std::pair<T, T> > Grafo<T, U>::dijkstra(T vertice) 
+{
     T verticeActual = vertice;
-    vector<T> distancias;
-    vector<T> visitados;
-    vector<T> componente = componenteVertice(vertice);
-    vector<T> noVisitados = componenteVertice(vertice);
-    vector<T> prev(componente.size());
+    std::vector<U> distancias;
+    std::vector<T> visitados;
+    std::vector<T> grafo = this->vertices;
+    std::vector<T> noVisitados = this->vertices;
+    std::vector<T> prev(grafo.size());
 
-    //Se inicializan las distancias en infinito
-    for (int i = 0; i < componente.size(); i++) {
-        distancias.push_back(numeric_limits<U>::max());
+    for (int i = 0; i < grafo.size(); i++) 
+    {
+        distancias.push_back(456361);
     }
-    //Se inicializa la distancia del vertice inicial en 0
     distancias[indiceVertice(verticeActual)] = 0;
 
-    //Mientras no se hayan visitado todos los nodos
-    while (!noVisitados.empty()) {
-
-        //Se inicializa la menor distancia con el maximo valor de U
-        U menor = numeric_limits<U>::max();
-        //Se recorren los nodos no visitados
-        for (int i = 0; i < noVisitados.size(); i++) {
-            //Si la distancia del nodo no visitado es menor a la menor distancia
-            if (distancias[indiceVertice(noVisitados[i])] < menor) {
-                //Se actualiza la menor distancia
+    while (!noVisitados.empty()) 
+    {
+        U menor = 456361;
+        for (int i = 0; i < noVisitados.size(); i++) 
+        {
+            if (distancias[indiceVertice(noVisitados[i])] < menor) 
+            {
                 menor = distancias[indiceVertice(noVisitados[i])];
-                //Se actualiza el nodo visitado
                 verticeActual = noVisitados[i];
             }
         }
-
-        //Se agrega el nodo visitado a visitados
         visitados.push_back(verticeActual);
-        //Se elimina el nodo visitado de noVisitados
-        //noVisitados.erase(remove(noVisitados.begin(), noVisitados.end(), verticeActual), noVisitados.end());
-        auto it = find(noVisitados.begin(), noVisitados.end(), verticeActual);
+
+        auto it = noVisitados.begin();
+
+        for(int i=0; i<noVisitados.size(); i++)
+        {
+            if(noVisitados[i].X == verticeActual.X && noVisitados[i].Y == verticeActual.Y)
+            {
+                it = noVisitados.begin() + i;
+            }
+        }
+        
         noVisitados.erase(it);
 
-        //Se recorren los vecinos del nodo visitado
-        for (int i = 0; i < componente.size(); i++) {
-
-            //Si existe una conexion entre el nodo visitado y el vecino
-            if (buscarArista(verticeActual, componente[i])) {
-
-                //Si la distancia del nodo visitado es mayor
-                // a la del vecino mas la distancia entre el nodo visitado y el vecino
+        for (int i = 0; i < grafo.size(); i++)
+        {
+            if (buscarArista(verticeActual, grafo[i])) 
+            {
                 U distanciaVertice = distancias[indiceVertice(verticeActual)];
-                U distanciaVecino = distancias[indiceVertice(componente[i])];
-                U nuevaDistancia = distanciaVertice + valorConexion(verticeActual, componente[i]);
+                U distanciaVecino = distancias[indiceVertice(grafo[i])];
+                U nuevaDistancia = distanciaVertice + valorConexion(verticeActual, grafo[i]);
 
-                if (distanciaVecino > nuevaDistancia) {
-                    //Se actualiza la distancia del nodo visitado
-                    distancias[indiceVertice(componente[i])] = nuevaDistancia;
-                    prev[indiceVertice(componente[i])] = verticeActual;
+                if (distanciaVecino > nuevaDistancia) 
+                {
+                    distancias[indiceVertice(grafo[i])] = nuevaDistancia;
+                    prev[indiceVertice(grafo[i])] = verticeActual;
                 }
             }
         }
     }
-    cout << "\n\nRutas generadas con Dijkstra:\n";
-    for (int i = 0; i < visitados.size(); i++) {
-        if (visitados[i] != vertice) {
-            cout << "\n" << vertice << " -> " << visitados[i] << ": ";
-            stack<T> ruta;
-            verticeActual = visitados[i];
 
-            while (verticeActual != vertice) {
-                ruta.push(verticeActual);
-                verticeActual = prev[indiceVertice(verticeActual)];
-            }
+    std::vector< std::pair<T, T> > conexiones;
 
-            cout << "(" << vertice << ") ";
-            while (!ruta.empty()){
-                cout << "(" << ruta.top() << ") ";
-                ruta.pop();
-            }
+    for(int i=0; i<prev.size(); i++)
+    {
+        if (i == indiceVertice(vertice))
+        {
+            continue;
+        }
+        else
+        {
+            conexiones.push_back(std::make_pair(prev[i], grafo[i]));
         }
     }
+
+    return conexiones;
 }

@@ -19,9 +19,7 @@ class Grafo
     bool buscarArista(T vertice1, T vertice2);
     U valorConexion(T vertice1, T vertice2);
     void imprimirMatriz();
-    vector<T> componenteVertice(T vertice);
-    void prim(T vertice);
-    void dijkstra(T vertice);
+    std::vector< std::pair<T, T> > dijkstra(T vertice);
 };
 
 #include "Grafo.hxx"
