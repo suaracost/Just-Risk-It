@@ -11,6 +11,7 @@
 - abrirNormal(string nombreArchivo): Abre el archivo .txt donde se guardó toda la información de la partida.
 - guardarComprimido(Partida p, string nombreArchivo): Guarda toda la partida en un archivo .bin.
 - abrirComprimido(string nombreArchivo): Abre el archivo .bin donde se guardó toda la partida.
+  
 ## TAD Partida 🎯
 ### Conjunto mínimo de datos
 - Idpartida: Entero, Identificador de la partida 
@@ -18,6 +19,7 @@
 - continentes: Arreglo de tipo Continente, Indica todos los continentes que hay dentro de la partida
 - turnos: Cola de jugadores, Indica los turnos de los jugadores de la partida en orden de llegada
 - cartasp: Lista de Carta: Indica todas las cartas que hay dentro de la partida
+  
 ### Comportamiento del objeto
 - Partida() : Operación para crear una partida sin jugadores y jugadoresTurnos 
    - Post: List<Jugador> jugadores = new List<Jugador>(0) , List<Stack> jugadoresTurnos ,List<Carta> cartas = new List< Carta >(52) , Continentes[6]
@@ -34,6 +36,7 @@
 -  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
 - guardarNormal(string nombreArchivo)
   - Post: Return guardado
+  
 ## TAD Continente 🗺️
 ### Conjunto mínimo de datos
 - nombreContinente : String , Nombre del continente
@@ -110,7 +113,7 @@ imprimirCodigos(): Imprime los códigos Huffman.
 ### Comportamiento del objeto
 - Caracter(char d): Constructor de Caracter.
 
-## TAD Grafo
+## TAD Grafo 🖼️
 ### Conjunto mínimo de datos
 - vertices: Vector de tipo template, vector donde se encuentran todos los vertices del grafo
 - matriz_adyacencia: Multi-Vector de tipo template, Multi-vector donde se guardan todas las conexiones con sus pesos
