@@ -36,10 +36,11 @@
 -  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
 - guardarNormal(string nombreArchivo)
   - Post: Return guardado
--  void crearGrafo();
-    void actualizarGrafo();
-    void costoconquista(std::string paisAtacado);
-    void conquistaMasBarata();
+- crearGrafo():
+- actualizarGrafo():
+- costoconquista(string paisAtacado):
+- conquistaMasBarata():
+
 ## TAD Continente 🗺️
 ### Conjunto mínimo de datos
 - nombreContinente : String , Nombre del continente
