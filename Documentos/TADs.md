@@ -36,8 +36,8 @@
 -  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
 - guardarNormal(string nombreArchivo)
   - Post: Return guardado
-- crearGrafo():
-- actualizarGrafo():
+- crearGrafo(): Crear todos los vértices y sus conexiones y las agrega en la matriz de adyacencia 
+- actualizarGrafo(): Actualiza el peso de las conexiones cuando sucede un, ataque una fortificación o se insertan nuevas tropas
 - costoconquista(string paisAtacado):
 - conquistaMasBarata():
 
@@ -119,20 +119,19 @@ imprimirCodigos(): Imprime los códigos Huffman.
 
 ## TAD Grafo 🖼️
 ### Conjunto mínimo de datos
-- vertices: Vector de tipo template, vector donde se encuentran todos los vertices del grafo
+- vertices: Vector de tipo template, vector donde se encuentran todos los vértices del grafo
 - matriz_adyacencia: Multi-Vector de tipo template, Multi-vector donde se guardan todas las conexiones con sus pesos
 ### Comportamiento del objeto
-- buscarVertice (PaginaWeb vertice): Nos dice si esta o no el vertice en el grafo.
-- indiceVertice(PaginaWeb vertice): Nos devuelve el indice del vertice en el vector de paginas.
-- insertarVertice(PaginaWeb vertice): Inserta un vertice en el grafo.
-- conectarVertices(PaginaWeb vertice1 PaginaWeb vertice2): Conecta dos vertices con un peso predeterminado en la funcion.
-- buscarArista(PaginaWeb vertice1 PaginaWeb vertice2): Nos dice si hay una arista entre dos vertices.
-- valorConexion(T vertice1, T vertice2): Devuelve el peso de la conexion partir de los dos vertices conectados 
-- imprimirMatriz();Imprijme la matrisz de adyahencia teniendo de referencia sus vertices
-- componenteVertice(T vertice): Devuelve un vector con todo el componente del vertice dado
+- buscarVertice (PaginaWeb vertice): Nos dice si está o no el vértice en el grafo.
+- indiceVertice(PaginaWeb vertice): Nos devuelve el índice del vértice en el vector de páginas.
+- insertarVertice(PaginaWeb vertice): Inserta un vértice en el grafo.
+- conectarVertices(PaginaWeb vertice1 PaginaWeb vertice2): Conecta dos vértices con un peso predeterminado en la función.
+- buscarArista(PaginaWeb vertice1 PaginaWeb vertice2): Nos dice si hay una arista entre dos vértices.
+- valorConexion(T vertice1, T vertice2): Devuelve el peso de la conexión partir de los dos vértices conectados 
+- imprimirMatriz(): Imprime la matriz de adyacencia teniendo de referencia sus vértices
+- componenteVertice(T vertice): Devuelve un vector con todo el componente del vértice dado
 - prim(T vertice): Implementa el algoritmo de prim
 - dijkstra(T vertice): Implementa el algoritmo de dijkstra
-
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
