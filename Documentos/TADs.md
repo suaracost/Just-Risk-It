@@ -110,6 +110,22 @@ imprimirCodigos(): Imprime los códigos Huffman.
 ### Comportamiento del objeto
 - Caracter(char d): Constructor de Caracter.
 
+## TAD Grafo
+### Conjunto mínimo de datos
+- vertices: Vector de tipo template, vector donde se encuentran todos los vertices del grafo
+- matriz_adyacencia: Multi-Vector de tipo template, Multi-vector donde se guardan todas las conexiones con sus pesos
+### Comportamiento del objeto
+- bool buscarVertice (PaginaWeb vertice): Nos dice si esta o no el vertice en el grafo.
+- int indiceVertice(PaginaWeb vertice): Nos devuelve el indice del vertice en el vector de paginas.
+- bool insertarVertice(PaginaWeb vertice): Inserta un vertice en el grafo.
+- bool conectarVertices(PaginaWeb vertice1 PaginaWeb vertice2): Conecta dos vertices con un peso predeterminado en la funcion.
+- bool buscarArista(PaginaWeb vertice1 PaginaWeb vertice2): Nos dice si hay una arista entre dos vertices.
+- U valorConexion(T vertice1, T vertice2): Devuelve el peso de la conexion partir de los dos vertices conectados 
+- void imprimirMatriz();Imprijme la matrisz de adyahencia teniendo de referencia sus vertices
+- vector<T> componenteVertice(T vertice): Devuelve un vector con todo el componente del vertice dado
+- void prim(T vertice): Implementa el algoritmo de prim
+- void dijkstra(T vertice): Implementa el algoritmo de dijkstra
+
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
