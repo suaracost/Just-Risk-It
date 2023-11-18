@@ -313,8 +313,7 @@ void Menu::menu()
       }
       else
       {
-        //tener en cuenta turno
-        //flujo correcto -> dijkstra
+        p.conquistaMasBarata(p.turnos.front());
       }
     }
 

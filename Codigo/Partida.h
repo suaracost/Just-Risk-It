@@ -35,7 +35,7 @@ class Partida
     void crearGrafo();
     void actualizarGrafo();
     void costoconquista(std::string paisAtacado);
-    void conquistaMasBarata();
+    void conquistaMasBarata(std::string jugador);
 };
 
 #endif 

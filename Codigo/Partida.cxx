@@ -3,6 +3,8 @@
 #include <iostream>
 #include <limits>
 #include <fstream>
+#include <algorithm>
+#include <vector>
 
 // cosas que se necesitan para cambiar el color del texto
 #define reset "\033[0m"
@@ -719,7 +721,7 @@ void Partida::atacar()
 
   mostrarTerritoriosPropios(jug, col);
   
-  while (puede == false)
+  while (puede == false && cancelar == false)
   {
     std::cout<<"\nDesde que territorio desea atacar? ";
     std::getline(std::cin, sele);
@@ -745,17 +747,29 @@ void Partida::atacar()
         }
       }
     }
-    if(puede == false)
+    if(puede == false && cancelar == false)
       std::cout<<"\nEl territorio "<<sele<<" no existe o no es tuyo\n";
   }
 
   if(cancelar == true)
   {
-    std::cout<<"\nSe ha cancelado el ataque";
+    std::cout<<"\nSe ha cancelado el ataque\n";
   }
   else
   {
     mostrarTerritoriosEnemigos(jug);
+
+    int atqIndice = grafo.indiceVertice(sele);
+
+    std::cout<<"\nPuedes atacar a: \n";
+    for(int i=0; i<grafo.matriz_adyacencia[atqIndice].size(); i++)
+    {
+      if(grafo.matriz_adyacencia[atqIndice][i] != 0)
+      {
+        std::cout<<"\t"<<grafo.vertices[i]<<"\n";
+      }
+    }
+
     while (puede2 == false)
     {
       std::cout<<"\nQue territorio desea atacar? ";
@@ -1514,7 +1528,102 @@ void Partida::costoconquista(std::string paisAtacado)
 
 }
 
-void Partida::conquistaMasBarata()
+void Partida::conquistaMasBarata(std::string jugador)
 {
+  std::vector < std::pair <std::string, int> > paisesCostos;
 
+  for(int i=0; i<grafo.matriz_adyacencia.size(); i++)
+  {
+    for(int x=0; x<6; x++)
+    {
+      std::list<Territorio>::iterator miIt;
+      for(miIt=contiP[x]->territoriosC.begin(); miIt!=contiP[x]->territoriosC.end(); miIt++)
+      {
+        if(grafo.vertices[i].compare(miIt->nombreTerritorio) == 0 && jugador.compare(miIt->duenio) == 0)
+        {
+          for(int j=0; j<grafo.matriz_adyacencia[i].size(); j++)
+          {
+            if(grafo.matriz_adyacencia[i][j] != 0)
+            {
+              std::list<Territorio>::iterator miIt2;
+              for(int y=0; y<6; y++)
+              {
+                for(miIt2=contiP[y]->territoriosC.begin(); miIt2!=contiP[y]->territoriosC.end(); miIt2++)
+                {
+                  if(grafo.vertices[j].compare(miIt2->nombreTerritorio) == 0 && jugador.compare(miIt2->duenio) != 0)
+                  {
+                    paisesCostos.push_back(std::make_pair(grafo.vertices[j], grafo.matriz_adyacencia[i][j]));
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  std::sort(paisesCostos.begin(), paisesCostos.end(), [](const std::pair <std::string, int> a, const std::pair <std::string, int> b){
+        return a.second < b.second;
+    });
+
+  std::list<Jugador>::iterator miIt;
+  for (miIt = jugadoresP.begin(); miIt != jugadoresP.end(); miIt++)
+  {      
+      if(jugador.compare(miIt->nombreJugador) == 0)
+      {                
+        std::string aux2 = miIt->colorJugador;
+
+        if(aux2.compare("azul") == 0)
+        {
+          std::cout<<blue;
+        }
+        else if(aux2.compare("rojo") == 0)
+        {
+          std::cout<<red;
+        }
+        else if(aux2.compare("verde") == 0)
+        {
+          std::cout<<green;
+        }
+        else if(aux2.compare("amarillo") == 0)
+        {
+          std::cout<<yellow;
+        }
+        else if(aux2.compare("magenta") == 0)
+        {
+          std::cout<<magenta;
+        }
+        else if(aux2.compare("cyan") == 0)
+        {
+          std::cout<<cyan;
+        }
+      }
+  }
+        
+  std::cout<<"\n"<<jugador<<reset;
+  std::cout<<"\nEl pais mas barato para conquistar es: ";
+  std::cout<<paisesCostos[0].first<<", teniendo un costo de "<<paisesCostos[0].second<<" tropas\n";
+
+  for(int i=0; i<grafo.matriz_adyacencia.size(); i++)
+  {
+    for(int j=0; j<grafo.matriz_adyacencia[i].size(); i++)
+    {
+      if(grafo.vertices[j].compare(paisesCostos[0].first) == 0 && grafo.matriz_adyacencia[i][j] == paisesCostos[0].second)
+      {
+        for(int x=0; x<6; x++)
+        {
+          std::list<Territorio>::iterator miIt;
+          for(miIt=contiP[x]->territoriosC.begin(); miIt!=contiP[x]->territoriosC.end(); miIt++)
+          {
+            if(grafo.vertices[i].compare(miIt->nombreTerritorio) == 0 && jugador.compare(miIt->duenio) == 0)
+            {
+              std::cout<<"Lo puedes atacar desde "<<grafo.vertices[i]<<"\n\n";
+            }
+          }
+        }
+      }
+    }
+  }
+ 
 }
