@@ -1508,3 +1508,13 @@ void Partida::actualizarGrafo()
   }
   //grafo.imprimirMatriz();
 }
+
+void Partida::costoconquista(std::string paisAtacado)
+{
+
+}
+
+void Partida::conquistaMasBarata()
+{
+
+}

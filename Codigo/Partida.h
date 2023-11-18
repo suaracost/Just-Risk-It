@@ -34,6 +34,8 @@ class Partida
     bool guardarNormal(std::string nombreArchivo);
     void crearGrafo();
     void actualizarGrafo();
+    void costoconquista(std::string paisAtacado);
+    void conquistaMasBarata();
 };
 
 #endif 
