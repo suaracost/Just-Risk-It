@@ -1567,6 +1567,7 @@ void Partida::conquistaMasBarata(std::string jugador)
         return a.second < b.second;
     });
 
+  std::cout<<"\nEs el turno de ";
   std::list<Jugador>::iterator miIt;
   for (miIt = jugadoresP.begin(); miIt != jugadoresP.end(); miIt++)
   {      
@@ -1601,7 +1602,7 @@ void Partida::conquistaMasBarata(std::string jugador)
       }
   }
         
-  std::cout<<"\n"<<jugador<<reset;
+  std::cout<<jugador<<reset;
   std::cout<<"\nEl pais mas barato para conquistar es: ";
   std::cout<<paisesCostos[0].first<<", teniendo un costo de "<<paisesCostos[0].second<<" tropas\n";
 
