@@ -132,6 +132,7 @@ imprimirCodigos(): Imprime los códigos Huffman.
 - componenteVertice(T vertice): Devuelve un vector con todo el componente del vértice dado
 - prim(T vertice): Implementa el algoritmo de prim
 - dijkstra(T vertice): Implementa el algoritmo de dijkstra
+
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
 
