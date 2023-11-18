@@ -36,7 +36,10 @@
 -  fortificar(): Dentro de la funcin, Fortifica un territorio del jugador con otro del mismo jugador
 - guardarNormal(string nombreArchivo)
   - Post: Return guardado
-  
+-  void crearGrafo();
+    void actualizarGrafo();
+    void costoconquista(std::string paisAtacado);
+    void conquistaMasBarata();
 ## TAD Continente 🗺️
 ### Conjunto mínimo de datos
 - nombreContinente : String , Nombre del continente
@@ -118,16 +121,16 @@ imprimirCodigos(): Imprime los códigos Huffman.
 - vertices: Vector de tipo template, vector donde se encuentran todos los vertices del grafo
 - matriz_adyacencia: Multi-Vector de tipo template, Multi-vector donde se guardan todas las conexiones con sus pesos
 ### Comportamiento del objeto
-- bool buscarVertice (PaginaWeb vertice): Nos dice si esta o no el vertice en el grafo.
-- int indiceVertice(PaginaWeb vertice): Nos devuelve el indice del vertice en el vector de paginas.
-- bool insertarVertice(PaginaWeb vertice): Inserta un vertice en el grafo.
-- bool conectarVertices(PaginaWeb vertice1 PaginaWeb vertice2): Conecta dos vertices con un peso predeterminado en la funcion.
-- bool buscarArista(PaginaWeb vertice1 PaginaWeb vertice2): Nos dice si hay una arista entre dos vertices.
-- U valorConexion(T vertice1, T vertice2): Devuelve el peso de la conexion partir de los dos vertices conectados 
-- void imprimirMatriz();Imprijme la matrisz de adyahencia teniendo de referencia sus vertices
-- vector<T> componenteVertice(T vertice): Devuelve un vector con todo el componente del vertice dado
-- void prim(T vertice): Implementa el algoritmo de prim
-- void dijkstra(T vertice): Implementa el algoritmo de dijkstra
+- buscarVertice (PaginaWeb vertice): Nos dice si esta o no el vertice en el grafo.
+- indiceVertice(PaginaWeb vertice): Nos devuelve el indice del vertice en el vector de paginas.
+- insertarVertice(PaginaWeb vertice): Inserta un vertice en el grafo.
+- conectarVertices(PaginaWeb vertice1 PaginaWeb vertice2): Conecta dos vertices con un peso predeterminado en la funcion.
+- buscarArista(PaginaWeb vertice1 PaginaWeb vertice2): Nos dice si hay una arista entre dos vertices.
+- valorConexion(T vertice1, T vertice2): Devuelve el peso de la conexion partir de los dos vertices conectados 
+- imprimirMatriz();Imprijme la matrisz de adyahencia teniendo de referencia sus vertices
+- componenteVertice(T vertice): Devuelve un vector con todo el componente del vertice dado
+- prim(T vertice): Implementa el algoritmo de prim
+- dijkstra(T vertice): Implementa el algoritmo de dijkstra
 
 # Diagrama Grafico
 ![Banner](../Images/foto_dibujo.jpg)
