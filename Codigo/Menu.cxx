@@ -291,10 +291,7 @@ void Menu::menu()
       }
       else
       {
-        //aqui usamos cN para saber el nombre del territorio que se necesita, 
-        //tener en cuenta turno
-        //puede que el territorio no exista o no sea de ese jugador
-        //flujo correcto -> dijkstra
+        p.costoconquista(cN);
       }
     }
 

@@ -189,11 +189,11 @@ std::vector< std::pair<T, T> > Grafo<T, U>::dijkstra(T vertice)
         }
         visitados.push_back(verticeActual);
 
-        auto it = noVisitados.begin();
+        typename std::vector<T>::iterator it = noVisitados.begin();
 
         for(int i=0; i<noVisitados.size(); i++)
         {
-            if(noVisitados[i].X == verticeActual.X && noVisitados[i].Y == verticeActual.Y)
+            if(noVisitados[i] == verticeActual)
             {
                 it = noVisitados.begin() + i;
             }

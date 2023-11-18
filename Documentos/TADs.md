@@ -38,7 +38,7 @@
   - Post: Return guardado
 - crearGrafo(): Crear todos los vértices y sus conexiones y las agrega en la matriz de adyacencia 
 - actualizarGrafo(): Actualiza el peso de las conexiones cuando sucede un, ataque una fortificación o se insertan nuevas tropas
-- costoconquista(string paisAtacado): 
+- costoconquista(string paisAtacado): Muestra el camino mas corto segun el territorio que quieras atacar
 - conquistaMasBarata(string jugador): Muestra el Territorio con menor numero de tropas el cual pueda ser atacado por el jugador en el turno junto con el pais de donde se puede hacer el ataque
 
 ## TAD Continente 🗺️
